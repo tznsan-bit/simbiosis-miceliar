@@ -1,16 +1,15 @@
 import "./globals.css";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Simbiosis Miceliar",
-  description: "Cultivo consciente, calidad y seguridad para una comunidad responsable.",
+  description: "Comunidad, bienestar y acompañamiento.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="es">
       <body>{children}</body>
