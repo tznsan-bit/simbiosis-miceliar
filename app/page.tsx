@@ -22,7 +22,7 @@ export default function Home() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://wa.me/549294413880"
+                  href="https://wa.me/54294413880"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-2xl bg-[#3fa46a] px-6 py-4 text-center text-base font-semibold text-white transition hover:scale-[1.02] hover:bg-[#4ab978]"
@@ -182,7 +182,7 @@ export default function Home() {
 
             <div className="flex justify-start md:justify-end">
               <a
-                href="https://wa.me/549294413880"
+                href="https://wa.me/54294413880"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl bg-[#3fa46a] px-8 py-4 text-base font-semibold text-white transition hover:scale-[1.02] hover:bg-[#4ab978]"
