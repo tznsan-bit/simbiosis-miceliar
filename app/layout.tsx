@@ -1,8 +1,9 @@
 import "./globals.css";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Simbiosis Miceliar",
-  description: "Seguridad para tu salud",
+  description: "Cultivo consciente, calidad y seguridad para una comunidad responsable.",
 };
 
 export default function RootLayout({
