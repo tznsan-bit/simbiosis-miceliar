@@ -165,7 +165,6 @@ export default function HomePage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#07110c] text-white">
       <DecorativeBackground />
-
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(61,145,93,0.18),transparent_34%),radial-gradient(circle_at_bottom,rgba(203,168,92,0.14),transparent_28%)]" />
       <div className="absolute inset-0 bg-black/35" />
 
