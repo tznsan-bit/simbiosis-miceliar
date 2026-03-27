@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const whatsappNumber = "54294413880";
+const whatsappNumber = "5492944138880";
 const whatsappMessage =
   "Hola, quiero recibir información sobre Simbiosis Miceliar.";
 
