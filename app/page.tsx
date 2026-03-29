@@ -1,407 +1,509 @@
-import Image from "next/image";
-
-const whatsappNumber = "5492944138880";
-const whatsappMessage =
-  "Hola, quiero recibir información sobre Simbiosis Miceliar.";
-
-const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
-
-function CannabisLeaf({
-  className = "",
-  rotate = "0deg",
-}: {
-  className?: string;
-  rotate?: string;
-}) {
-  return (
-    <svg
-      viewBox="0 0 120 120"
-      className={className}
-      style={{ transform: `rotate(${rotate})` }}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g opacity="0.18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-        <path d="M60 20C66 38 66 53 60 73C54 53 54 38 60 20Z" />
-        <path d="M60 30C77 35 88 44 97 60C80 60 69 56 60 48" />
-        <path d="M60 30C43 35 32 44 23 60C40 60 51 56 60 48" />
-        <path d="M60 42C76 45 88 54 96 71C79 70 68 64 60 56" />
-        <path d="M60 42C44 45 32 54 24 71C41 70 52 64 60 56" />
-        <path d="M60 55C72 58 81 66 87 80C74 79 66 74 60 67" />
-        <path d="M60 55C48 58 39 66 33 80C46 79 54 74 60 67" />
-        <path d="M60 20V92" />
-      </g>
-    </svg>
-  );
-}
-
-function PruningScissors({
-  className = "",
-  rotate = "0deg",
-}: {
-  className?: string;
-  rotate?: string;
-}) {
-  return (
-    <svg
-      viewBox="0 0 120 120"
-      className={className}
-      style={{ transform: `rotate(${rotate})` }}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g
-        opacity="0.16"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="36" cy="82" r="12" />
-        <circle cx="65" cy="88" r="12" />
-        <path d="M44 74L83 34" />
-        <path d="M73 77L51 55" />
-        <path d="M83 34L94 25" />
-        <path d="M51 55L44 43" />
-      </g>
-    </svg>
-  );
-}
-
-function RootLines({
-  className = "",
-  rotate = "0deg",
-}: {
-  className?: string;
-  rotate?: string;
-}) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      style={{ transform: `rotate(${rotate})` }}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g opacity="0.12" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-        <path d="M80 20V56" />
-        <path d="M80 56C80 76 67 83 58 94" />
-        <path d="M80 56C80 76 94 84 104 95" />
-        <path d="M58 94C50 103 48 113 46 126" />
-        <path d="M104 95C113 104 116 113 118 127" />
-        <path d="M78 74C70 82 69 91 69 102" />
-        <path d="M85 75C93 83 94 92 95 104" />
-        <path d="M68 102C61 109 58 117 56 130" />
-        <path d="M96 104C104 111 108 118 111 131" />
-      </g>
-    </svg>
-  );
-}
-
-function DecorativeBackground() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <CannabisLeaf
-        className="absolute left-[3%] top-[7%] h-24 w-24 text-emerald-500 md:h-32 md:w-32"
-        rotate="-18deg"
-      />
-      <CannabisLeaf
-        className="absolute right-[6%] top-[14%] h-16 w-16 text-lime-400 md:h-24 md:w-24"
-        rotate="22deg"
-      />
-      <PruningScissors
-        className="absolute right-[8%] top-[34%] h-16 w-16 text-amber-300 md:h-24 md:w-24"
-        rotate="-12deg"
-      />
-      <RootLines
-        className="absolute left-[1%] top-[38%] h-28 w-28 text-emerald-300 md:h-40 md:w-40"
-        rotate="-8deg"
-      />
-      <CannabisLeaf
-        className="absolute right-[3%] top-[58%] h-24 w-24 text-emerald-400 md:h-32 md:w-32"
-        rotate="-20deg"
-      />
-      <PruningScissors
-        className="absolute left-[8%] bottom-[14%] h-16 w-16 text-amber-200 md:h-20 md:w-20"
-        rotate="16deg"
-      />
-      <RootLines
-        className="absolute right-[12%] bottom-[6%] h-24 w-24 text-lime-300 md:h-36 md:w-36"
-        rotate="14deg"
-      />
-      <CannabisLeaf
-        className="absolute left-[14%] bottom-[28%] h-14 w-14 text-emerald-200 md:h-20 md:w-20"
-        rotate="10deg"
-      />
-    </div>
-  );
-}
-
-function SectionTitle({
-  eyebrow,
-  title,
-  text,
-}: {
-  eyebrow: string;
-  title: string;
-  text: string;
-}) {
-  return (
-    <div className="mx-auto mb-10 max-w-3xl text-center">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300">
-        {eyebrow}
-      </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-        {title}
-      </h2>
-      <p className="mt-4 text-base leading-7 text-white/70 md:text-lg">{text}</p>
-    </div>
-  );
-}
-
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#07110c] text-white">
-      <DecorativeBackground />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(61,145,93,0.18),transparent_34%),radial-gradient(circle_at_bottom,rgba(203,168,92,0.14),transparent_28%)]" />
-      <div className="absolute inset-0 bg-black/35" />
-
-      <div className="relative z-10">
-        <section className="mx-auto flex min-h-screen max-w-7xl items-center px-6 py-16 md:px-10">
-          <div className="grid w-full items-center gap-14 md:grid-cols-2">
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300">
-                Comunidad · Bienestar · Acompañamiento
-              </p>
-
-              <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
-                Una comunidad con identidad, cuidado y acompañamiento real
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg leading-8 text-white/75">
-                Simbiosis Miceliar es un espacio pensado para brindar orientación,
-                cercanía y una presencia seria, humana y confiable.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400"
-                >
-                  Escribinos por WhatsApp
-                </a>
-
-                <a
-                  href="#cultivo"
-                  className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Ver sección cultivo
-                </a>
-              </div>
-            </div>
-
-            <div className="flex justify-center md:justify-end">
-              <div className="relative w-full max-w-md rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-sm">
-                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-emerald-400/10 via-transparent to-amber-200/10" />
-                <div className="relative flex items-center justify-center">
-                  <Image
-                    src="/logo-simbiosis.png"
-                    alt="Logo Simbiosis Miceliar"
-                    width={520}
-                    height={520}
-                    className="h-auto w-full object-contain"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-6xl px-6 py-6 md:px-10 md:py-10">
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold text-white">Identidad seria</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Una presencia clara, prolija y coherente, con una estética sólida y
-                una comunicación confiable.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold text-white">Acompañamiento humano</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Cercanía, orientación y atención directa, con una mirada responsable
-                y real.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold text-white">Cuidado en cada etapa</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Seguimiento, dedicación y una construcción basada en compromiso,
-                presencia y calidad.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-6xl px-6 py-20 md:px-10">
-          <SectionTitle
-            eyebrow="Quiénes somos"
-            title="Una propuesta con identidad propia"
-            text="Simbiosis Miceliar busca transmitir una imagen sólida, cercana y confiable. El objetivo es construir una comunidad con presencia real, acompañamiento humano y una estética que refleje cuidado, seriedad y conexión."
-          />
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-3xl border border-white/10 bg-[#0b1711]/90 p-7">
-              <h3 className="text-lg font-semibold text-white">Comunidad</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Un espacio pensado para vincular personas, procesos y recorridos con
-                una identidad compartida.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-[#0b1711]/90 p-7">
-              <h3 className="text-lg font-semibold text-white">Bienestar</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Una comunicación enfocada en transmitir calma, confianza y una
-                presencia más humana.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-[#0b1711]/90 p-7">
-              <h3 className="text-lg font-semibold text-white">Acompañamiento</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Cercanía real, trato claro y una forma de orientar que prioriza el
-                cuidado y la conexión.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="cultivo" className="mx-auto max-w-6xl px-6 py-20 md:px-10">
-          <SectionTitle
-            eyebrow="Cultivo"
-            title="Seguimiento, dedicación y cuidado en cada etapa"
-            text="Esta sección refleja una parte esencial de la identidad visual del proyecto: imágenes reales, proceso, detalle y una estética conectada con el trabajo, el cuidado y la calidad."
-          />
-
-          <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
-              <div className="relative h-[420px] w-full">
-                <Image
-                  src="/cultivo-1.jpg"
-                  alt="Imagen de cultivo"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07110c]/80 via-transparent to-transparent" />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
-                <h3 className="text-xl font-semibold text-white">Cultivo con identidad</h3>
-                <p className="mt-4 text-sm leading-7 text-white/70">
-                  Las imágenes no aparecen como elementos sueltos, sino como parte de
-                  una narrativa visual que transmite dedicación, observación y
-                  presencia en cada etapa.
-                </p>
-              </div>
-
-              <div className="grid gap-6 sm:grid-cols-3">
-                <div className="rounded-3xl border border-white/10 bg-[#0b1711]/90 p-5">
-                  <h4 className="text-base font-semibold text-white">Cuidado</h4>
-                  <p className="mt-2 text-sm leading-6 text-white/65">
-                    Atención y seguimiento real.
-                  </p>
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-[#0b1711]/90 p-5">
-                  <h4 className="text-base font-semibold text-white">Proceso</h4>
-                  <p className="mt-2 text-sm leading-6 text-white/65">
-                    Una estética ligada al trabajo.
-                  </p>
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-[#0b1711]/90 p-5">
-                  <h4 className="text-base font-semibold text-white">Calidad</h4>
-                  <p className="mt-2 text-sm leading-6 text-white/65">
-                    Presencia, detalle y dedicación.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-5xl px-6 py-20 text-center md:px-10">
-          <SectionTitle
-            eyebrow="Cómo funciona"
-            title="Un recorrido simple, claro y cercano"
-            text="La idea es ofrecer una forma de contacto directa y una experiencia visual que inspire confianza desde el primer momento."
-          />
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
-              <span className="text-3xl font-semibold text-emerald-300">1</span>
-              <h3 className="mt-3 text-lg font-semibold text-white">Nos escribís</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Primer contacto simple, directo y humano.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
-              <span className="text-3xl font-semibold text-emerald-300">2</span>
-              <h3 className="mt-3 text-lg font-semibold text-white">Te orientamos</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Acompañamiento claro con una comunicación cercana.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
-              <span className="text-3xl font-semibold text-emerald-300">3</span>
-              <h3 className="mt-3 text-lg font-semibold text-white">Coordinamos</h3>
-              <p className="mt-3 text-sm leading-7 text-white/70">
-                Un paso final prolijo, simple y ordenado.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-4xl px-6 pb-24 md:px-10">
-          <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-emerald-500/10 via-white/5 to-amber-200/10 p-8 text-center backdrop-blur-sm md:p-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300">
-              Contacto
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              Empezá hoy con una atención clara y humana
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/75">
-              Si querés recibir más información o ponerte en contacto, escribinos
-              directamente por WhatsApp.
-            </p>
-
-            <div className="mt-8">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex rounded-full bg-emerald-500 px-7 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400"
-              >
-                Hablar por WhatsApp
-              </a>
-            </div>
-
-            <p className="mt-5 text-sm text-white/50">+54 2944 13 880</p>
-          </div>
-        </section>
+    <main className="page">
+      <div className="backgroundDecor">
+        <span className="float decor1">✦</span>
+        <span className="float decor2">✂</span>
+        <span className="float decor3">❋</span>
+        <span className="float decor4">✦</span>
+        <span className="float decor5">✂</span>
+        <span className="float decor6">❋</span>
       </div>
+
+      <section className="hero">
+        <div className="overlay" />
+        <img
+          src="/IMG_3967.jpeg"
+          alt="Cultivo de Simbiosis Miceliar"
+          className="heroImage"
+        />
+
+        <div className="heroContent">
+          <div className="badge">Asociación civil • Lago Puelo • Patagonia</div>
+          <h1>Simbiosis Miceliar</h1>
+          <p className="heroText">
+            Cultivo, acompañamiento y desarrollo comunitario con identidad
+            territorial, perspectiva de salud y trabajo responsable.
+          </p>
+
+          <div className="heroButtons">
+            <a
+              href="https://wa.me/549294413880"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primaryBtn"
+            >
+              WhatsApp
+            </a>
+
+            <a href="#cultivo" className="secondaryBtn">
+              Ver cultivo
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="intro section">
+        <div className="sectionHeader">
+          <span className="miniTag">Nuestra identidad</span>
+          <h2>Una propuesta seria, humana y cercana</h2>
+        </div>
+
+        <div className="introGrid">
+          <div className="card glass">
+            <h3>Quiénes somos</h3>
+            <p>
+              Simbiosis Miceliar es una asociación enfocada en el trabajo
+              comunitario, el cultivo responsable y la construcción de espacios
+              seguros de acompañamiento, información y desarrollo.
+            </p>
+          </div>
+
+          <div className="card glass">
+            <h3>Nuestra mirada</h3>
+            <p>
+              Buscamos unir naturaleza, organización y compromiso social en una
+              propuesta con raíces patagónicas, estética cuidada y enfoque
+              humano.
+            </p>
+          </div>
+
+          <div className="card glass">
+            <h3>Compromiso</h3>
+            <p>
+              Promovemos buenas prácticas, trabajo transparente, cercanía con
+              las personas y una construcción institucional sólida.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cultivo" className="section">
+        <div className="sectionHeader">
+          <span className="miniTag">Cultivo</span>
+          <h2>Nuestro entorno de trabajo</h2>
+          <p className="sectionText">
+            Un espacio vivo, en contacto con la naturaleza, donde el cultivo se
+            integra con el territorio y el cuidado del proceso.
+          </p>
+        </div>
+
+        <div className="gallery">
+          <article className="galleryCard large">
+            <img src="/IMG_3967.jpeg" alt="Vista general del cultivo" />
+            <div className="galleryInfo">
+              <h3>Espacio de cultivo</h3>
+              <p>
+                Un entorno verde, natural y organizado, pensado para sostener
+                procesos con dedicación y presencia real.
+              </p>
+            </div>
+          </article>
+
+          <article className="galleryCard">
+            <img src="/IMG_3924.jpeg" alt="Floración detalle 1" />
+            <div className="galleryInfo">
+              <h3>Detalle de floración</h3>
+              <p>
+                Seguimiento cercano del desarrollo, observando estructura,
+                resina y evolución de cada etapa.
+              </p>
+            </div>
+          </article>
+
+          <article className="galleryCard">
+            <img src="/IMG_3819.jpeg" alt="Floración detalle 2" />
+            <div className="galleryInfo">
+              <h3>Observación y cuidado</h3>
+              <p>
+                Procesos atendidos con paciencia, criterio y una mirada integral
+                del cultivo.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="section valuesSection">
+        <div className="sectionHeader">
+          <span className="miniTag">Valores</span>
+          <h2>Lo que nos representa</h2>
+        </div>
+
+        <div className="valuesGrid">
+          <div className="valueItem">
+            <h3>Territorio</h3>
+            <p>Raíz patagónica, identidad local y vínculo real con el entorno.</p>
+          </div>
+          <div className="valueItem">
+            <h3>Cuidado</h3>
+            <p>Respeto por los procesos, las personas y la calidad del trabajo.</p>
+          </div>
+          <div className="valueItem">
+            <h3>Comunidad</h3>
+            <p>Construcción colectiva, cercanía humana y acompañamiento.</p>
+          </div>
+          <div className="valueItem">
+            <h3>Seriedad</h3>
+            <p>Una propuesta clara, prolija y con visión institucional.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact section">
+        <div className="contactBox">
+          <span className="miniTag">Contacto</span>
+          <h2>Hablemos</h2>
+          <p>
+            Si querés comunicarte con Simbiosis Miceliar, podés escribirnos por
+            WhatsApp.
+          </p>
+
+          <a
+            href="https://wa.me/549294413880"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primaryBtn"
+          >
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <style jsx>{`
+        .page {
+          position: relative;
+          min-height: 100vh;
+          overflow: hidden;
+          background:
+            radial-gradient(circle at top left, rgba(69, 122, 70, 0.18), transparent 30%),
+            radial-gradient(circle at bottom right, rgba(144, 101, 42, 0.16), transparent 28%),
+            linear-gradient(180deg, #07110b 0%, #0b1710 40%, #101a13 100%);
+          color: #f4f0e8;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .backgroundDecor {
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        .float {
+          position: absolute;
+          opacity: 0.08;
+          font-size: 28px;
+          animation: drift 10s ease-in-out infinite;
+        }
+
+        .decor1 { top: 10%; left: 4%; }
+        .decor2 { top: 22%; right: 6%; animation-delay: 1s; }
+        .decor3 { top: 48%; left: 3%; animation-delay: 2s; }
+        .decor4 { bottom: 18%; right: 8%; animation-delay: 3s; }
+        .decor5 { bottom: 10%; left: 8%; animation-delay: 1.5s; }
+        .decor6 { top: 70%; right: 3%; animation-delay: 2.5s; }
+
+        .hero,
+        .section {
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero {
+          min-height: 92vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 36px 18px;
+        }
+
+        .heroImage {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: brightness(0.45) saturate(0.95);
+        }
+
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(to bottom, rgba(6, 12, 8, 0.28), rgba(6, 12, 8, 0.72)),
+            linear-gradient(to right, rgba(7, 17, 11, 0.72), rgba(7, 17, 11, 0.28));
+          z-index: 1;
+        }
+
+        .heroContent {
+          position: relative;
+          z-index: 2;
+          max-width: 950px;
+          width: 100%;
+          text-align: center;
+          padding: 30px 18px;
+        }
+
+        .badge,
+        .miniTag {
+          display: inline-block;
+          border: 1px solid rgba(244, 240, 232, 0.2);
+          background: rgba(255, 255, 255, 0.06);
+          backdrop-filter: blur(10px);
+          color: #e9dfc9;
+          padding: 8px 14px;
+          border-radius: 999px;
+          font-size: 13px;
+          letter-spacing: 0.4px;
+          margin-bottom: 18px;
+        }
+
+        h1 {
+          margin: 0;
+          font-size: clamp(42px, 8vw, 86px);
+          line-height: 0.95;
+          letter-spacing: -1px;
+          color: #f8f4eb;
+        }
+
+        .heroText {
+          max-width: 760px;
+          margin: 22px auto 0;
+          font-size: clamp(17px, 2.3vw, 22px);
+          line-height: 1.7;
+          color: rgba(248, 244, 235, 0.9);
+        }
+
+        .heroButtons {
+          margin-top: 28px;
+          display: flex;
+          gap: 14px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .primaryBtn,
+        .secondaryBtn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 170px;
+          padding: 14px 22px;
+          border-radius: 14px;
+          text-decoration: none;
+          font-weight: 700;
+          transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+        }
+
+        .primaryBtn {
+          background: linear-gradient(135deg, #d7b16a, #b18645);
+          color: #10100d;
+          box-shadow: 0 10px 30px rgba(177, 134, 69, 0.28);
+        }
+
+        .secondaryBtn {
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          background: rgba(255, 255, 255, 0.06);
+          color: #f4f0e8;
+          backdrop-filter: blur(10px);
+        }
+
+        .primaryBtn:hover,
+        .secondaryBtn:hover {
+          transform: translateY(-2px);
+          opacity: 0.95;
+        }
+
+        .section {
+          padding: 78px 18px;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+
+        .sectionHeader {
+          max-width: 760px;
+          margin-bottom: 28px;
+        }
+
+        h2 {
+          margin: 0;
+          font-size: clamp(30px, 5vw, 52px);
+          line-height: 1.08;
+          color: #f8f4eb;
+        }
+
+        .sectionText {
+          margin-top: 14px;
+          color: rgba(244, 240, 232, 0.74);
+          font-size: 17px;
+          line-height: 1.7;
+        }
+
+        .introGrid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 18px;
+          margin-top: 10px;
+        }
+
+        .glass {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(14px);
+        }
+
+        .card {
+          padding: 26px;
+          border-radius: 22px;
+          box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+        }
+
+        .card h3,
+        .galleryInfo h3,
+        .valueItem h3 {
+          margin: 0 0 12px 0;
+          font-size: 22px;
+          color: #efe3c8;
+        }
+
+        .card p,
+        .galleryInfo p,
+        .valueItem p,
+        .contactBox p {
+          margin: 0;
+          color: rgba(244, 240, 232, 0.76);
+          line-height: 1.75;
+          font-size: 16px;
+        }
+
+        .gallery {
+          display: grid;
+          grid-template-columns: 1.2fr 1fr 1fr;
+          gap: 18px;
+          align-items: stretch;
+        }
+
+        .galleryCard {
+          overflow: hidden;
+          border-radius: 24px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .galleryCard img {
+          width: 100%;
+          height: 340px;
+          object-fit: cover;
+          display: block;
+        }
+
+        .galleryCard.large img {
+          height: 100%;
+          min-height: 460px;
+        }
+
+        .galleryInfo {
+          padding: 20px;
+        }
+
+        .valuesGrid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+        }
+
+        .valueItem {
+          padding: 24px;
+          border-radius: 20px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact {
+          padding-bottom: 110px;
+        }
+
+        .contactBox {
+          max-width: 860px;
+          margin: 0 auto;
+          text-align: center;
+          padding: 42px 26px;
+          border-radius: 28px;
+          background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+        }
+
+        .contactBox .primaryBtn {
+          margin-top: 22px;
+        }
+
+        @keyframes drift {
+          0% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(6deg); }
+          100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @media (max-width: 1024px) {
+          .introGrid,
+          .valuesGrid,
+          .gallery {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .galleryCard.large {
+            grid-column: span 2;
+          }
+
+          .galleryCard.large img {
+            min-height: 380px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero {
+            min-height: 88vh;
+            padding: 20px 14px;
+          }
+
+          .heroContent {
+            padding: 18px 8px;
+          }
+
+          .section {
+            padding: 58px 14px;
+          }
+
+          .introGrid,
+          .valuesGrid,
+          .gallery {
+            grid-template-columns: 1fr;
+          }
+
+          .galleryCard.large {
+            grid-column: auto;
+          }
+
+          .galleryCard img,
+          .galleryCard.large img {
+            height: 300px;
+            min-height: unset;
+          }
+
+          .primaryBtn,
+          .secondaryBtn {
+            width: 100%;
+            max-width: 320px;
+          }
+
+          .float {
+            font-size: 22px;
+          }
+        }
+      `}</style>
     </main>
   );
 }
