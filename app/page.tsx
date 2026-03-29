@@ -1,728 +1,319 @@
 import Image from "next/image";
 
-const cardStyle: React.CSSProperties = {
-  background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(255,255,255,0.08)",
-  borderRadius: "24px",
-  padding: "24px",
-  backdropFilter: "blur(8px)",
-};
+const pilares = [
+  {
+    n: "01",
+    titulo: "Cercanía real",
+    texto:
+      "Queremos que cada persona sienta que del otro lado hay un proyecto presente, accesible y con una forma humana de acompañar.",
+  },
+  {
+    n: "02",
+    titulo: "Criterio y seriedad",
+    texto:
+      "Nos importa comunicar con claridad, sostener procesos prolijos y trabajar con responsabilidad en cada detalle.",
+  },
+  {
+    n: "03",
+    titulo: "Identidad patagónica",
+    texto:
+      "Simbiosis Miceliar es un proyecto patagónico, con una forma propia de construir comunidad, vínculo y pertenencia.",
+  },
+];
 
-const sectionTitleStyle: React.CSSProperties = {
-  color: "#c7a54b",
-  fontWeight: 800,
-  fontSize: "0.9rem",
-  letterSpacing: "0.08em",
-  marginBottom: "10px",
-};
+const legalCards = [
+  {
+    titulo: "Qué es REPROCANN",
+    texto:
+      "Es el registro nacional que permite encuadrar el acceso al cannabis medicinal dentro del marco vigente para pacientes, cultivadores y organizaciones autorizadas.",
+  },
+  {
+    titulo: "Qué es un club",
+    texto:
+      "Un club de cultivo es una comunidad organizada que trabaja con criterios internos, trazabilidad, acompañamiento y una lógica responsable de acceso.",
+  },
+  {
+    titulo: "Cómo lo entendemos",
+    texto:
+      "Nos movemos con una mirada seria del marco legal argentino, priorizando el acceso seguro, el acompañamiento y la claridad en cada proceso.",
+  },
+];
 
-export default function Home() {
+const servicios = [
+  "Acompañamiento cercano y orientación clara",
+  "Vinculación con médicos para REPROCANN",
+  "Comunidad con identidad patagónica",
+  "Información accesible para quienes recién empiezan",
+  "Criterio, presencia y seguimiento responsable",
+  "Proyecto pensado desde el vínculo y la confianza",
+];
+
+export default function Page() {
   return (
-    <main
-      style={{
-        background:
-          "radial-gradient(circle at top, rgba(72,120,80,0.18), transparent 28%), linear-gradient(180deg, #07110b 0%, #0b0f0c 45%, #090909 100%)",
-        color: "#f5f5f5",
-        minHeight: "100vh",
-        fontFamily: "Arial, Helvetica, sans-serif",
-      }}
-    >
-      <section
-        style={{
-          maxWidth: "1240px",
-          margin: "0 auto",
-          padding: "24px 20px 90px",
-        }}
-      >
-        <header
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
-            flexWrap: "wrap",
-            padding: "10px 0 26px",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <Image
-              src="/logo-simbiosis.png"
-              alt="Simbiosis Miceliar"
-              width={64}
-              height={64}
-              priority
-              style={{ borderRadius: "50%" }}
-            />
-            <div>
-              <div
-                style={{
-                  fontSize: "1.2rem",
-                  fontWeight: 800,
-                  letterSpacing: "0.02em",
-                }}
-              >
-                Simbiosis Miceliar
-              </div>
-              <div
-                style={{
-                  color: "rgba(255,255,255,0.65)",
-                  fontSize: "0.95rem",
-                  marginTop: "4px",
-                }}
-              >
-                Proyecto patagónico · comunidad · acompañamiento
-              </div>
-            </div>
-          </div>
+    <main className="min-h-screen overflow-x-hidden bg-[#051009] text-white">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,90,58,0.34),transparent_26%),radial-gradient(circle_at_top_right,rgba(196,160,75,0.14),transparent_20%),radial-gradient(circle_at_bottom,rgba(22,61,43,0.22),transparent_28%)]" />
+        <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:34px_34px]" />
+      </div>
 
-          <nav
-            style={{
-              display: "flex",
-              gap: "12px",
-              flexWrap: "wrap",
-              alignItems: "center",
-            }}
-          >
-            <a
-              href="#quienes-somos"
-              style={{
-                color: "rgba(255,255,255,0.82)",
-                textDecoration: "none",
-                fontSize: "0.96rem",
-              }}
-            >
-              Quiénes somos
-            </a>
-            <a
-              href="#acompanamiento"
-              style={{
-                color: "rgba(255,255,255,0.82)",
-                textDecoration: "none",
-                fontSize: "0.96rem",
-              }}
-            >
-              Acompañamiento
-            </a>
-            <a
-              href="#marco-legal"
-              style={{
-                color: "rgba(255,255,255,0.82)",
-                textDecoration: "none",
-                fontSize: "0.96rem",
-              }}
-            >
-              REPROCANN y marco legal
-            </a>
-            <a
-              href="#contacto"
-              style={{
-                textDecoration: "none",
-                background: "#c7a54b",
-                color: "#111",
-                padding: "12px 18px",
-                borderRadius: "999px",
-                fontWeight: 800,
-                fontSize: "0.95rem",
-              }}
-            >
-              Contacto
-            </a>
-          </nav>
-        </header>
-
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.15fr 0.85fr",
-            gap: "24px",
-            alignItems: "stretch",
-            marginTop: "10px",
-            marginBottom: "36px",
-          }}
-        >
-          <div
-            style={{
-              ...cardStyle,
-              padding: "38px",
-              minHeight: "540px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              background:
-                "linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)), linear-gradient(180deg, rgba(50,90,60,0.22), rgba(0,0,0,0.18))",
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  display: "inline-block",
-                  padding: "8px 14px",
-                  borderRadius: "999px",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  color: "#d6d6d6",
-                  fontSize: "0.9rem",
-                  marginBottom: "18px",
-                }}
-              >
-                Club de cultivo · Patagonia · comunidad real
-              </div>
-
-              <h1
-                style={{
-                  fontSize: "clamp(2.8rem, 6vw, 5.3rem)",
-                  lineHeight: 0.95,
-                  margin: "0 0 18px",
-                  letterSpacing: "-0.04em",
-                  maxWidth: "820px",
-                }}
-              >
-                Una comunidad seria, cercana y con identidad propia
-              </h1>
-
-              <p
-                style={{
-                  fontSize: "1.12rem",
-                  lineHeight: 1.8,
-                  color: "rgba(255,255,255,0.82)",
-                  maxWidth: "760px",
-                  margin: 0,
-                }}
-              >
-                Simbiosis Miceliar es un proyecto patagónico que busca hacer las
-                cosas bien: con presencia, criterio y una forma responsable de
-                acompañar. Nos importa la calidad del vínculo, la claridad en cada
-                proceso y una identidad que transmita confianza desde el primer
-                contacto.
-              </p>
+      <section className="mx-auto w-full max-w-7xl px-4 pb-8 pt-5 sm:px-6 lg:px-8 lg:pb-14 lg:pt-8">
+        <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr] lg:gap-5">
+          <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur md:p-7 lg:p-10">
+            <div className="mb-5 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80">
+              Club de cultivo · Patagonia · comunidad real
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "14px",
-                flexWrap: "wrap",
-                marginTop: "26px",
-              }}
-            >
+            <h1 className="max-w-[10ch] text-[42px] font-semibold leading-[0.96] tracking-[-0.05em] sm:text-[58px] lg:text-[84px]">
+              Una comunidad seria, cercana y con identidad propia
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-[18px] leading-[1.8] text-white/78 sm:text-[19px] lg:text-[21px]">
+              Simbiosis Miceliar es un proyecto patagónico que busca hacer las
+              cosas bien: con presencia, criterio y una forma responsable de
+              acompañar. Nos importa la calidad del vínculo, la claridad en cada
+              proceso y una identidad que transmita confianza desde el primer
+              contacto.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="https://wa.me/5492944138880"
                 target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  textDecoration: "none",
-                  background: "#c7a54b",
-                  color: "#111",
-                  padding: "14px 20px",
-                  borderRadius: "999px",
-                  fontWeight: 800,
-                }}
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-[#d6b250] px-6 py-3.5 text-[15px] font-semibold text-[#0b110d] transition hover:scale-[1.02]"
               >
                 Escribinos por WhatsApp
               </a>
 
               <a
                 href="#quienes-somos"
-                style={{
-                  textDecoration: "none",
-                  color: "#f5f5f5",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  padding: "14px 20px",
-                  borderRadius: "999px",
-                  fontWeight: 700,
-                }}
+                className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.03] px-6 py-3.5 text-[15px] font-medium text-white/88 transition hover:bg-white/[0.06]"
               >
-                Conocer más
+                Conocé el proyecto
               </a>
             </div>
           </div>
 
-          <div
-            style={{
-              borderRadius: "28px",
-              overflow: "hidden",
-              minHeight: "540px",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.28)",
-            }}
-          >
+          <div className="relative min-h-[320px] overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] sm:min-h-[420px] lg:min-h-full">
             <Image
               src="/IMG_3967.jpeg"
-              alt="Simbiosis Miceliar"
-              width={1100}
-              height={1400}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
+              alt="Cultivo de Simbiosis Miceliar"
+              fill
+              priority
+              className="object-cover object-center"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#051009]/80 via-[#051009]/10 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 rounded-[22px] border border-white/10 bg-black/20 p-4 backdrop-blur-md">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#d6b250]">
+                Simbiosis Miceliar
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/82">
+                Proyecto patagónico con una mirada seria, cercana y enfocada en
+                construir comunidad.
+              </p>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            gap: "18px",
-            marginBottom: "72px",
-          }}
-        >
-          <div style={cardStyle}>
-            <div style={sectionTitleStyle}>01</div>
-            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Cercanía real</h3>
-            <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-              Queremos que cada persona sienta que del otro lado hay un proyecto
-              presente, humano y accesible.
+      <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8 lg:py-8">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {pilares.map((item) => (
+            <article
+              key={item.n}
+              className="rounded-[26px] border border-white/10 bg-white/[0.03] p-5 md:p-6"
+            >
+              <span className="text-sm font-semibold tracking-[0.22em] text-[#d6b250]">
+                {item.n}
+              </span>
+              <h2 className="mt-4 text-[28px] font-medium leading-[1.05] tracking-[-0.03em] sm:text-[32px]">
+                {item.titulo}
+              </h2>
+              <p className="mt-4 text-[16px] leading-8 text-white/72">
+                {item.texto}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="quienes-somos"
+        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-14"
+      >
+        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-6 md:p-8 lg:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d6b250]">
+              Quiénes somos
             </p>
-          </div>
 
-          <div style={cardStyle}>
-            <div style={sectionTitleStyle}>02</div>
-            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Criterio y seriedad</h3>
-            <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-              Nos importa comunicar con claridad, acompañar bien y sostener una
-              propuesta prolija en cada detalle.
+            <h3 className="mt-5 max-w-[12ch] text-[38px] font-semibold leading-[0.96] tracking-[-0.04em] sm:text-[52px] lg:text-[72px]">
+              Una asociación pensada para transmitir confianza
+            </h3>
+
+            <p className="mt-6 text-[17px] leading-[1.9] text-white/78 sm:text-[18px]">
+              Construimos un espacio con identidad propia, vínculo cercano y una
+              forma seria de acompañar. Nos interesa que cada persona que se
+              acerca encuentre claridad, escucha y una comunidad presente.
             </p>
-          </div>
 
-          <div style={cardStyle}>
-            <div style={sectionTitleStyle}>03</div>
-            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Identidad patagónica</h3>
-            <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-              Nacemos desde el territorio, con una mirada propia y una forma de
-              construir comunidad que valora el vínculo y la pertenencia.
+            <p className="mt-5 text-[17px] leading-[1.9] text-white/78 sm:text-[18px]">
+              Entendemos el cannabis desde una perspectiva responsable,
+              comunitaria y humana. Por eso priorizamos procesos prolijos,
+              comunicación clara y una presencia real en cada instancia.
             </p>
-          </div>
-        </section>
 
-        <section
-          id="quienes-somos"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "0.95fr 1.05fr",
-            gap: "24px",
-            alignItems: "center",
-            marginBottom: "72px",
-          }}
-        >
-          <div
-            style={{
-              borderRadius: "28px",
-              overflow: "hidden",
-              minHeight: "470px",
-              border: "1px solid rgba(255,255,255,0.08)",
-            }}
-          >
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {servicios.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white/80"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] sm:min-h-[480px]">
             <Image
               src="/IMG_3819.jpeg"
-              alt="Comunidad Simbiosis Miceliar"
-              width={1200}
-              height={900}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
+              alt="Comunidad y cultivo en Patagonia"
+              fill
+              className="object-cover object-center"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#051009]/70 via-transparent to-transparent" />
           </div>
-
-          <div style={cardStyle}>
-            <div style={sectionTitleStyle}>QUIÉNES SOMOS</div>
-
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                lineHeight: 1.02,
-                margin: "0 0 16px",
-              }}
-            >
-              Una asociación pensada para transmitir confianza, pertenencia y nivel
-            </h2>
-
-            <p
-              style={{
-                color: "rgba(255,255,255,0.82)",
-                lineHeight: 1.8,
-                fontSize: "1.04rem",
-                marginBottom: "14px",
-              }}
-            >
-              Simbiosis Miceliar nace con una idea simple: construir un espacio
-              serio, actual y cercano. No buscamos una presencia improvisada ni un
-              vínculo distante, sino una comunidad donde la estética, el trato
-              humano y la coherencia formen parte de lo mismo.
-            </p>
-
-            <p
-              style={{
-                color: "rgba(255,255,255,0.74)",
-                lineHeight: 1.8,
-                fontSize: "1.01rem",
-                margin: 0,
-              }}
-            >
-              Queremos que quien llegue sienta que detrás hay un proyecto real:
-              con trabajo, presencia y una forma de acompañar que prioriza a las
-              personas sin perder solidez.
-            </p>
-          </div>
-        </section>
-
-        <section
-          id="acompanamiento"
-          style={{
-            marginBottom: "72px",
-          }}
-        >
-          <div style={{ marginBottom: "22px" }}>
-            <div style={sectionTitleStyle}>ACOMPAÑAMIENTO</div>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                lineHeight: 1.04,
-                margin: 0,
-                maxWidth: "800px",
-              }}
-            >
-              Un proceso guiado con cercanía, criterio y orientación clara
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-              gap: "18px",
-            }}
-          >
-            <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>Orientación cercana</h3>
-              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-                Cada proceso necesita escucha, claridad y una atención más humana.
-                Buscamos que el primer contacto sea simple, prolijo y accesible.
-              </p>
-            </div>
-
-            <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>Vinculación médica</h3>
-              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-                Contamos con médicos encargados de la vinculación a REPROCANN y
-                acompañamos a las personas durante ese recorrido.
-              </p>
-            </div>
-
-            <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>Seguimiento real</h3>
-              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-                Nos interesa construir un vínculo sostenido, no solo responder una
-                consulta y desaparecer.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "24px",
-            alignItems: "stretch",
-            marginBottom: "72px",
-          }}
-        >
-          <div style={cardStyle}>
-            <div style={sectionTitleStyle}>CULTIVO E IDENTIDAD</div>
-
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                lineHeight: 1.04,
-                margin: "0 0 16px",
-              }}
-            >
-              Una presencia cuidada también habla de cómo trabajamos
-            </h2>
-
-            <p
-              style={{
-                color: "rgba(255,255,255,0.82)",
-                lineHeight: 1.8,
-                fontSize: "1.04rem",
-                marginBottom: "14px",
-              }}
-            >
-              La manera en que cultivamos, mostramos y construimos nuestra
-              identidad forma parte del mismo mensaje: orden, dedicación,
-              coherencia y respeto por lo que hacemos.
-            </p>
-
-            <p
-              style={{
-                color: "rgba(255,255,255,0.74)",
-                lineHeight: 1.8,
-                fontSize: "1.01rem",
-                margin: 0,
-              }}
-            >
-              Queremos que Simbiosis Miceliar se vea como lo que busca ser: una
-              asociación seria, contemporánea y con personalidad propia.
-            </p>
-          </div>
-
-          <div
-            style={{
-              borderRadius: "28px",
-              overflow: "hidden",
-              minHeight: "480px",
-              border: "1px solid rgba(255,255,255,0.08)",
-            }}
-          >
-            <Image
-              src="/cultivo-1.jpg"
-              alt="Cultivo Simbiosis Miceliar"
-              width={1200}
-              height={900}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-          </div>
-        </section>
-
-        <section
-          id="marco-legal"
-          style={{ marginBottom: "72px" }}
-        >
-          <div style={{ marginBottom: "22px" }}>
-            <div style={sectionTitleStyle}>REPROCANN Y MARCO LEGAL</div>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                lineHeight: 1.04,
-                margin: 0,
-                maxWidth: "900px",
-              }}
-            >
-              Información clara para entender cómo funciona hoy el acceso medicinal en Argentina
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-              gap: "18px",
-            }}
-          >
-            <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>¿Qué es REPROCANN?</h3>
-              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.75, margin: 0 }}>
-                Es el registro del programa nacional que permite autorizar el
-                cultivo controlado de cannabis con fines medicinales, terapéuticos
-                y/o paliativos del dolor para personas con indicación médica.
-              </p>
-            </div>
-
-            <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>¿Qué es un club?</h3>
-              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.75, margin: 0 }}>
-                En este marco, un club o asociación funciona como una organización
-                civil sin fines de lucro que busca acompañar, organizar y sostener
-                un acceso responsable dentro de las reglas vigentes.
-              </p>
-            </div>
-
-            <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>¿Cómo funciona la ley?</h3>
-              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.75, margin: 0 }}>
-                En Argentina, el uso medicinal se encuadra principalmente en la Ley
-                27.350 y su reglamentación. El sistema contempla autocultivo,
-                tercero cultivador y determinadas organizaciones autorizadas.
-              </p>
-            </div>
-          </div>
-
-          <div
-            style={{
-              ...cardStyle,
-              marginTop: "18px",
-              padding: "28px",
-            }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                gap: "22px",
-              }}
-            >
-              <div>
-                <h3 style={{ marginTop: 0 }}>En resumen</h3>
-                <p style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.8 }}>
-                  El acceso medicinal no funciona como un mercado libre ni como una
-                  lógica informal. Requiere indicación médica, inscripción cuando
-                  corresponde y trazabilidad dentro del marco vigente.
-                </p>
-              </div>
-
-              <div>
-                <h3 style={{ marginTop: 0 }}>Nuestro enfoque</h3>
-                <p style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.8 }}>
-                  Por eso priorizamos la orientación clara, la vinculación médica y
-                  un acompañamiento responsable para que cada persona entienda mejor
-                  su camino y pueda dar pasos informados.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          style={{
-            marginBottom: "72px",
-          }}
-        >
-          <div
-            style={{
-              ...cardStyle,
-              padding: "18px",
-            }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1.1fr 0.9fr",
-                gap: "18px",
-                alignItems: "stretch",
-              }}
-            >
-              <div
-                style={{
-                  borderRadius: "22px",
-                  overflow: "hidden",
-                  minHeight: "360px",
-                }}
-              >
-                <Image
-                  src="/IMG_3967.jpeg"
-                  alt="Identidad Simbiosis Miceliar"
-                  width={1200}
-                  height={900}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  padding: "8px 8px 8px 2px",
-                }}
-              >
-                <div style={sectionTitleStyle}>IDENTIDAD</div>
-
-                <h2
-                  style={{
-                    fontSize: "clamp(2rem, 4vw, 3rem)",
-                    lineHeight: 1.03,
-                    margin: "0 0 16px",
-                  }}
-                >
-                  Una marca con presencia, estilo y cercanía
-                </h2>
-
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.78)",
-                    lineHeight: 1.8,
-                    fontSize: "1.03rem",
-                    margin: 0,
-                  }}
-                >
-                  Queremos que Simbiosis Miceliar se vea sólida, actual y atractiva,
-                  sin perder sensibilidad humana. Una asociación que inspire
-                  confianza, pertenencia y ganas de formar parte.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="contacto"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(199,165,75,0.18), rgba(255,255,255,0.03))",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "28px",
-            padding: "34px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "20px",
-              flexWrap: "wrap",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <div style={sectionTitleStyle}>CONTACTO</div>
-
-              <h2
-                style={{
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
-                  lineHeight: 1.03,
-                  margin: "0 0 12px",
-                }}
-              >
-                Conectate con Simbiosis Miceliar
-              </h2>
-
-              <p
-                style={{
-                  color: "rgba(255,255,255,0.8)",
-                  lineHeight: 1.8,
-                  maxWidth: "700px",
-                  margin: 0,
-                }}
-              >
-                Si querés conocer más, recibir orientación o dar el primer paso
-                para comunicarte con nosotros, escribinos directamente.
-              </p>
-            </div>
-
-            <a
-              href="https://wa.me/5492944138880"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                textDecoration: "none",
-                background: "#c7a54b",
-                color: "#111",
-                padding: "16px 22px",
-                borderRadius: "999px",
-                fontWeight: 800,
-                whiteSpace: "nowrap",
-              }}
-            >
-              Hablar por WhatsApp
-            </a>
-          </div>
-        </section>
+        </div>
       </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-14">
+        <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-6 md:p-8 lg:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d6b250]">
+              Cultivo
+            </p>
+
+            <h3 className="mt-4 text-[36px] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-[48px] lg:text-[64px]">
+              Una mirada responsable sobre el cultivo
+            </h3>
+
+            <p className="mt-6 text-[17px] leading-[1.9] text-white/78 sm:text-[18px]">
+              Para nosotros el cultivo no es un detalle decorativo: es parte
+              central del proyecto. Le damos importancia a la calidad, al
+              seguimiento, a la observación y a sostener una práctica coherente
+              con lo que comunicamos.
+            </p>
+
+            <p className="mt-5 text-[17px] leading-[1.9] text-white/78 sm:text-[18px]">
+              Buscamos una forma de trabajo ordenada, seria y consciente, donde
+              el vínculo entre comunidad, acompañamiento e información tenga una
+              base real. No se trata solo de cultivar, sino de hacerlo con
+              criterio.
+            </p>
+          </div>
+
+          <div className="rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-6 md:p-8 lg:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d6b250]">
+              Acompañamiento
+            </p>
+
+            <h3 className="mt-4 text-[32px] font-semibold leading-[1.02] tracking-[-0.04em] sm:text-[42px]">
+              Vinculación y orientación para REPROCANN
+            </h3>
+
+            <p className="mt-6 text-[17px] leading-[1.9] text-white/78 sm:text-[18px]">
+              Contamos con médicos encargados de la vinculación a REPROCANN y
+              acompañamos a las personas en ese proceso para que puedan
+              orientarse con mayor claridad dentro del marco correspondiente.
+            </p>
+
+            <p className="mt-5 text-[17px] leading-[1.9] text-white/78 sm:text-[18px]">
+              Sabemos que muchas consultas llegan con dudas, desinformación o
+              inseguridad. Por eso buscamos brindar una referencia cercana,
+              seria y comprensible desde el primer contacto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-14">
+        <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-6 md:p-8 lg:p-10">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d6b250]">
+              Información clara
+            </p>
+            <h3 className="mt-4 text-[36px] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-[48px] lg:text-[64px]">
+              Cannabis, comunidad y marco legal
+            </h3>
+            <p className="mt-5 text-[17px] leading-[1.85] text-white/75 sm:text-[18px]">
+              Mucha gente llega con dudas. Por eso elegimos explicar de forma
+              breve, clara y seria cómo entendemos el acceso, el acompañamiento
+              y el funcionamiento de un proyecto como este.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {legalCards.map((card) => (
+              <article
+                key={card.titulo}
+                className="rounded-[24px] border border-white/10 bg-black/20 p-5"
+              >
+                <h4 className="text-[24px] font-medium leading-[1.1] tracking-[-0.03em]">
+                  {card.titulo}
+                </h4>
+                <p className="mt-4 text-[15px] leading-7 text-white/72">
+                  {card.texto}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 pb-8 pt-4 sm:px-6 lg:px-8 lg:pb-14">
+        <div className="rounded-[30px] border border-white/10 bg-[linear-gradient(135deg,rgba(214,178,80,0.16),rgba(255,255,255,0.03))] p-6 md:p-8 lg:p-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d6b250]">
+                Contacto
+              </p>
+              <h3 className="mt-4 text-[34px] font-semibold leading-[1] tracking-[-0.04em] sm:text-[46px] lg:text-[58px]">
+                Hablemos
+              </h3>
+              <p className="mt-5 text-[17px] leading-[1.85] text-white/78">
+                Si querés conocer más sobre Simbiosis Miceliar, escribirnos es
+                la mejor manera de empezar. Respondemos con cercanía, claridad y
+                una mirada seria sobre cada consulta.
+              </p>
+            </div>
+
+            <div>
+              <a
+                href="https://wa.me/5492944138880"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-[#d6b250] px-7 py-3.5 text-[15px] font-semibold text-[#0c120d] transition hover:scale-[1.02]"
+              >
+                +54 9 2944 138880
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
+        <div className="flex flex-col gap-4 rounded-[24px] border border-white/10 bg-white/[0.02] px-5 py-5 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
+          <div>
+            <span className="font-medium text-white/78">Simbiosis Miceliar</span>{" "}
+            · Proyecto patagónico
+          </div>
+          <div className="flex flex-col gap-1 md:items-end">
+            <span>simbiosismiceliar.com.ar</span>
+            <span>WhatsApp: +54 9 2944 138880</span>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
