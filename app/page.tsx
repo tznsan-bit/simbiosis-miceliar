@@ -8,16 +8,23 @@ const cardStyle: React.CSSProperties = {
   backdropFilter: "blur(8px)",
 };
 
+const sectionTitleStyle: React.CSSProperties = {
+  color: "#c7a54b",
+  fontWeight: 800,
+  fontSize: "0.9rem",
+  letterSpacing: "0.08em",
+  marginBottom: "10px",
+};
+
 export default function Home() {
   return (
     <main
       style={{
         background:
-          "radial-gradient(circle at top, rgba(72,120,80,0.20), transparent 28%), linear-gradient(180deg, #07110b 0%, #0b0f0c 45%, #090909 100%)",
+          "radial-gradient(circle at top, rgba(72,120,80,0.18), transparent 28%), linear-gradient(180deg, #07110b 0%, #0b0f0c 45%, #090909 100%)",
         color: "#f5f5f5",
         minHeight: "100vh",
-        fontFamily:
-          'Arial, Helvetica, sans-serif',
+        fontFamily: "Arial, Helvetica, sans-serif",
       }}
     >
       <section
@@ -97,14 +104,14 @@ export default function Home() {
               Acompañamiento
             </a>
             <a
-              href="#cultivo"
+              href="#marco-legal"
               style={{
                 color: "rgba(255,255,255,0.82)",
                 textDecoration: "none",
                 fontSize: "0.96rem",
               }}
             >
-              Cultivo
+              REPROCANN y marco legal
             </a>
             <a
               href="#contacto"
@@ -162,14 +169,14 @@ export default function Home() {
 
               <h1
                 style={{
-                  fontSize: "clamp(2.7rem, 6vw, 5.2rem)",
+                  fontSize: "clamp(2.8rem, 6vw, 5.3rem)",
                   lineHeight: 0.95,
                   margin: "0 0 18px",
                   letterSpacing: "-0.04em",
                   maxWidth: "820px",
                 }}
               >
-                Cercanía, identidad y acompañamiento en una propuesta seria y moderna
+                Una comunidad seria, cercana y con identidad propia
               </h1>
 
               <p
@@ -181,10 +188,11 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                Simbiosis Miceliar es un proyecto patagónico construido desde el
-                vínculo cercano entre la asociación y cada persona que se acerca.
-                Buscamos ofrecer una experiencia responsable, humana y bien guiada,
-                con una identidad propia, actual y conectada con el territorio.
+                Simbiosis Miceliar es un proyecto patagónico que busca hacer las
+                cosas bien: con presencia, criterio y una forma responsable de
+                acompañar. Nos importa la calidad del vínculo, la claridad en cada
+                proceso y una identidad que transmita confianza desde el primer
+                contacto.
               </p>
             </div>
 
@@ -261,59 +269,29 @@ export default function Home() {
           }}
         >
           <div style={cardStyle}>
-            <div
-              style={{
-                fontSize: "0.88rem",
-                color: "#c7a54b",
-                fontWeight: 800,
-                marginBottom: "10px",
-                letterSpacing: "0.08em",
-              }}
-            >
-              01
-            </div>
-            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Proyecto patagónico</h3>
+            <div style={sectionTitleStyle}>01</div>
+            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Cercanía real</h3>
             <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-              Una propuesta con identidad territorial, mirada propia y una forma de
-              trabajo conectada con las personas y su realidad.
+              Queremos que cada persona sienta que del otro lado hay un proyecto
+              presente, humano y accesible.
             </p>
           </div>
 
           <div style={cardStyle}>
-            <div
-              style={{
-                fontSize: "0.88rem",
-                color: "#c7a54b",
-                fontWeight: 800,
-                marginBottom: "10px",
-                letterSpacing: "0.08em",
-              }}
-            >
-              02
-            </div>
-            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Vínculo cercano</h3>
+            <div style={sectionTitleStyle}>02</div>
+            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Criterio y seriedad</h3>
             <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-              Nos importa que el trato sea real, directo y humano, generando una
-              relación próxima entre los socios y la asociación.
+              Nos importa comunicar con claridad, acompañar bien y sostener una
+              propuesta prolija en cada detalle.
             </p>
           </div>
 
           <div style={cardStyle}>
-            <div
-              style={{
-                fontSize: "0.88rem",
-                color: "#c7a54b",
-                fontWeight: 800,
-                marginBottom: "10px",
-                letterSpacing: "0.08em",
-              }}
-            >
-              03
-            </div>
-            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Acompañamiento responsable</h3>
+            <div style={sectionTitleStyle}>03</div>
+            <h3 style={{ marginTop: 0, fontSize: "1.35rem" }}>Identidad patagónica</h3>
             <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-              Apostamos a una experiencia cuidada, seria y bien orientada, con
-              información clara y acompañamiento en cada etapa.
+              Nacemos desde el territorio, con una mirada propia y una forma de
+              construir comunidad que valora el vínculo y la pertenencia.
             </p>
           </div>
         </section>
@@ -351,17 +329,7 @@ export default function Home() {
           </div>
 
           <div style={cardStyle}>
-            <div
-              style={{
-                color: "#c7a54b",
-                fontWeight: 800,
-                fontSize: "0.9rem",
-                letterSpacing: "0.08em",
-                marginBottom: "12px",
-              }}
-            >
-              QUIÉNES SOMOS
-            </div>
+            <div style={sectionTitleStyle}>QUIÉNES SOMOS</div>
 
             <h2
               style={{
@@ -370,7 +338,7 @@ export default function Home() {
                 margin: "0 0 16px",
               }}
             >
-              Una asociación pensada para verse seria, sentirse cercana y transmitir confianza
+              Una asociación pensada para transmitir confianza, pertenencia y nivel
             </h2>
 
             <p
@@ -381,9 +349,10 @@ export default function Home() {
                 marginBottom: "14px",
               }}
             >
-              Simbiosis Miceliar nace con la idea de construir algo más que una
-              estructura formal: un espacio donde la comunidad pueda encontrar
-              cercanía, contención, identidad y una forma moderna de vincularse.
+              Simbiosis Miceliar nace con una idea simple: construir un espacio
+              serio, actual y cercano. No buscamos una presencia improvisada ni un
+              vínculo distante, sino una comunidad donde la estética, el trato
+              humano y la coherencia formen parte de lo mismo.
             </p>
 
             <p
@@ -394,9 +363,9 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              Queremos que cada persona sienta que hay un proyecto real detrás:
-              con presencia, criterio, estética cuidada y un trabajo que prioriza
-              lo humano sin perder solidez.
+              Queremos que quien llegue sienta que detrás hay un proyecto real:
+              con trabajo, presencia y una forma de acompañar que prioriza a las
+              personas sin perder solidez.
             </p>
           </div>
         </section>
@@ -408,17 +377,7 @@ export default function Home() {
           }}
         >
           <div style={{ marginBottom: "22px" }}>
-            <div
-              style={{
-                color: "#c7a54b",
-                fontWeight: 800,
-                fontSize: "0.9rem",
-                letterSpacing: "0.08em",
-                marginBottom: "10px",
-              }}
-            >
-              ACOMPAÑAMIENTO
-            </div>
+            <div style={sectionTitleStyle}>ACOMPAÑAMIENTO</div>
             <h2
               style={{
                 fontSize: "clamp(2rem, 4vw, 3rem)",
@@ -439,10 +398,10 @@ export default function Home() {
             }}
           >
             <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>Orientación personalizada</h3>
+              <h3 style={{ marginTop: 0 }}>Orientación cercana</h3>
               <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-                Acompañamos a cada persona de forma cercana, buscando que el proceso
-                resulte claro, prolijo y accesible.
+                Cada proceso necesita escucha, claridad y una atención más humana.
+                Buscamos que el primer contacto sea simple, prolijo y accesible.
               </p>
             </div>
 
@@ -450,22 +409,21 @@ export default function Home() {
               <h3 style={{ marginTop: 0 }}>Vinculación médica</h3>
               <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
                 Contamos con médicos encargados de la vinculación a REPROCANN y
-                ayudamos a las personas durante ese recorrido.
+                acompañamos a las personas durante ese recorrido.
               </p>
             </div>
 
             <div style={cardStyle}>
-              <h3 style={{ marginTop: 0 }}>Comunidad y seguimiento</h3>
+              <h3 style={{ marginTop: 0 }}>Seguimiento real</h3>
               <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.7 }}>
-                Buscamos que la relación no termine en un primer contacto, sino que
-                forme parte de un vínculo sostenido y cercano.
+                Nos interesa construir un vínculo sostenido, no solo responder una
+                consulta y desaparecer.
               </p>
             </div>
           </div>
         </section>
 
         <section
-          id="cultivo"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -475,17 +433,7 @@ export default function Home() {
           }}
         >
           <div style={cardStyle}>
-            <div
-              style={{
-                color: "#c7a54b",
-                fontWeight: 800,
-                fontSize: "0.9rem",
-                letterSpacing: "0.08em",
-                marginBottom: "12px",
-              }}
-            >
-              CULTIVO
-            </div>
+            <div style={sectionTitleStyle}>CULTIVO E IDENTIDAD</div>
 
             <h2
               style={{
@@ -494,7 +442,7 @@ export default function Home() {
                 margin: "0 0 16px",
               }}
             >
-              Una estética y una forma de trabajo conectadas con el cuidado
+              Una presencia cuidada también habla de cómo trabajamos
             </h2>
 
             <p
@@ -505,9 +453,9 @@ export default function Home() {
                 marginBottom: "14px",
               }}
             >
-              La dimensión del cultivo también forma parte de nuestra identidad:
-              orden, dedicación, criterio y una imagen cuidada que represente lo
-              que queremos construir.
+              La manera en que cultivamos, mostramos y construimos nuestra
+              identidad forma parte del mismo mensaje: orden, dedicación,
+              coherencia y respeto por lo que hacemos.
             </p>
 
             <p
@@ -518,9 +466,8 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              No buscamos una estética improvisada, sino una presencia seria,
-              moderna y coherente con una asociación que quiere transmitir nivel,
-              confianza y pertenencia.
+              Queremos que Simbiosis Miceliar se vea como lo que busca ser: una
+              asociación seria, contemporánea y con personalidad propia.
             </p>
           </div>
 
@@ -544,6 +491,94 @@ export default function Home() {
                 display: "block",
               }}
             />
+          </div>
+        </section>
+
+        <section
+          id="marco-legal"
+          style={{ marginBottom: "72px" }}
+        >
+          <div style={{ marginBottom: "22px" }}>
+            <div style={sectionTitleStyle}>REPROCANN Y MARCO LEGAL</div>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                lineHeight: 1.04,
+                margin: 0,
+                maxWidth: "900px",
+              }}
+            >
+              Información clara para entender cómo funciona hoy el acceso medicinal en Argentina
+            </h2>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+              gap: "18px",
+            }}
+          >
+            <div style={cardStyle}>
+              <h3 style={{ marginTop: 0 }}>¿Qué es REPROCANN?</h3>
+              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.75, margin: 0 }}>
+                Es el registro del programa nacional que permite autorizar el
+                cultivo controlado de cannabis con fines medicinales, terapéuticos
+                y/o paliativos del dolor para personas con indicación médica.
+              </p>
+            </div>
+
+            <div style={cardStyle}>
+              <h3 style={{ marginTop: 0 }}>¿Qué es un club?</h3>
+              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.75, margin: 0 }}>
+                En este marco, un club o asociación funciona como una organización
+                civil sin fines de lucro que busca acompañar, organizar y sostener
+                un acceso responsable dentro de las reglas vigentes.
+              </p>
+            </div>
+
+            <div style={cardStyle}>
+              <h3 style={{ marginTop: 0 }}>¿Cómo funciona la ley?</h3>
+              <p style={{ color: "rgba(255,255,255,0.76)", lineHeight: 1.75, margin: 0 }}>
+                En Argentina, el uso medicinal se encuadra principalmente en la Ley
+                27.350 y su reglamentación. El sistema contempla autocultivo,
+                tercero cultivador y determinadas organizaciones autorizadas.
+              </p>
+            </div>
+          </div>
+
+          <div
+            style={{
+              ...cardStyle,
+              marginTop: "18px",
+              padding: "28px",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "22px",
+              }}
+            >
+              <div>
+                <h3 style={{ marginTop: 0 }}>En resumen</h3>
+                <p style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.8 }}>
+                  El acceso medicinal no funciona como un mercado libre ni como una
+                  lógica informal. Requiere indicación médica, inscripción cuando
+                  corresponde y trazabilidad dentro del marco vigente.
+                </p>
+              </div>
+
+              <div>
+                <h3 style={{ marginTop: 0 }}>Nuestro enfoque</h3>
+                <p style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.8 }}>
+                  Por eso priorizamos la orientación clara, la vinculación médica y
+                  un acompañamiento responsable para que cada persona entienda mejor
+                  su camino y pueda dar pasos informados.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -595,17 +630,7 @@ export default function Home() {
                   padding: "8px 8px 8px 2px",
                 }}
               >
-                <div
-                  style={{
-                    color: "#c7a54b",
-                    fontWeight: 800,
-                    fontSize: "0.9rem",
-                    letterSpacing: "0.08em",
-                    marginBottom: "12px",
-                  }}
-                >
-                  IDENTIDAD
-                </div>
+                <div style={sectionTitleStyle}>IDENTIDAD</div>
 
                 <h2
                   style={{
@@ -654,17 +679,7 @@ export default function Home() {
             }}
           >
             <div>
-              <div
-                style={{
-                  color: "#c7a54b",
-                  fontWeight: 800,
-                  fontSize: "0.9rem",
-                  letterSpacing: "0.08em",
-                  marginBottom: "10px",
-                }}
-              >
-                CONTACTO
-              </div>
+              <div style={sectionTitleStyle}>CONTACTO</div>
 
               <h2
                 style={{
@@ -684,8 +699,8 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                Si querés conocer más, recibir orientación o dar el primer paso para
-                comunicarte con nosotros, escribinos directamente.
+                Si querés conocer más, recibir orientación o dar el primer paso
+                para comunicarte con nosotros, escribinos directamente.
               </p>
             </div>
 
