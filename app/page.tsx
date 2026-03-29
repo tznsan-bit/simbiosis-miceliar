@@ -79,17 +79,26 @@ export default function Page() {
         <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:36px_36px]" />
       </div>
 
-      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#04100a]/70 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d7b353]/30 bg-[#d7b353]/10 text-sm font-semibold text-[#d7b353]">
-              SM
+      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#04100a]/75 backdrop-blur-xl">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+          <a href="#" className="flex min-w-0 items-center gap-3">
+            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/5 sm:h-12 sm:w-12">
+              <Image
+                src="/logo-simbiosis.png"
+                alt="Logo Simbiosis Miceliar"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-            <div className="leading-tight">
-              <p className="text-sm font-semibold tracking-[0.14em] text-white/95">
+
+            <div className="min-w-0 leading-tight">
+              <p className="truncate text-[11px] font-semibold tracking-[0.18em] text-white/95 sm:text-xs">
                 SIMBIOSIS MICELIAR
               </p>
-              <p className="text-xs text-white/50">Proyecto patagónico</p>
+              <p className="text-[11px] text-white/50 sm:text-xs">
+                Proyecto patagónico
+              </p>
             </div>
           </a>
 
@@ -399,10 +408,23 @@ export default function Page() {
 
       <footer className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="flex flex-col gap-4 rounded-[24px] border border-white/10 bg-white/[0.02] px-5 py-5 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <div>
-            <span className="font-medium text-white/78">Simbiosis Miceliar</span>{" "}
-            · Club de cultivo · Proyecto patagónico
+          <div className="flex items-center gap-3">
+            <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white/5">
+              <Image
+                src="/logo-simbiosis.png"
+                alt="Logo Simbiosis Miceliar"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <span className="font-medium text-white/78">
+                Simbiosis Miceliar
+              </span>{" "}
+              · Club de cultivo · Proyecto patagónico
+            </div>
           </div>
+
           <div className="flex flex-col gap-1 md:items-end">
             <span>simbiosismiceliar.com.ar</span>
             <span>WhatsApp: +54 9 2944 138880</span>
