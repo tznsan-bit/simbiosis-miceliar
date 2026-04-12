@@ -98,15 +98,13 @@ export default function HomePage() {
           <div className="container heroGrid">
             <div className="heroText">
               <div className="pill">Cannabis medicinal · Comunidad · Patagonia</div>
-              <h1>Acompañamiento claro, humano y responsable</h1>
+              <h1>Comunidad, orientación y acompañamiento responsable</h1>
               <p className="heroLead">
-                Proyecto patagónico de acompañamiento, formación y articulación en
-                cannabis medicinal.
+                Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
               </p>
               <p className="heroBody">
-                En Simbiosis Miceliar trabajamos desde una mirada cercana, comunitaria y
-                responsable, acompañando procesos de orientación, vinculación médica
-                para REPROCANN, formación y seguimiento.
+                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para
+                REPROCANN, formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
               </p>
 
               <div className="buttons">
@@ -126,7 +124,6 @@ export default function HomePage() {
               <div className="badges">
                 <span>Proyecto patagónico</span>
                 <span>Vinculación médica para REPROCANN</span>
-                <span>Acompañamiento cercano</span>
                 <span>Confidencialidad y cuidado</span>
               </div>
             </div>
@@ -354,8 +351,8 @@ export default function HomePage() {
 
         <section className="section gallerySection">
           <div className="container">
-            <div className="pill">Identidad visual</div>
-            <h2>Territorio, cuidado y comunidad</h2>
+            <div className="pill">Territorio y comunidad</div>
+            <h2>Una identidad construida desde el cuidado y la cercanía</h2>
             <div className="galleryGrid">
               <div className="galleryCard large">
                 <img src="/IMG_3819.jpeg" alt="Territorio y comunidad" />
@@ -425,8 +422,8 @@ export default function HomePage() {
               <div className="pill">Contacto</div>
               <h2>Comunicate con nosotros</h2>
               <p className="sectionLead">
-                Podés escribirnos para recibir orientación, realizar consultas o conocer
-                más sobre nuestro trabajo.
+                Podés escribirnos para recibir orientación, realizar consultas o conocer más
+                sobre nuestro trabajo y nuestras formas de acompañamiento.
               </p>
 
               <div className="contactList">
@@ -448,6 +445,14 @@ export default function HomePage() {
                 >
                   <strong>Instagram</strong>
                   <span>@simbiosismiceliar</span>
+                </a>
+
+                <a
+                  className="contactItem"
+                  href="mailto:info@simbiosismiceliar.com.ar"
+                >
+                  <strong>Email</strong>
+                  <span>info@simbiosismiceliar.com.ar</span>
                 </a>
 
                 <div className="contactItem">
@@ -502,13 +507,14 @@ export default function HomePage() {
               cannabis medicinal.
             </p>
             <p className="footerLine">
-              Hecho con identidad territorial, cercanía humana y compromiso comunitario.
+              Identidad territorial, acompañamiento humano y compromiso comunitario.
             </p>
           </div>
 
           <div className="footerInfo">
             <p><strong>WhatsApp:</strong> +54 9 2944 13 8880</p>
             <p><strong>Instagram:</strong> @simbiosismiceliar</p>
+            <p><strong>Email:</strong> info@simbiosismiceliar.com.ar</p>
             <p><strong>Ubicación:</strong> Lago Puelo · Patagonia</p>
             <p><strong>Web:</strong> simbiosismiceliar.com.ar</p>
           </div>
@@ -634,7 +640,7 @@ export default function HomePage() {
         }
 
         .hero {
-          padding: 96px 0 56px;
+          padding: 82px 0 42px;
           position: relative;
         }
 
@@ -746,7 +752,7 @@ export default function HomePage() {
 
         .heroImage {
           position: relative;
-          min-height: 560px;
+          min-height: 500px;
           border-radius: 28px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1140,7 +1146,7 @@ export default function HomePage() {
           }
 
           .hero {
-            padding: 56px 0 28px;
+            padding: 44px 0 20px;
           }
 
           .section {
