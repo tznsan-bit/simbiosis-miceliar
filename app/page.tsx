@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const [ageVerified, setAgeVerified] = useState(true);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     const saved = sessionStorage.getItem("ageVerified");
@@ -23,27 +23,27 @@ export default function HomePage() {
   const faqs = [
     {
       q: "¿Qué es REPROCANN?",
-      a: "REPROCANN es el registro que permite encuadrar determinados procesos dentro del marco vigente. Muchas personas llegan con dudas sobre este tema, por eso brindamos orientación y acompañamiento para transitarlo con mayor claridad.",
+      a: "REPROCANN es el registro nacional vinculado al acceso dentro del marco vigente. Muchas personas llegan con dudas sobre cómo iniciar, qué documentación se necesita o cómo seguir. Por eso brindamos orientación y acompañamiento en cada etapa.",
     },
     {
       q: "¿Cómo arranco?",
-      a: "Podés escribirnos por WhatsApp para contarnos tu situación y tus dudas. A partir de ese primer contacto, te orientamos sobre los pasos a seguir.",
+      a: "Podés escribirnos por WhatsApp y contarnos tu situación. A partir de ese primer contacto, te orientamos sobre los pasos a seguir según tu caso.",
+    },
+    {
+      q: "¿Tienen vinculación con profesionales médicos?",
+      a: "Sí. Contamos con médicos encargados de la vinculación a REPROCANN, acompañando ese proceso con seriedad, criterio y cercanía.",
     },
     {
       q: "¿Ofrecen acompañamiento durante el proceso?",
       a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana.",
     },
     {
-      q: "¿Tienen vinculación con profesionales médicos?",
-      a: "Sí. Contamos con médicos encargados de la vinculación a REPROCANN, acompañando ese recorrido con seriedad y criterio.",
-    },
-    {
       q: "¿La consulta es confidencial?",
       a: "Sí. Priorizamos el respeto, la privacidad y el cuidado de cada proceso personal.",
     },
     {
-      q: "¿Solo trabajan temas médicos?",
-      a: "No. También promovemos formación, cultivo responsable, comunidad y una mirada integral sobre los procesos vinculados al cannabis medicinal.",
+      q: "¿También trabajan formación y cultivo responsable?",
+      a: "Sí. Promovemos una mirada integral que incluye formación, cultivo responsable, comunidad y construcción de saberes.",
     },
   ];
 
@@ -84,9 +84,9 @@ export default function HomePage() {
 
           <nav className="navLinks">
             <a href="#quienes-somos">Quiénes somos</a>
-            <a href="#acompanamiento">Acompañamiento</a>
+            <a href="#como-trabajamos">Cómo trabajamos</a>
+            <a href="#areas">Áreas</a>
             <a href="#reprocann">REPROCANN</a>
-            <a href="#cultivo">Cultivo</a>
             <a href="#faq">Preguntas frecuentes</a>
             <a href="#contacto">Contacto</a>
           </nav>
@@ -98,22 +98,16 @@ export default function HomePage() {
           <div className="container heroGrid">
             <div className="heroText">
               <div className="pill">Cannabis medicinal · Comunidad · Patagonia</div>
-              <h1>Simbiosis Miceliar</h1>
+              <h1>Acompañamiento claro, humano y responsable</h1>
               <p className="heroLead">
                 Proyecto patagónico de acompañamiento, formación y articulación en
                 cannabis medicinal.
               </p>
               <p className="heroBody">
-                Trabajamos desde una mirada cercana, responsable y comunitaria,
-                acompañando procesos de orientación, vinculación médica para REPROCANN
-                y seguimiento, con identidad territorial y compromiso humano.
+                En Simbiosis Miceliar trabajamos desde una mirada cercana, comunitaria y
+                responsable, acompañando procesos de orientación, vinculación médica
+                para REPROCANN, formación y seguimiento.
               </p>
-
-              <div className="badges">
-                <span>Acompañamiento cercano</span>
-                <span>Vinculación médica</span>
-                <span>Identidad patagónica</span>
-              </div>
 
               <div className="buttons">
                 <a
@@ -125,8 +119,15 @@ export default function HomePage() {
                   Hablar por WhatsApp
                 </a>
                 <a className="btn btnSecondary" href="#como-trabajamos">
-                  Conocer cómo trabajamos
+                  Ver cómo trabajamos
                 </a>
+              </div>
+
+              <div className="badges">
+                <span>Proyecto patagónico</span>
+                <span>Vinculación médica para REPROCANN</span>
+                <span>Acompañamiento cercano</span>
+                <span>Confidencialidad y cuidado</span>
               </div>
             </div>
 
@@ -137,41 +138,119 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="trustStrip">
+          <div className="container trustGrid">
+            <div className="trustItem">
+              <strong>Orientación personalizada</strong>
+              <span>Escucha, claridad y acompañamiento según cada caso.</span>
+            </div>
+            <div className="trustItem">
+              <strong>REPROCANN</strong>
+              <span>Vinculación médica y proceso acompañado de forma ordenada.</span>
+            </div>
+            <div className="trustItem">
+              <strong>Cultivo responsable</strong>
+              <span>Formación, cuidado y construcción de saberes desde el territorio.</span>
+            </div>
+            <div className="trustItem">
+              <strong>Comunidad real</strong>
+              <span>Un espacio cercano, serio y humano.</span>
+            </div>
+          </div>
+        </section>
+
         <section className="section" id="quienes-somos">
           <div className="container">
             <div className="pill">Quiénes somos</div>
-            <h2>Una comunidad real, construida desde el territorio</h2>
+            <h2>Una comunidad construida desde el territorio</h2>
             <p className="sectionLead">
-              Simbiosis Miceliar es un proyecto patagónico construido desde el vínculo
-              cercano con las personas, la comunidad y el territorio.
+              Simbiosis Miceliar es un proyecto patagónico que nace del vínculo cercano
+              con las personas, la comunidad y el cuidado de los procesos.
             </p>
 
             <div className="twoCols">
               <div className="card">
                 <p>
-                  Nacemos con la convicción de que el acceso a la información, la
-                  orientación responsable y el acompañamiento humano hacen una diferencia
-                  real en los procesos vinculados al cannabis medicinal.
+                  Creemos que el acceso a la información, la orientación responsable y
+                  el acompañamiento humano hacen una diferencia real en los recorridos
+                  vinculados al cannabis medicinal.
                 </p>
               </div>
               <div className="card">
                 <p>
-                  Nuestro enfoque combina cercanía, seriedad y compromiso. Buscamos que
-                  cada persona encuentre un espacio de escucha, orientación y
-                  acompañamiento, con una mirada clara, responsable y situada.
+                  Nuestro enfoque combina cercanía, seriedad, identidad territorial y
+                  compromiso comunitario. Buscamos que cada persona encuentre un espacio
+                  claro, respetuoso y confiable.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="acompanamiento">
+        <section className="section" id="como-trabajamos">
           <div className="container">
-            <div className="pill">Qué hacemos</div>
-            <h2>Acompañamiento integral, claro y cercano</h2>
+            <div className="pill">Cómo trabajamos</div>
+            <h2>Un recorrido simple, cuidado y ordenado</h2>
             <p className="sectionLead">
-              Brindamos orientación seria para personas que buscan información,
-              acompañamiento y un recorrido más ordenado.
+              Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo
+              empieza el proceso.
+            </p>
+
+            <div className="steps">
+              <div className="step card">
+                <div className="stepNum">1</div>
+                <div>
+                  <h3>Nos escribís</h3>
+                  <p>
+                    Recibimos tu consulta por WhatsApp y conocemos tu situación, tus
+                    dudas y lo que necesitás orientar.
+                  </p>
+                </div>
+              </div>
+
+              <div className="step card">
+                <div className="stepNum">2</div>
+                <div>
+                  <h3>Te orientamos</h3>
+                  <p>
+                    Brindamos una primera orientación clara, cercana y responsable para
+                    ayudarte a entender el camino posible según tu caso.
+                  </p>
+                </div>
+              </div>
+
+              <div className="step card">
+                <div className="stepNum">3</div>
+                <div>
+                  <h3>Te vinculamos</h3>
+                  <p>
+                    Cuando corresponde, articulamos la vinculación con profesionales
+                    médicos para el proceso de REPROCANN.
+                  </p>
+                </div>
+              </div>
+
+              <div className="step card">
+                <div className="stepNum">4</div>
+                <div>
+                  <h3>Acompañamos el seguimiento</h3>
+                  <p>
+                    Sostenemos una relación cercana, con continuidad y compromiso,
+                    priorizando siempre el cuidado de cada proceso.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="areas">
+          <div className="container">
+            <div className="pill">Áreas de trabajo</div>
+            <h2>Qué hacemos en Simbiosis Miceliar</h2>
+            <p className="sectionLead">
+              Integramos orientación, acompañamiento, formación y comunidad desde una
+              mirada responsable.
             </p>
 
             <div className="gridCards">
@@ -183,92 +262,39 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="card">
-                <h3>Vinculación médica para REPROCANN</h3>
+                <h3>Vinculación médica</h3>
                 <p>
                   Contamos con médicos encargados de la vinculación a REPROCANN,
-                  acompañando el proceso con seriedad.
+                  acompañando el proceso de manera seria y ordenada.
                 </p>
               </div>
               <div className="card">
-                <h3>Acompañamiento en el proceso</h3>
+                <h3>Acompañamiento</h3>
                 <p>
-                  No trabajamos desde una lógica fría o automática: acompañamos el
-                  recorrido de manera humana y ordenada.
+                  No trabajamos desde una lógica fría o automática. Buscamos presencia
+                  real, seguimiento y cercanía.
                 </p>
               </div>
               <div className="card">
-                <h3>Formación y cultivo responsable</h3>
+                <h3>Formación</h3>
                 <p>
-                  Promovemos una mirada responsable sobre el cultivo, el aprendizaje y
-                  el cuidado de los procesos.
+                  Promovemos la circulación de saberes, el aprendizaje y una mirada
+                  consciente sobre los procesos vinculados al cannabis medicinal.
                 </p>
               </div>
               <div className="card">
-                <h3>Comunidad y cercanía</h3>
+                <h3>Cultivo responsable</h3>
                 <p>
-                  Sostenemos un vínculo real con quienes se acercan a Simbiosis
-                  Miceliar, priorizando escucha y confianza.
+                  Entendemos el cultivo como parte de una perspectiva integral basada en
+                  el cuidado, la responsabilidad y el territorio.
                 </p>
               </div>
               <div className="card">
-                <h3>Seguimiento</h3>
+                <h3>Comunidad</h3>
                 <p>
-                  Buscamos que cada persona se sienta contenida, informada y acompañada
-                  con continuidad.
+                  Sostenemos un vínculo cercano con quienes se acercan a Simbiosis,
+                  priorizando escucha, confianza y acompañamiento humano.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="como-trabajamos">
-          <div className="container">
-            <div className="pill">Cómo trabajamos</div>
-            <h2>Un proceso claro, humano y ordenado</h2>
-
-            <div className="steps">
-              <div className="step card">
-                <div className="stepNum">1</div>
-                <div>
-                  <h3>Primer contacto</h3>
-                  <p>
-                    Nos escribís y conocemos tu situación, tus dudas y lo que necesitás
-                    orientar.
-                  </p>
-                </div>
-              </div>
-
-              <div className="step card">
-                <div className="stepNum">2</div>
-                <div>
-                  <h3>Orientación personalizada</h3>
-                  <p>
-                    Te brindamos una primera orientación clara, cercana y responsable,
-                    según tu caso.
-                  </p>
-                </div>
-              </div>
-
-              <div className="step card">
-                <div className="stepNum">3</div>
-                <div>
-                  <h3>Vinculación y acompañamiento</h3>
-                  <p>
-                    Cuando corresponde, realizamos la vinculación con profesionales
-                    médicos para el proceso de REPROCANN.
-                  </p>
-                </div>
-              </div>
-
-              <div className="step card">
-                <div className="stepNum">4</div>
-                <div>
-                  <h3>Seguimiento</h3>
-                  <p>
-                    Sostenemos una relación cercana, con continuidad y compromiso
-                    durante el proceso.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -300,7 +326,7 @@ export default function HomePage() {
 
         <section className="section" id="cultivo">
           <div className="container">
-            <div className="pill">Cultivo responsable</div>
+            <div className="pill">Cultivo responsable y formación</div>
             <h2>Aprendizaje, cuidado y territorio</h2>
 
             <div className="twoCols">
@@ -317,32 +343,28 @@ export default function HomePage() {
                   el cuidado, la formación y la construcción de saberes, desde una
                   lógica seria, comunitaria y respetuosa.
                 </p>
+                <p>
+                  Para nosotros, cultivar también es aprender, compartir conocimiento y
+                  fortalecer una red construida desde la experiencia y la cercanía.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section gallerySection">
           <div className="container">
-            <div className="pill">Lo que nos define</div>
-            <h2>Identidad, responsabilidad y comunidad</h2>
-
-            <div className="gridFour">
-              <div className="card">
-                <h3>Identidad patagónica</h3>
-                <p>Trabajamos desde el territorio, con una mirada cercana, real y situada.</p>
+            <div className="pill">Identidad visual</div>
+            <h2>Territorio, cuidado y comunidad</h2>
+            <div className="galleryGrid">
+              <div className="galleryCard large">
+                <img src="/IMG_3819.jpeg" alt="Territorio y comunidad" />
               </div>
-              <div className="card">
-                <h3>Acompañamiento humano</h3>
-                <p>Ponemos en el centro a las personas, sus tiempos, sus procesos y sus necesidades.</p>
+              <div className="galleryCard">
+                <img src="/IMG_3967.jpeg" alt="Simbiosis Miceliar Patagonia" />
               </div>
-              <div className="card">
-                <h3>Responsabilidad y criterio</h3>
-                <p>Sostenemos una comunicación clara, seria y comprometida.</p>
-              </div>
-              <div className="card">
-                <h3>Comunidad real</h3>
-                <p>Creemos en los vínculos genuinos, en la escucha y en el trabajo colectivo.</p>
+              <div className="galleryCard">
+                <img src="/IMG_3924.jpeg" alt="Cultivo y formación" />
               </div>
             </div>
           </div>
@@ -381,7 +403,7 @@ export default function HomePage() {
               <h2>Estamos para acompañarte</h2>
               <p className="sectionLead">
                 Si querés recibir orientación, conocer cómo trabajamos o iniciar un
-                primer contacto, podés escribirnos.
+                primer contacto, escribinos y te respondemos de forma cercana y clara.
               </p>
               <div className="buttons">
                 <a
@@ -408,14 +430,31 @@ export default function HomePage() {
               </p>
 
               <div className="contactList">
-                <div className="contactItem">
+                <a
+                  className="contactItem"
+                  href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <strong>WhatsApp</strong>
                   <span>+54 9 2944 13 8880</span>
-                </div>
-                <div className="contactItem">
+                </a>
+
+                <a
+                  className="contactItem"
+                  href="https://instagram.com/simbiosismiceliar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <strong>Instagram</strong>
                   <span>@simbiosismiceliar</span>
+                </a>
+
+                <div className="contactItem">
+                  <strong>Ubicación</strong>
+                  <span>Lago Puelo · Patagonia</span>
                 </div>
+
                 <div className="contactItem">
                   <strong>Sitio web</strong>
                   <span>simbiosismiceliar.com.ar</span>
@@ -423,13 +462,22 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="card">
+            <div className="card contactSide">
               <h3>Confidencialidad y cuidado</h3>
               <p>
                 Trabajamos con respeto, escucha y confidencialidad en cada proceso,
                 priorizando la tranquilidad de quienes se acercan a Simbiosis
                 Miceliar.
               </p>
+
+              <div className="miniPolicy">
+                <strong>Privacidad</strong>
+                <span>
+                  La información compartida en el primer contacto se trata con cuidado y
+                  reserva.
+                </span>
+              </div>
+
               <div className="buttons">
                 <a
                   className="btn btnSecondary"
@@ -461,6 +509,7 @@ export default function HomePage() {
           <div className="footerInfo">
             <p><strong>WhatsApp:</strong> +54 9 2944 13 8880</p>
             <p><strong>Instagram:</strong> @simbiosismiceliar</p>
+            <p><strong>Ubicación:</strong> Lago Puelo · Patagonia</p>
             <p><strong>Web:</strong> simbiosismiceliar.com.ar</p>
           </div>
         </div>
@@ -478,10 +527,9 @@ export default function HomePage() {
 
       <style jsx global>{`
         :root {
-          --bg: #0a110d;
+          --bg: #09100b;
           --bg2: #101913;
           --card: rgba(255, 255, 255, 0.05);
-          --card2: rgba(255, 255, 255, 0.08);
           --line: rgba(255, 255, 255, 0.08);
           --text: #f4f2ec;
           --muted: #c6c9c1;
@@ -586,22 +634,23 @@ export default function HomePage() {
         }
 
         .hero {
-          padding: 96px 0 72px;
+          padding: 96px 0 56px;
           position: relative;
         }
 
         .heroGrid {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
+          grid-template-columns: 1.08fr 0.92fr;
           gap: 40px;
           align-items: center;
         }
 
         .heroText h1 {
-          font-size: clamp(2.6rem, 6vw, 5rem);
+          font-size: clamp(2.7rem, 6vw, 5.1rem);
           line-height: 1.02;
           margin: 0 0 18px;
           letter-spacing: -1px;
+          max-width: 720px;
         }
 
         .pill {
@@ -627,7 +676,9 @@ export default function HomePage() {
         .highlight p,
         .contactItem span,
         .footer p,
-        .faqAnswer p {
+        .faqAnswer p,
+        .miniPolicy span,
+        .trustItem span {
           color: var(--muted);
         }
 
@@ -695,7 +746,7 @@ export default function HomePage() {
 
         .heroImage {
           position: relative;
-          min-height: 540px;
+          min-height: 560px;
           border-radius: 28px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
@@ -713,6 +764,27 @@ export default function HomePage() {
           position: absolute;
           inset: 0;
           background: linear-gradient(180deg, rgba(6, 10, 7, 0.05), rgba(6, 10, 7, 0.5));
+        }
+
+        .trustStrip {
+          padding: 0 0 28px;
+        }
+
+        .trustGrid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+        }
+
+        .trustItem {
+          padding: 18px 18px;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.045);
+          border: 1px solid var(--line);
+          box-shadow: var(--shadow);
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
         }
 
         .section {
@@ -740,13 +812,6 @@ export default function HomePage() {
         .gridCards {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-top: 30px;
-        }
-
-        .gridFour {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
           gap: 24px;
           margin-top: 30px;
         }
@@ -805,7 +870,7 @@ export default function HomePage() {
         .imageCard {
           overflow: hidden;
           padding: 0;
-          min-height: 360px;
+          min-height: 380px;
         }
 
         .imageCard img {
@@ -816,6 +881,36 @@ export default function HomePage() {
 
         .textCard p + p {
           margin-top: 16px;
+        }
+
+        .gallerySection {
+          padding-top: 10px;
+        }
+
+        .galleryGrid {
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr 0.8fr;
+          gap: 18px;
+          margin-top: 28px;
+        }
+
+        .galleryCard {
+          border-radius: 24px;
+          overflow: hidden;
+          min-height: 280px;
+          border: 1px solid var(--line);
+          box-shadow: var(--shadow);
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .galleryCard.large {
+          min-height: 420px;
+        }
+
+        .galleryCard img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .faqList {
@@ -875,6 +970,28 @@ export default function HomePage() {
           border-radius: 18px;
           background: rgba(255, 255, 255, 0.04);
           border: 1px solid var(--line);
+          transition: 0.2s ease;
+        }
+
+        a.contactItem:hover {
+          background: rgba(255, 255, 255, 0.07);
+        }
+
+        .contactSide {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .miniPolicy {
+          margin-top: 20px;
+          padding: 16px 18px;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid var(--line);
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
         }
 
         .footer {
@@ -992,12 +1109,14 @@ export default function HomePage() {
             grid-template-columns: 1fr;
           }
 
-          .gridCards {
+          .gridCards,
+          .trustGrid,
+          .galleryGrid {
             grid-template-columns: 1fr 1fr;
           }
 
-          .gridFour {
-            grid-template-columns: 1fr 1fr;
+          .galleryCard.large {
+            grid-column: span 2;
           }
 
           .heroImage {
@@ -1021,7 +1140,7 @@ export default function HomePage() {
           }
 
           .hero {
-            padding: 56px 0 36px;
+            padding: 56px 0 28px;
           }
 
           .section {
@@ -1029,8 +1148,14 @@ export default function HomePage() {
           }
 
           .gridCards,
-          .gridFour {
+          .trustGrid,
+          .galleryGrid {
             grid-template-columns: 1fr;
+          }
+
+          .galleryCard.large {
+            grid-column: auto;
+            min-height: 280px;
           }
 
           .heroImage {
