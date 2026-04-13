@@ -61,9 +61,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 860) {
-        setMenuOpen(false);
-      }
+      if (window.innerWidth > 900) setMenuOpen(false);
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -82,7 +80,6 @@ export default function HomePage() {
   useEffect(() => {
     const shouldLockScroll = menuOpen || ageVerified === false;
     const previousOverflow = document.body.style.overflow;
-
     document.body.style.overflow = shouldLockScroll ? "hidden" : "";
 
     return () => {
@@ -117,7 +114,7 @@ export default function HomePage() {
           aria-labelledby="age-gate-title"
         >
           <div className="ageBox">
-            <div className="pill">Acceso al sitio</div>
+            <div className="pill darkPill">Acceso al sitio</div>
             <h3 id="age-gate-title">¿Sos mayor de edad?</h3>
             <p>Este sitio está dirigido a personas mayores de 18 años.</p>
             <div className="ageActions">
@@ -158,6 +155,7 @@ export default function HomePage() {
                 className="brandLogo"
               />
             </div>
+
             <div className="brandText">
               <div className="brandTitle">Simbiosis Miceliar</div>
               <div className="brandSub">Proyecto patagónico</div>
@@ -184,24 +182,36 @@ export default function HomePage() {
               </a>
             ))}
           </nav>
+
+          <a
+            className="desktopWhatsApp"
+            href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Escribinos
+          </a>
         </div>
       </header>
 
       <main>
-        <section className="hero" id="inicio">
+        <section className="hero darkSection" id="inicio">
           <div className="container heroGrid">
             <div className="heroText">
-              <div className="pill">Cannabis medicinal · Comunidad · Patagonia</div>
+              <div className="pill darkPill">Cannabis medicinal · Comunidad · Patagonia</div>
 
-              <h1>Comunidad, orientación y acompañamiento responsable</h1>
+              <h1>
+                Comunidad, orientación y
+                <span> acompañamiento responsable</span>
+              </h1>
 
               <p className="heroLead">
                 Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
               </p>
 
               <p className="heroBody">
-                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para
-                REPROCANN, formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
+                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para REPROCANN,
+                formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
               </p>
 
               <div className="buttons">
@@ -213,7 +223,8 @@ export default function HomePage() {
                 >
                   Hablar por WhatsApp
                 </a>
-                <a className="btn btnSecondary" href="#como-trabajamos">
+
+                <a className="btn btnGhost" href="#como-trabajamos">
                   Ver cómo trabajamos
                 </a>
               </div>
@@ -243,330 +254,272 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="trustStrip">
+        <section className="trustBand lightSection">
           <div className="container trustGrid">
-            <div className="trustItem">
-              <strong>Orientación personalizada</strong>
-              <span>Escucha, claridad y acompañamiento según cada caso.</span>
+            <div className="trustMini">
+              <div className="trustIcon">◎</div>
+              <div>
+                <strong>Orientación personalizada</strong>
+                <span>Escucha, claridad y acompañamiento según cada caso.</span>
+              </div>
             </div>
-            <div className="trustItem">
-              <strong>REPROCANN</strong>
-              <span>Vinculación médica y proceso acompañado de forma ordenada.</span>
+
+            <div className="trustMini">
+              <div className="trustIcon">✚</div>
+              <div>
+                <strong>REPROCANN</strong>
+                <span>Vinculación médica y proceso acompañado.</span>
+              </div>
             </div>
-            <div className="trustItem">
-              <strong>Cultivo responsable</strong>
-              <span>Formación, cuidado y construcción de saberes desde el territorio.</span>
+
+            <div className="trustMini">
+              <div className="trustIcon">❋</div>
+              <div>
+                <strong>Cultivo responsable</strong>
+                <span>Formación, cuidado y construcción de saberes.</span>
+              </div>
             </div>
-            <div className="trustItem">
-              <strong>Comunidad real</strong>
-              <span>Un espacio cercano, serio y humano.</span>
+
+            <div className="trustMini">
+              <div className="trustIcon">◉</div>
+              <div>
+                <strong>Comunidad real</strong>
+                <span>Un espacio cercano, serio y humano.</span>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="quienes-somos">
-          <div className="container">
-            <div className="sectionTop">
-              <div className="pill">Quiénes somos</div>
+        <section className="section lightSection" id="quienes-somos">
+          <div className="container splitIntro">
+            <div className="introBlock">
+              <div className="pill lightPill">Quiénes somos</div>
               <h2>Una comunidad construida desde el territorio</h2>
-              <p className="sectionLead">
-                Simbiosis Miceliar es un proyecto patagónico que nace del vínculo cercano con
-                las personas, la comunidad y el cuidado de los procesos.
+              <p className="sectionLead darkText">
+                Creemos que el acceso a la información, la orientación responsable y el acompañamiento
+                humano hacen una diferencia real en los recorridos vinculados al cannabis medicinal.
+              </p>
+              <p className="sectionText">
+                Nuestro enfoque combina cercanía, seriedad, identidad territorial y compromiso comunitario.
+                Buscamos que cada persona encuentre un espacio claro, respetuoso y confiable.
               </p>
             </div>
 
-            <div className="twoCols">
-              <div className="card softCard">
-                <p>
-                  Creemos que el acceso a la información, la orientación responsable y el
-                  acompañamiento humano hacen una diferencia real en los recorridos vinculados
-                  al cannabis medicinal.
-                </p>
+            <div className="introCards">
+              <div className="smallPhotoCard">
+                <div className="smallPhoto">
+                  <Image
+                    src="/IMG_3967.jpeg"
+                    alt="Territorio patagónico"
+                    fill
+                    sizes="(max-width: 1080px) 100vw, 22vw"
+                    className="coverImage"
+                  />
+                </div>
+                <strong>Territorio patagónico</strong>
+                <span>Lago Puelo · Chubut</span>
               </div>
-              <div className="card softCard">
-                <p>
-                  Nuestro enfoque combina cercanía, seriedad, identidad territorial y compromiso
-                  comunitario. Buscamos que cada persona encuentre un espacio claro, respetuoso y confiable.
-                </p>
+
+              <div className="smallPhotoCard">
+                <div className="smallPhoto">
+                  <Image
+                    src="/IMG_3924.jpeg"
+                    alt="Compromiso comunitario"
+                    fill
+                    sizes="(max-width: 1080px) 100vw, 22vw"
+                    className="coverImage"
+                  />
+                </div>
+                <strong>Compromiso comunitario</strong>
+                <span>Identidad, respeto y cuidado</span>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="como-trabajamos">
+        <section className="section darkSection" id="como-trabajamos">
           <div className="container">
-            <div className="sectionTop">
-              <div className="pill">Cómo trabajamos</div>
+            <div className="sectionTop centerTop">
+              <div className="pill darkPill">Cómo trabajamos</div>
               <h2>Un recorrido simple, cuidado y ordenado</h2>
               <p className="sectionLead">
                 Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo empieza el proceso.
               </p>
             </div>
 
-            <div className="steps">
-              <div className="step card softCard">
-                <div className="stepNum">1</div>
-                <div>
-                  <h3>Nos escribís</h3>
-                  <p>
-                    Recibimos tu consulta por WhatsApp y conocemos tu situación, tus dudas y lo que necesitás orientar.
-                  </p>
-                </div>
+            <div className="stepsRow">
+              <div className="stepCard">
+                <div className="stepCircle">1</div>
+                <h3>Nos escribís</h3>
+                <p>Recibimos tu consulta y conocemos tu situación, tus dudas y lo que necesitás orientar.</p>
               </div>
 
-              <div className="step card softCard">
-                <div className="stepNum">2</div>
-                <div>
-                  <h3>Te orientamos</h3>
-                  <p>
-                    Brindamos una primera orientación clara, cercana y responsable para ayudarte a entender
-                    el camino posible según tu caso.
-                  </p>
-                </div>
+              <div className="stepCard">
+                <div className="stepCircle">2</div>
+                <h3>Te orientamos</h3>
+                <p>Brindamos una primera orientación clara y responsable para ayudarte a entender el camino posible.</p>
               </div>
 
-              <div className="step card softCard">
-                <div className="stepNum">3</div>
-                <div>
-                  <h3>Te vinculamos</h3>
-                  <p>
-                    Cuando corresponde, articulamos la vinculación con profesionales médicos para el proceso de REPROCANN.
-                  </p>
-                </div>
+              <div className="stepCard">
+                <div className="stepCircle">3</div>
+                <h3>Te vinculamos</h3>
+                <p>Cuando corresponde, articulamos la vinculación con profesionales médicos para REPROCANN.</p>
               </div>
 
-              <div className="step card softCard">
-                <div className="stepNum">4</div>
-                <div>
-                  <h3>Acompañamos el seguimiento</h3>
-                  <p>
-                    Sostenemos una relación cercana, con continuidad y compromiso, priorizando siempre el cuidado de cada proceso.
-                  </p>
-                </div>
+              <div className="stepCard">
+                <div className="stepCircle">4</div>
+                <h3>Acompañamos</h3>
+                <p>Sostenemos una relación cercana, con seguimiento y continuidad durante cada proceso.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="areas">
-          <div className="container">
-            <div className="sectionTop">
-              <div className="pill">Áreas de trabajo</div>
+        <section className="section lightSection" id="areas">
+          <div className="container areasGridWrap">
+            <div className="areasLeft">
+              <div className="pill lightPill">Áreas de trabajo</div>
               <h2>Qué hacemos en Simbiosis Miceliar</h2>
-              <p className="sectionLead">
+              <p className="sectionLead darkText">
                 Integramos orientación, acompañamiento, formación y comunidad desde una mirada responsable.
               </p>
+
+              <div className="areasGrid">
+                <div className="areaCard">
+                  <div className="areaIcon">◌</div>
+                  <h3>Orientación inicial</h3>
+                  <p>Escuchamos cada situación de forma personalizada.</p>
+                </div>
+
+                <div className="areaCard">
+                  <div className="areaIcon">✚</div>
+                  <h3>Vinculación médica</h3>
+                  <p>Médicos encargados del proceso de REPROCANN.</p>
+                </div>
+
+                <div className="areaCard">
+                  <div className="areaIcon">♡</div>
+                  <h3>Acompañamiento</h3>
+                  <p>Presencia real, seguimiento y cercanía.</p>
+                </div>
+
+                <div className="areaCard">
+                  <div className="areaIcon">▣</div>
+                  <h3>Formación</h3>
+                  <p>Circulación de saberes y aprendizaje consciente.</p>
+                </div>
+
+                <div className="areaCard">
+                  <div className="areaIcon">❋</div>
+                  <h3>Cultivo responsable</h3>
+                  <p>Cuidado, responsabilidad y vínculo con el territorio.</p>
+                </div>
+
+                <div className="areaCard">
+                  <div className="areaIcon">◎</div>
+                  <h3>Comunidad</h3>
+                  <p>Escucha, confianza y acompañamiento humano.</p>
+                </div>
+              </div>
             </div>
 
-            <div className="gridCards">
-              <div className="card softCard">
-                <h3>Orientación inicial</h3>
-                <p>Escuchamos cada situación de forma personalizada para orientar con claridad, respeto y criterio.</p>
-              </div>
-              <div className="card softCard">
-                <h3>Vinculación médica</h3>
+            <div className="areasRight" id="reprocann">
+              <div className="reprocannCard">
+                <div className="pill darkPill">REPROCANN</div>
+                <h3>Acompañamiento claro para un proceso sensible</h3>
                 <p>
-                  Contamos con médicos encargados de la vinculación a REPROCANN, acompañando el proceso de manera seria y ordenada.
+                  Sabemos que muchas personas llegan con dudas o desinformación. Por eso ofrecemos
+                  un acompañamiento claro y cercano en cada etapa.
                 </p>
-              </div>
-              <div className="card softCard">
-                <h3>Acompañamiento</h3>
-                <p>No trabajamos desde una lógica fría o automática. Buscamos presencia real, seguimiento y cercanía.</p>
-              </div>
-              <div className="card softCard">
-                <h3>Formación</h3>
-                <p>
-                  Promovemos la circulación de saberes, el aprendizaje y una mirada consciente sobre los procesos vinculados al cannabis medicinal.
-                </p>
-              </div>
-              <div className="card softCard">
-                <h3>Cultivo responsable</h3>
-                <p>
-                  Entendemos el cultivo como parte de una perspectiva integral basada en el cuidado, la responsabilidad y el territorio.
-                </p>
-              </div>
-              <div className="card softCard">
-                <h3>Comunidad</h3>
-                <p>
-                  Sostenemos un vínculo cercano con quienes se acercan a Simbiosis, priorizando escucha, confianza y acompañamiento humano.
-                </p>
+                <ul>
+                  <li>Información clara</li>
+                  <li>Vinculación con profesionales</li>
+                  <li>Proceso acompañado con criterio</li>
+                  <li>Confidencialidad y respeto</li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="reprocann">
-          <div className="container">
-            <div className="highlight">
-              <div className="pill">REPROCANN</div>
-              <h2>Acompañamiento claro para un proceso sensible</h2>
-              <p className="sectionLead">
-                Sabemos que muchas personas llegan con dudas, desinformación o incertidumbre sobre REPROCANN.
+        <section className="section darkSection" id="cultivo">
+          <div className="container cultivoGrid">
+            <div className="cultivoImage">
+              <Image
+                src="/IMG_3819.jpeg"
+                alt="Cultivo responsable"
+                fill
+                sizes="(max-width: 1080px) 100vw, 50vw"
+                className="coverImage"
+              />
+            </div>
+
+            <div className="cultivoTextCard">
+              <div className="pill darkPill">Cultivo y formación</div>
+              <h2>Aprendizaje, cuidado y territorio</h2>
+              <p>
+                Entendemos el cultivo como parte de una mirada integral: aprendizaje, responsabilidad
+                y vínculo con la tierra.
               </p>
               <p>
-                Por eso ofrecemos un acompañamiento claro y cercano, ayudando a ordenar el proceso y brindando orientación
-                en cada etapa. Contamos con médicos encargados de la vinculación a REPROCANN y acompañamos a las personas
-                para que puedan transitar ese camino con más claridad, resguardo y tranquilidad.
-              </p>
-              <p className="strongLine">
-                Acompañamos con cercanía, seriedad y criterio, priorizando siempre el cuidado de cada proceso.
+                Para nosotros, cultivar también es compartir conocimiento y fortalecer comunidad.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="section" id="cultivo">
-          <div className="container">
-            <div className="sectionTop">
-              <div className="pill">Cultivo responsable y formación</div>
-              <h2>Aprendizaje, cuidado y territorio</h2>
-            </div>
-
-            <div className="twoCols">
-              <div className="card imageCard">
-                <Image
-                  src="/IMG_3819.jpeg"
-                  alt="Cultivo responsable"
-                  fill
-                  sizes="(max-width: 1080px) 100vw, 50vw"
-                  className="coverImage"
-                />
-              </div>
-
-              <div className="card textCard softCard">
-                <p>
-                  Entendemos el cultivo como parte de una mirada integral, basada en el aprendizaje, la responsabilidad y el vínculo con el territorio.
-                </p>
-                <p>
-                  Promovemos una perspectiva consciente sobre los procesos de cultivo, el cuidado, la formación y la construcción de saberes,
-                  desde una lógica seria, comunitaria y respetuosa.
-                </p>
-                <p>
-                  Para nosotros, cultivar también es aprender, compartir conocimiento y fortalecer una red construida desde la experiencia y la cercanía.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section gallerySection">
-          <div className="container">
-            <div className="sectionTop">
-              <div className="pill">Territorio y comunidad</div>
-              <h2>Una identidad construida desde el cuidado y la cercanía</h2>
-            </div>
-
-            <div className="galleryGrid">
-              <div className="galleryCard large">
-                <Image
-                  src="/IMG_3967.jpeg"
-                  alt="Territorio y comunidad"
-                  fill
-                  sizes="(max-width: 1080px) 100vw, 40vw"
-                  className="coverImage"
-                />
-              </div>
-              <div className="galleryCard">
-                <Image
-                  src="/IMG_3819.jpeg"
-                  alt="Simbiosis Miceliar Patagonia"
-                  fill
-                  sizes="(max-width: 1080px) 50vw, 20vw"
-                  className="coverImage"
-                />
-              </div>
-              <div className="galleryCard">
-                <Image
-                  src="/IMG_3924.jpeg"
-                  alt="Cultivo y formación"
-                  fill
-                  sizes="(max-width: 1080px) 50vw, 20vw"
-                  className="coverImage"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="faq">
-          <div className="container">
-            <div className="sectionTop">
-              <div className="pill">Preguntas frecuentes</div>
+        <section className="section lightSection" id="faq">
+          <div className="container faqContactWrap">
+            <div className="faqBlock">
+              <div className="pill lightPill">Preguntas frecuentes</div>
               <h2>Dudas comunes, respuestas claras</h2>
-            </div>
 
-            <div className="faqList">
-              {faqs.map((item, index) => {
-                const isOpen = openFaq === index;
-                const answerId = `faq-answer-${index}`;
-                const questionId = `faq-question-${index}`;
+              <div className="faqList">
+                {faqs.map((item, index) => {
+                  const isOpen = openFaq === index;
+                  const answerId = `faq-answer-${index}`;
+                  const questionId = `faq-question-${index}`;
 
-                return (
-                  <div key={item.q} className={`faqItem ${isOpen ? "active" : ""}`}>
-                    <button
-                      id={questionId}
-                      className="faqQuestion"
-                      onClick={() => setOpenFaq(isOpen ? null : index)}
-                      type="button"
-                      aria-expanded={isOpen}
-                      aria-controls={answerId}
-                    >
-                      <span>{item.q}</span>
-                      <span>{isOpen ? "−" : "+"}</span>
-                    </button>
+                  return (
+                    <div key={item.q} className={`faqItem ${isOpen ? "active" : ""}`}>
+                      <button
+                        id={questionId}
+                        className="faqQuestion"
+                        onClick={() => setOpenFaq(isOpen ? null : index)}
+                        type="button"
+                        aria-expanded={isOpen}
+                        aria-controls={answerId}
+                      >
+                        <span>{item.q}</span>
+                        <span>{isOpen ? "−" : "+"}</span>
+                      </button>
 
-                    <div
-                      id={answerId}
-                      className="faqAnswer"
-                      role="region"
-                      aria-labelledby={questionId}
-                      hidden={!isOpen}
-                    >
-                      <p>{item.a}</p>
+                      <div
+                        id={answerId}
+                        className="faqAnswer"
+                        role="region"
+                        aria-labelledby={questionId}
+                        hidden={!isOpen}
+                      >
+                        <p>{item.a}</p>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </section>
 
-        <section className="section ctaSection">
-          <div className="container">
-            <div className="highlight ctaBox">
-              <div className="pill">Primer contacto</div>
-              <h2>Estamos para acompañarte</h2>
-              <p className="sectionLead">
-                Si querés recibir orientación, conocer cómo trabajamos o iniciar un primer contacto, escribinos y te respondemos de forma cercana y clara.
+            <div className="contactPromo" id="contacto">
+              <div className="pill darkPill">Primer contacto</div>
+              <h2>Escribinos y te orientamos de forma cercana y responsable</h2>
+              <p>
+                Si querés recibir orientación, conocer cómo trabajamos o iniciar un primer contacto,
+                escribinos y te respondemos de forma clara.
               </p>
-              <div className="buttons centerButtons">
-                <a
-                  className="btn btnPrimary"
-                  href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Escribinos por WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="section" id="contacto">
-          <div className="container contactGrid">
-            <div>
-              <div className="sectionTop leftTop">
-                <div className="pill">Contacto</div>
-                <h2>Comunicate con nosotros</h2>
-                <p className="sectionLead">
-                  Podés escribirnos para recibir orientación, realizar consultas o conocer más sobre nuestro trabajo y nuestras formas de acompañamiento.
-                </p>
-              </div>
-
-              <div className="contactList">
+              <div className="contactButtons">
                 <a
-                  className="contactItem"
+                  className="contactPromoBtn whatsappBtn"
                   href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
                   target="_blank"
                   rel="noopener noreferrer"
@@ -576,7 +529,7 @@ export default function HomePage() {
                 </a>
 
                 <a
-                  className="contactItem"
+                  className="contactPromoBtn instagramBtn"
                   href="https://instagram.com/simbiosismiceliar"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -585,64 +538,66 @@ export default function HomePage() {
                   <span>@simbiosismiceliar</span>
                 </a>
 
-                <div className="contactItem">
+                <div className="contactPromoBtn locationBtn">
                   <strong>Ubicación</strong>
                   <span>Lago Puelo · Patagonia</span>
                 </div>
-
-                <div className="contactItem">
-                  <strong>Sitio web</strong>
-                  <span>simbiosismiceliar.com.ar</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="card contactSide softCard">
-              <h3>Confidencialidad y cuidado</h3>
-              <p>
-                Trabajamos con respeto, escucha y confidencialidad en cada proceso, priorizando la tranquilidad de quienes se acercan a Simbiosis Miceliar.
-              </p>
-
-              <div className="miniPolicy">
-                <strong>Privacidad</strong>
-                <span>
-                  La información compartida en el primer contacto se trata con cuidado y reserva.
-                </span>
               </div>
 
-              <div className="buttons">
-                <a
-                  className="btn btnSecondary"
-                  href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Escribir ahora
-                </a>
+              <div className="contactMeta">
+                <span>Confidencialidad</span>
+                <span>Respeto</span>
+                <span>Cuidado</span>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="footer">
+      <footer className="footer darkSection">
         <div className="container footerWrap">
-          <div className="footerMain">
-            <h3>Simbiosis Miceliar</h3>
-            <p>
-              Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
-            </p>
-            <p className="footerLine">
+          <div className="footerBrand">
+            <div className="footerLogoRow">
+              <div className="footerLogoWrap">
+                <Image
+                  src="/logo.png"
+                  alt="Logo de Simbiosis Miceliar"
+                  width={54}
+                  height={54}
+                  className="brandLogo"
+                />
+              </div>
+              <div>
+                <h3>Simbiosis Miceliar</h3>
+                <p>Proyecto patagónico de cannabis medicinal</p>
+              </div>
+            </div>
+
+            <p className="footerStatement">
               Identidad territorial, acompañamiento humano y compromiso comunitario.
             </p>
           </div>
 
-          <div className="footerInfo">
-            <p><strong>WhatsApp:</strong> +54 9 2944 13 8880</p>
-            <p><strong>Instagram:</strong> @simbiosismiceliar</p>
-            <p><strong>Ubicación:</strong> Lago Puelo · Patagonia</p>
-            <p><strong>Web:</strong> simbiosismiceliar.com.ar</p>
+          <div className="footerLinks">
+            <strong>Enlaces</strong>
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">Quiénes somos</a>
+            <a href="#areas">Áreas</a>
+            <a href="#faq">Preguntas frecuentes</a>
+            <a href="#contacto">Contacto</a>
           </div>
+
+          <div className="footerContact">
+            <strong>Contacto</strong>
+            <p>WhatsApp: +54 9 2944 13 8880</p>
+            <p>Instagram: @simbiosismiceliar</p>
+            <p>Lago Puelo · Patagonia</p>
+            <p>simbiosismiceliar.com.ar</p>
+          </div>
+        </div>
+
+        <div className="container footerBottom">
+          <p>© 2024 Simbiosis Miceliar. Lago Puelo, Chubut. Todos los derechos reservados.</p>
         </div>
       </footer>
 
@@ -658,21 +613,26 @@ export default function HomePage() {
 
       <style jsx global>{`
         :root {
-          --bg: #09100b;
-          --bg-soft: rgba(255, 255, 255, 0.04);
-          --card: rgba(255, 255, 255, 0.05);
-          --card-soft: rgba(255, 255, 255, 0.055);
-          --line: rgba(255, 255, 255, 0.08);
-          --line-soft: rgba(255, 255, 255, 0.06);
-          --text: #f4f2ec;
-          --muted: #c6c9c1;
-          --green: #9cc77e;
-          --green2: #7faa61;
-          --gold: #d8b96a;
-          --shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
-          --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.18);
+          --dark: #07110a;
+          --dark-2: #0d1811;
+          --dark-3: #102117;
+          --green: #6da35a;
+          --green-2: #87bd72;
+          --green-soft: rgba(123, 174, 102, 0.15);
+          --gold: #ccb06d;
+          --light: #f2eee5;
+          --light-2: #f8f5ee;
+          --white: #ffffff;
+          --text-dark: #182018;
+          --text-light: #f4f2ec;
+          --muted-dark: #596255;
+          --muted-light: #cdd4c9;
+          --line-dark: rgba(255, 255, 255, 0.08);
+          --line-light: rgba(8, 18, 10, 0.09);
+          --shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+          --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
           --radius: 24px;
-          --radius-sm: 18px;
+          --radius-lg: 30px;
           --max: 1180px;
         }
 
@@ -687,16 +647,9 @@ export default function HomePage() {
         body {
           margin: 0;
           font-family: Arial, Helvetica, sans-serif;
-          background:
-            radial-gradient(circle at top left, rgba(156, 199, 126, 0.08), transparent 30%),
-            radial-gradient(circle at top right, rgba(216, 185, 106, 0.08), transparent 25%),
-            linear-gradient(180deg, #09100b 0%, #0f1711 100%);
-          color: var(--text);
+          background: var(--dark);
+          color: var(--text-light);
           overflow-x: hidden;
-        }
-
-        section[id] {
-          scroll-margin-top: 96px;
         }
 
         a {
@@ -704,12 +657,13 @@ export default function HomePage() {
           text-decoration: none;
         }
 
+        section[id] {
+          scroll-margin-top: 92px;
+        }
+
         .bootScreen {
           min-height: 100vh;
-          background:
-            radial-gradient(circle at top left, rgba(156, 199, 126, 0.08), transparent 30%),
-            radial-gradient(circle at top right, rgba(216, 185, 106, 0.08), transparent 25%),
-            linear-gradient(180deg, #09100b 0%, #0f1711 100%);
+          background: var(--dark);
         }
 
         .container {
@@ -721,13 +675,26 @@ export default function HomePage() {
           object-fit: cover;
         }
 
+        .darkSection {
+          background:
+            radial-gradient(circle at top left, rgba(122, 176, 96, 0.12), transparent 28%),
+            radial-gradient(circle at right center, rgba(204, 176, 109, 0.08), transparent 24%),
+            linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+          color: var(--text-light);
+        }
+
+        .lightSection {
+          background: linear-gradient(180deg, var(--light-2) 0%, var(--light) 100%);
+          color: var(--text-dark);
+        }
+
         .header {
           position: sticky;
           top: 0;
-          z-index: 50;
-          background: rgba(8, 13, 10, 0.72);
+          z-index: 60;
+          background: rgba(7, 17, 10, 0.88);
           backdrop-filter: blur(12px);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          border-bottom: 1px solid var(--line-dark);
         }
 
         .nav {
@@ -746,35 +713,35 @@ export default function HomePage() {
           min-width: 0;
         }
 
-        .brandLogoWrap {
+        .brandLogoWrap,
+        .footerLogoWrap {
           width: 52px;
           height: 52px;
           border-radius: 14px;
           overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.06);
           flex-shrink: 0;
           position: relative;
-          box-shadow: var(--shadow-soft);
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid var(--line-dark);
+        }
+
+        .footerLogoWrap {
+          width: 54px;
+          height: 54px;
         }
 
         .brandLogo {
-          width: 52px;
-          height: 52px;
           object-fit: cover;
-        }
-
-        .brandText {
-          min-width: 0;
         }
 
         .brandTitle {
           font-weight: 800;
           font-size: 1rem;
+          color: var(--text-light);
         }
 
         .brandSub {
-          color: var(--muted);
+          color: var(--muted-light);
           font-size: 0.84rem;
         }
 
@@ -783,21 +750,21 @@ export default function HomePage() {
           width: 48px;
           height: 48px;
           border-radius: 14px;
-          border: 1px solid var(--line);
+          border: 1px solid var(--line-dark);
           background: rgba(255, 255, 255, 0.04);
           align-items: center;
           justify-content: center;
           flex-direction: column;
           gap: 5px;
           cursor: pointer;
-          z-index: 52;
+          z-index: 62;
         }
 
         .menuToggle span {
           width: 18px;
           height: 2px;
           border-radius: 999px;
-          background: var(--text);
+          background: var(--text-light);
           display: block;
           transition: transform 0.2s ease, opacity 0.2s ease;
         }
@@ -814,82 +781,73 @@ export default function HomePage() {
           transform: translateY(-7px) rotate(-45deg);
         }
 
-        .menuBackdrop {
-          display: none;
-        }
-
         .navLinks {
           display: flex;
-          gap: 22px;
+          align-items: center;
+          gap: 26px;
           flex-wrap: wrap;
         }
 
         .navLinks a {
-          color: var(--muted);
+          color: var(--text-light);
           font-size: 0.95rem;
-          transition: 0.2s ease;
+          opacity: 0.9;
+          transition: opacity 0.2s ease;
         }
 
         .navLinks a:hover {
-          color: var(--text);
+          opacity: 1;
+        }
+
+        .desktopWhatsApp {
+          padding: 12px 18px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, #0f8b4b, #13a357);
+          color: white;
+          font-weight: 700;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+          white-space: nowrap;
         }
 
         .hero {
-          padding: 78px 0 34px;
-          position: relative;
+          padding: 36px 0 30px;
         }
 
         .heroGrid {
           display: grid;
           grid-template-columns: 1.02fr 0.98fr;
-          gap: 46px;
+          gap: 34px;
           align-items: center;
         }
 
         .heroText h1 {
-          font-size: clamp(2.7rem, 6vw, 5rem);
-          line-height: 1.01;
-          margin: 0 0 18px;
-          letter-spacing: -1.2px;
+          margin: 0 0 16px;
+          font-size: clamp(2.7rem, 5.8vw, 5rem);
+          line-height: 0.98;
+          letter-spacing: -1.4px;
           max-width: 720px;
           text-wrap: balance;
         }
 
-        .pill {
-          display: inline-block;
-          padding: 8px 14px;
-          border-radius: 999px;
-          border: 1px solid var(--line-soft);
-          background: rgba(255, 255, 255, 0.04);
-          color: var(--green);
-          font-size: 13px;
-          margin-bottom: 16px;
+        .heroText h1 span {
+          color: var(--green-2);
         }
 
-        .heroLead,
-        .sectionLead {
+        .heroLead {
           font-size: clamp(1.04rem, 2vw, 1.18rem);
-          color: var(--muted);
-          max-width: 760px;
-          line-height: 1.65;
-        }
-
-        .heroBody,
-        .card p,
-        .highlight p,
-        .contactItem span,
-        .footer p,
-        .faqAnswer p,
-        .miniPolicy span,
-        .trustItem span {
-          color: var(--muted);
+          line-height: 1.6;
+          color: var(--text-light);
+          opacity: 0.96;
+          max-width: 720px;
+          margin: 0 0 10px;
         }
 
         .heroBody {
-          max-width: 720px;
-          margin-top: 14px;
           font-size: 1rem;
-          line-height: 1.78;
+          line-height: 1.72;
+          color: var(--muted-light);
+          max-width: 700px;
+          margin: 0;
         }
 
         .buttons {
@@ -897,26 +855,6 @@ export default function HomePage() {
           flex-wrap: wrap;
           gap: 14px;
           margin-top: 28px;
-        }
-
-        .centerButtons {
-          justify-content: center;
-        }
-
-        .badges {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-          margin-top: 24px;
-        }
-
-        .badges span {
-          padding: 9px 13px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--line-soft);
-          font-size: 0.88rem;
-          color: #eef1ea;
         }
 
         .btn {
@@ -933,94 +871,152 @@ export default function HomePage() {
         }
 
         .btnPrimary {
-          background: linear-gradient(135deg, var(--green), var(--green2));
-          color: #08100b;
-          box-shadow: var(--shadow);
+          background: linear-gradient(135deg, #177f48, #22a55c);
+          color: white;
+          box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
         }
 
         .btnPrimary:hover {
           transform: translateY(-2px);
-          filter: brightness(1.02);
         }
 
-        .btnSecondary {
-          background: rgba(255, 255, 255, 0.04);
-          border-color: var(--line);
-          color: var(--text);
+        .btnSecondary,
+        .btnGhost {
+          background: transparent;
+          border-color: rgba(255, 255, 255, 0.18);
+          color: var(--text-light);
         }
 
+        .btnGhost:hover,
         .btnSecondary:hover {
-          background: rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .badges {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 22px;
+        }
+
+        .badges span {
+          padding: 9px 13px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          font-size: 0.88rem;
+          color: #eef1ea;
         }
 
         .heroImage {
           position: relative;
-          min-height: 520px;
+          min-height: 510px;
           border-radius: 30px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.04);
           box-shadow: var(--shadow);
         }
 
         .heroOverlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(6, 10, 7, 0.03), rgba(6, 10, 7, 0.46));
-          pointer-events: none;
+          background: linear-gradient(180deg, rgba(4, 10, 6, 0.04), rgba(4, 10, 6, 0.34));
         }
 
         .heroMiniCard {
           position: absolute;
-          left: 20px;
-          right: 20px;
-          bottom: 20px;
-          padding: 16px 18px;
-          border-radius: 20px;
-          background: rgba(8, 13, 10, 0.58);
+          right: 18px;
+          bottom: 18px;
+          max-width: 250px;
+          padding: 14px 16px;
+          border-radius: 18px;
+          background: rgba(7, 17, 10, 0.75);
           border: 1px solid rgba(255, 255, 255, 0.08);
           backdrop-filter: blur(10px);
           box-shadow: var(--shadow-soft);
           display: flex;
           flex-direction: column;
-          gap: 6px;
+          gap: 4px;
         }
 
         .heroMiniCard strong {
-          font-size: 1rem;
-          color: var(--text);
+          font-size: 0.98rem;
         }
 
         .heroMiniCard span {
-          font-size: 0.94rem;
-          color: var(--muted);
+          font-size: 0.9rem;
+          color: var(--muted-light);
+          line-height: 1.4;
         }
 
-        .trustStrip {
-          padding: 0 0 24px;
+        .pill {
+          display: inline-block;
+          padding: 8px 14px;
+          border-radius: 999px;
+          font-size: 12px;
+          letter-spacing: 0.3px;
+          margin-bottom: 16px;
+          font-weight: 700;
+        }
+
+        .darkPill {
+          background: rgba(109, 163, 90, 0.14);
+          color: #9fd086;
+          border: 1px solid rgba(109, 163, 90, 0.2);
+        }
+
+        .lightPill {
+          background: rgba(24, 32, 24, 0.06);
+          color: #5a6a55;
+          border: 1px solid rgba(24, 32, 24, 0.08);
+        }
+
+        .trustBand {
+          padding: 26px 0;
         }
 
         .trustGrid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
+          gap: 0;
+          border-top: 1px solid var(--line-light);
+          border-bottom: 1px solid var(--line-light);
         }
 
-        .trustItem {
-          padding: 18px;
-          border-radius: 18px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--line-soft);
-          box-shadow: var(--shadow-soft);
+        .trustMini {
           display: flex;
-          flex-direction: column;
-          gap: 6px;
-          transition: transform 0.2s ease, background 0.2s ease;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 26px 18px;
+          border-right: 1px solid var(--line-light);
         }
 
-        .trustItem:hover {
-          transform: translateY(-2px);
-          background: rgba(255, 255, 255, 0.055);
+        .trustMini:last-child {
+          border-right: 0;
+        }
+
+        .trustIcon {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: rgba(109, 163, 90, 0.14);
+          color: #4e6f48;
+          display: grid;
+          place-items: center;
+          font-size: 0.9rem;
+          flex-shrink: 0;
+        }
+
+        .trustMini strong {
+          display: block;
+          color: var(--text-dark);
+          margin-bottom: 4px;
+        }
+
+        .trustMini span {
+          color: var(--muted-dark);
+          line-height: 1.45;
+          font-size: 0.94rem;
         }
 
         .section {
@@ -1028,149 +1024,309 @@ export default function HomePage() {
         }
 
         .sectionTop {
-          max-width: 760px;
           margin-bottom: 28px;
         }
 
-        .leftTop {
-          margin-bottom: 0;
+        .centerTop {
+          text-align: center;
+          max-width: 760px;
+          margin: 0 auto 28px;
         }
 
-        h2 {
-          font-size: clamp(2rem, 4vw, 3rem);
-          line-height: 1.08;
+        .splitIntro {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 42px;
+          align-items: center;
+        }
+
+        .introBlock h2,
+        .sectionTop h2,
+        .areasLeft h2,
+        .contactPromo h2 {
           margin: 0 0 16px;
+          font-size: clamp(2rem, 4vw, 3rem);
+          line-height: 1.05;
+          color: var(--text-dark);
           text-wrap: balance;
         }
 
-        h3 {
-          margin: 0 0 10px;
-          font-size: 1.14rem;
+        .darkSection .sectionTop h2,
+        .darkSection .contactPromo h2 {
+          color: var(--text-light);
         }
 
-        .twoCols {
+        .sectionLead {
+          font-size: clamp(1.04rem, 2vw, 1.16rem);
+          line-height: 1.62;
+          max-width: 760px;
+          margin: 0;
+        }
+
+        .darkText {
+          color: var(--text-dark);
+        }
+
+        .sectionText {
+          color: var(--muted-dark);
+          line-height: 1.7;
+          margin-top: 14px;
+          max-width: 700px;
+        }
+
+        .introCards {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 24px;
+          gap: 16px;
+        }
+
+        .smallPhotoCard {
+          background: #fff;
+          border-radius: 18px;
+          padding: 12px;
+          box-shadow: var(--shadow-soft);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .smallPhoto {
+          position: relative;
+          width: 100%;
+          min-height: 180px;
+          border-radius: 14px;
+          overflow: hidden;
+          margin-bottom: 12px;
+        }
+
+        .smallPhotoCard strong {
+          display: block;
+          color: var(--text-dark);
+          margin-bottom: 4px;
+        }
+
+        .smallPhotoCard span {
+          color: var(--muted-dark);
+          font-size: 0.94rem;
+        }
+
+        .stepsRow {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+        }
+
+        .stepCard {
+          padding: 26px 20px;
+          border-radius: 20px;
+          background: rgba(255, 255, 255, 0.035);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .stepCircle {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, var(--green), var(--green-2));
+          color: white;
+          display: grid;
+          place-items: center;
+          font-weight: 800;
+          margin-bottom: 16px;
+        }
+
+        .stepCard h3 {
+          margin: 0 0 10px;
+          font-size: 1.14rem;
+          color: var(--text-light);
+        }
+
+        .stepCard p {
+          margin: 0;
+          color: var(--muted-light);
+          line-height: 1.6;
+          font-size: 0.96rem;
+        }
+
+        .areasGridWrap {
+          display: grid;
+          grid-template-columns: 1.3fr 0.9fr;
+          gap: 26px;
+          align-items: start;
+        }
+
+        .areasGrid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          margin-top: 24px;
+        }
+
+        .areaCard {
+          background: rgba(255, 255, 255, 0.9);
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          border-radius: 18px;
+          padding: 22px 18px;
+          box-shadow: var(--shadow-soft);
+          min-height: 170px;
+        }
+
+        .areaIcon {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: rgba(109, 163, 90, 0.14);
+          color: #4d6e47;
+          display: grid;
+          place-items: center;
+          margin-bottom: 14px;
+          font-weight: 700;
+        }
+
+        .areaCard h3 {
+          margin: 0 0 8px;
+          color: var(--text-dark);
+          font-size: 1.08rem;
+        }
+
+        .areaCard p {
+          margin: 0;
+          color: var(--muted-dark);
+          line-height: 1.55;
+          font-size: 0.94rem;
+        }
+
+        .reprocannCard {
+          background:
+            linear-gradient(180deg, rgba(7, 17, 10, 0.82), rgba(7, 17, 10, 0.92)),
+            url("/IMG_3924.jpeg");
+          background-size: cover;
+          background-position: center;
+          border-radius: 22px;
+          padding: 28px 24px;
+          color: var(--text-light);
+          min-height: 100%;
+          box-shadow: var(--shadow);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .reprocannCard h3 {
+          font-size: 2rem;
+          line-height: 1.1;
+          margin: 0 0 14px;
+        }
+
+        .reprocannCard p {
+          color: var(--muted-light);
+          line-height: 1.7;
+          margin: 0 0 18px;
+        }
+
+        .reprocannCard ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          gap: 10px;
+        }
+
+        .reprocannCard li {
+          position: relative;
+          padding-left: 22px;
+          color: #eaf0e7;
+        }
+
+        .reprocannCard li::before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: var(--green-2);
+          font-weight: 700;
+        }
+
+        .cultivoGrid {
+          display: grid;
+          grid-template-columns: 1.08fr 0.92fr;
+          gap: 22px;
           align-items: stretch;
         }
 
-        .gridCards {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 22px;
-        }
-
-        .card {
-          background: var(--card);
-          border: 1px solid var(--line-soft);
-          border-radius: var(--radius);
-          padding: 28px;
-          box-shadow: var(--shadow-soft);
-        }
-
-        .softCard {
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.03));
-        }
-
-        .steps {
-          display: grid;
-          gap: 16px;
-        }
-
-        .step {
-          display: flex;
-          gap: 16px;
-          align-items: flex-start;
-        }
-
-        .stepNum {
-          width: 46px;
-          height: 46px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, var(--gold), #a88d50);
-          color: #10110d;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 800;
-          flex-shrink: 0;
-          box-shadow: var(--shadow-soft);
-        }
-
-        .highlight {
-          padding: 34px;
-          border-radius: 28px;
-          background: linear-gradient(
-            135deg,
-            rgba(156, 199, 126, 0.14),
-            rgba(216, 185, 106, 0.12)
-          );
-          border: 1px solid rgba(255, 255, 255, 0.08);
+        .cultivoImage {
+          position: relative;
+          min-height: 340px;
+          border-radius: 24px;
+          overflow: hidden;
           box-shadow: var(--shadow);
         }
 
-        .ctaBox {
-          text-align: center;
+        .cultivoTextCard {
+          border-radius: 24px;
+          padding: 34px 30px;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.03));
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
 
-        .strongLine {
-          margin-top: 18px;
-          font-weight: 700;
-          color: var(--text) !important;
+        .cultivoTextCard h2 {
+          margin: 0 0 16px;
+          font-size: clamp(2rem, 4vw, 2.7rem);
+          line-height: 1.1;
         }
 
-        .imageCard,
-        .galleryCard {
-          position: relative;
-          overflow: hidden;
+        .cultivoTextCard p {
+          color: var(--muted-light);
+          line-height: 1.72;
+          margin: 0 0 14px;
         }
 
-        .imageCard {
-          padding: 0;
-          min-height: 390px;
-        }
-
-        .textCard p + p {
-          margin-top: 16px;
-        }
-
-        .gallerySection {
-          padding-top: 10px;
+        .gallerySection .sectionTop {
+          margin-bottom: 18px;
         }
 
         .galleryGrid {
           display: grid;
           grid-template-columns: 1.2fr 0.8fr 0.8fr;
-          gap: 18px;
+          gap: 16px;
         }
 
         .galleryCard {
-          border-radius: 24px;
-          min-height: 280px;
-          border: 1px solid var(--line-soft);
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          min-height: 260px;
           box-shadow: var(--shadow-soft);
-          background: rgba(255, 255, 255, 0.04);
-          transition: transform 0.22s ease;
-        }
-
-        .galleryCard:hover {
-          transform: translateY(-2px);
+          background: #fff;
         }
 
         .galleryCard.large {
-          min-height: 430px;
+          min-height: 330px;
+        }
+
+        .faqContactWrap {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+          align-items: start;
+        }
+
+        .faqBlock h2 {
+          margin: 0 0 16px;
+          font-size: clamp(2rem, 4vw, 2.8rem);
+          line-height: 1.08;
+          color: var(--text-dark);
         }
 
         .faqList {
           display: grid;
-          gap: 14px;
+          gap: 12px;
         }
 
         .faqItem {
-          border: 1px solid var(--line-soft);
-          border-radius: 18px;
-          background: rgba(255, 255, 255, 0.035);
+          background: rgba(255, 255, 255, 0.85);
+          border: 1px solid rgba(0, 0, 0, 0.07);
+          border-radius: 16px;
           overflow: hidden;
           box-shadow: var(--shadow-soft);
         }
@@ -1178,9 +1334,9 @@ export default function HomePage() {
         .faqQuestion {
           width: 100%;
           background: transparent;
-          color: var(--text);
+          color: var(--text-dark);
           border: 0;
-          padding: 20px 22px;
+          padding: 18px 18px;
           font-size: 1rem;
           font-weight: 700;
           display: flex;
@@ -1188,96 +1344,169 @@ export default function HomePage() {
           justify-content: space-between;
           cursor: pointer;
           text-align: left;
-          transition: background 0.2s ease;
-        }
-
-        .faqQuestion:hover {
-          background: rgba(255, 255, 255, 0.03);
         }
 
         .faqAnswer {
-          padding: 0 22px 20px;
+          padding: 0 18px 18px;
         }
 
-        .ctaSection {
-          padding-top: 16px;
+        .faqAnswer p {
+          margin: 0;
+          color: var(--muted-dark);
+          line-height: 1.65;
         }
 
-        .contactGrid {
+        .contactPromo {
+          background:
+            radial-gradient(circle at top right, rgba(109, 163, 90, 0.15), transparent 25%),
+            linear-gradient(180deg, var(--dark-2) 0%, var(--dark) 100%);
+          border-radius: 24px;
+          padding: 28px 24px;
+          color: var(--text-light);
+          box-shadow: var(--shadow);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contactPromo h2 {
+          color: var(--text-light);
+          font-size: clamp(1.9rem, 4vw, 2.6rem);
+          line-height: 1.08;
+          margin: 0 0 14px;
+          text-wrap: balance;
+        }
+
+        .contactPromo p {
+          margin: 0 0 18px;
+          color: var(--muted-light);
+          line-height: 1.72;
+        }
+
+        .contactButtons {
           display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 28px;
-          align-items: stretch;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+          margin-top: 20px;
         }
 
-        .contactList {
-          display: grid;
-          gap: 14px;
-          margin-top: 22px;
+        .contactButtons .locationBtn {
+          grid-column: span 2;
         }
 
-        .contactItem {
+        .contactPromoBtn {
+          border-radius: 16px;
+          padding: 16px 16px;
           display: flex;
           flex-direction: column;
           gap: 4px;
-          padding: 18px 20px;
-          border-radius: 18px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--line-soft);
-          transition: 0.2s ease;
+          min-height: 78px;
+          justify-content: center;
+          border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: var(--shadow-soft);
         }
 
-        a.contactItem:hover {
-          background: rgba(255, 255, 255, 0.065);
-          transform: translateY(-1px);
+        .contactPromoBtn strong {
+          font-size: 0.98rem;
         }
 
-        .contactSide {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+        .contactPromoBtn span {
+          font-size: 0.92rem;
+          color: rgba(255, 255, 255, 0.88);
         }
 
-        .miniPolicy {
-          margin-top: 20px;
-          padding: 16px 18px;
-          border-radius: 18px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--line-soft);
+        .whatsappBtn {
+          background: linear-gradient(135deg, #0f8b4b, #159f57);
+        }
+
+        .instagramBtn {
+          background: linear-gradient(135deg, #7b2d78, #b93b6a);
+        }
+
+        .locationBtn {
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .contactMeta {
           display: flex;
-          flex-direction: column;
-          gap: 6px;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-top: 18px;
+          color: var(--muted-light);
+          font-size: 0.92rem;
+        }
+
+        .contactMeta span::before {
+          content: "•";
+          margin-right: 8px;
+          color: var(--green-2);
+        }
+
+        .contactMeta span:first-child::before {
+          content: "•";
         }
 
         .footer {
+          padding: 28px 0 18px;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
-          padding: 28px 0 38px;
-          background: rgba(0, 0, 0, 0.12);
         }
 
         .footerWrap {
+          display: grid;
+          grid-template-columns: 1.2fr 0.8fr 0.8fr;
+          gap: 28px;
+          align-items: start;
+        }
+
+        .footerLogoRow {
           display: flex;
-          justify-content: space-between;
-          gap: 24px;
-          flex-wrap: wrap;
-          align-items: flex-start;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 14px;
         }
 
-        .footerMain {
-          max-width: 560px;
+        .footerLogoRow h3 {
+          margin: 0 0 4px;
+          color: var(--text-light);
         }
 
-        .footerMain h3 {
-          margin-bottom: 10px;
+        .footerLogoRow p,
+        .footerStatement,
+        .footerContact p {
+          color: var(--muted-light);
         }
 
-        .footerLine {
-          margin-top: 10px;
+        .footerStatement {
+          max-width: 420px;
+          line-height: 1.65;
         }
 
-        .footerInfo p {
-          margin: 0 0 8px;
+        .footerLinks,
+        .footerContact {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .footerLinks strong,
+        .footerContact strong {
+          margin-bottom: 6px;
+          color: var(--text-light);
+        }
+
+        .footerLinks a {
+          color: var(--muted-light);
+        }
+
+        .footerBottom {
+          margin-top: 22px;
+          padding-top: 16px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footerBottom p {
+          margin: 0;
+          color: var(--muted-light);
+          font-size: 0.92rem;
+          text-align: center;
         }
 
         .whatsappFloat {
@@ -1329,7 +1558,7 @@ export default function HomePage() {
         }
 
         .ageBox p {
-          color: var(--muted);
+          color: var(--muted-light);
           margin: 0 0 24px;
         }
 
@@ -1342,71 +1571,72 @@ export default function HomePage() {
 
         .leaf {
           position: absolute;
-          opacity: 0.05;
+          opacity: 0.06;
           font-size: 54px;
           user-select: none;
           pointer-events: none;
         }
 
         .leaf1 {
-          top: 180px;
+          top: 140px;
           left: 2%;
           transform: rotate(-14deg);
         }
 
         .leaf2 {
-          top: 980px;
+          top: 1650px;
           right: 4%;
           transform: rotate(18deg);
         }
 
         .leaf3 {
-          top: 2050px;
-          left: 4%;
+          top: 2680px;
+          left: 3%;
           transform: rotate(10deg);
         }
 
-        @media (max-width: 1080px) {
+        @media (max-width: 1180px) {
           .heroGrid,
-          .twoCols,
-          .contactGrid {
+          .splitIntro,
+          .areasGridWrap,
+          .cultivoGrid,
+          .faqContactWrap,
+          .footerWrap {
             grid-template-columns: 1fr;
           }
 
-          .gridCards,
+          .introCards,
+          .areasGrid,
           .trustGrid,
-          .galleryGrid {
+          .galleryGrid,
+          .stepsRow {
             grid-template-columns: 1fr 1fr;
           }
 
-          .galleryCard.large {
-            grid-column: span 2;
+          .trustGrid {
+            gap: 12px;
+            border-top: 0;
+            border-bottom: 0;
+          }
+
+          .trustMini {
+            border: 1px solid var(--line-light);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.45);
           }
 
           .heroImage {
             min-height: 420px;
           }
-
-          .heroMiniCard {
-            left: 16px;
-            right: 16px;
-            bottom: 16px;
-          }
         }
 
-        @media (max-width: 860px) {
+        @media (max-width: 900px) {
           section[id] {
             scroll-margin-top: 84px;
           }
 
-          .header {
-            position: sticky;
-            top: 0;
-          }
-
-          .nav {
-            min-height: 74px;
-            padding: 12px 0;
+          .desktopWhatsApp {
+            display: none;
           }
 
           .menuToggle {
@@ -1417,8 +1647,8 @@ export default function HomePage() {
             display: block;
             position: fixed;
             inset: 0;
-            z-index: 49;
-            background: rgba(0, 0, 0, 0.24);
+            z-index: 59;
+            background: rgba(0, 0, 0, 0.28);
             border: 0;
           }
 
@@ -1431,11 +1661,11 @@ export default function HomePage() {
             flex-direction: column;
             gap: 0;
             padding: 10px;
-            background: rgba(8, 13, 10, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(7, 17, 10, 0.96);
+            border: 1px solid var(--line-dark);
             border-radius: 20px;
             box-shadow: var(--shadow);
-            z-index: 51;
+            z-index: 61;
           }
 
           .navLinks.open {
@@ -1450,49 +1680,49 @@ export default function HomePage() {
           .navLinks a:hover {
             background: rgba(255, 255, 255, 0.05);
           }
+        }
 
+        @media (max-width: 760px) {
           .hero {
-            padding: 44px 0 20px;
+            padding: 30px 0 22px;
           }
 
-          .section {
-            padding: 66px 0;
-          }
-
-          .gridCards,
+          .heroGrid,
+          .introCards,
+          .areasGrid,
+          .galleryGrid,
           .trustGrid,
-          .galleryGrid {
+          .stepsRow,
+          .contactButtons {
             grid-template-columns: 1fr;
           }
 
-          .galleryCard.large {
+          .contactButtons .locationBtn {
             grid-column: auto;
-            min-height: 280px;
           }
 
           .heroImage {
-            min-height: 320px;
-          }
-
-          .card,
-          .highlight {
-            padding: 22px;
-          }
-
-          .buttons {
-            flex-direction: column;
-          }
-
-          .btn {
-            width: 100%;
+            min-height: 300px;
           }
 
           .heroMiniCard {
-            position: absolute;
             left: 14px;
             right: 14px;
             bottom: 14px;
-            padding: 14px 16px;
+            max-width: none;
+          }
+
+          .section {
+            padding: 64px 0;
+          }
+
+          .smallPhoto {
+            min-height: 160px;
+          }
+
+          .galleryCard.large,
+          .galleryCard {
+            min-height: 240px;
           }
 
           .whatsappFloat {
@@ -1500,6 +1730,18 @@ export default function HomePage() {
             height: 58px;
             right: 14px;
             bottom: 14px;
+          }
+
+          .btn {
+            width: 100%;
+          }
+
+          .buttons {
+            flex-direction: column;
+          }
+
+          .trustMini {
+            padding: 18px 16px;
           }
         }
       `}</style>
