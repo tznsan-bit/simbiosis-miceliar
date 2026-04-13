@@ -244,7 +244,7 @@ export default function HomePage() {
                 fill
                 priority
                 sizes="(max-width: 1080px) 100vw, 48vw"
-                className="coverImage"
+                className="coverImage heroImg"
               />
               <div className="heroOverlay" />
               <div className="heroMiniCard">
@@ -323,7 +323,7 @@ export default function HomePage() {
                     alt="Territorio patagónico"
                     fill
                     sizes="(max-width: 1080px) 100vw, 22vw"
-                    className="coverImage"
+                    className="coverImage smallImgGreenhouse"
                   />
                 </div>
                 <strong>Territorio patagónico</strong>
@@ -337,7 +337,7 @@ export default function HomePage() {
                     alt="Compromiso comunitario"
                     fill
                     sizes="(max-width: 1080px) 100vw, 22vw"
-                    className="coverImage"
+                    className="coverImage smallImgBudOne"
                   />
                 </div>
                 <strong>Compromiso comunitario</strong>
@@ -460,7 +460,7 @@ export default function HomePage() {
                 alt="Cultivo responsable y agroecológico"
                 fill
                 sizes="(max-width: 1080px) 100vw, 50vw"
-                className="coverImage"
+                className="coverImage cultivoImg"
               />
             </div>
 
@@ -499,7 +499,7 @@ export default function HomePage() {
                   alt="Territorio y comunidad"
                   fill
                   sizes="(max-width: 1080px) 100vw, 40vw"
-                  className="coverImage"
+                  className="coverImage galleryHeroImg"
                 />
               </div>
               <div className="galleryCard">
@@ -508,7 +508,7 @@ export default function HomePage() {
                   alt="Cultivo responsable"
                   fill
                   sizes="(max-width: 1080px) 50vw, 20vw"
-                  className="coverImage"
+                  className="coverImage galleryBudTwo"
                 />
               </div>
               <div className="galleryCard">
@@ -517,7 +517,7 @@ export default function HomePage() {
                   alt="Cultivo y comunidad"
                   fill
                   sizes="(max-width: 1080px) 50vw, 20vw"
-                  className="coverImage"
+                  className="coverImage galleryBudOne"
                 />
               </div>
             </div>
@@ -726,6 +726,34 @@ export default function HomePage() {
           object-fit: cover;
         }
 
+        .heroImg {
+          object-position: center 68%;
+        }
+
+        .smallImgGreenhouse {
+          object-position: center 62%;
+        }
+
+        .smallImgBudOne {
+          object-position: center 36%;
+        }
+
+        .cultivoImg {
+          object-position: center 32%;
+        }
+
+        .galleryHeroImg {
+          object-position: center 64%;
+        }
+
+        .galleryBudTwo {
+          object-position: center 30%;
+        }
+
+        .galleryBudOne {
+          object-position: center 36%;
+        }
+
         .darkSection {
           background:
             radial-gradient(circle at top left, rgba(111, 143, 91, 0.12), transparent 28%),
@@ -830,6 +858,10 @@ export default function HomePage() {
 
         .menuToggle.active span:nth-child(3) {
           transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .menuBackdrop {
+          display: none;
         }
 
         .navLinks {
@@ -961,7 +993,7 @@ export default function HomePage() {
 
         .heroImage {
           position: relative;
-          min-height: 510px;
+          min-height: 540px;
           border-radius: 28px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1153,7 +1185,7 @@ export default function HomePage() {
         .smallPhoto {
           position: relative;
           width: 100%;
-          min-height: 180px;
+          min-height: 210px;
           border-radius: 14px;
           overflow: hidden;
           margin-bottom: 12px;
@@ -1315,7 +1347,7 @@ export default function HomePage() {
 
         .cultivoImage {
           position: relative;
-          min-height: 340px;
+          min-height: 420px;
           border-radius: 22px;
           overflow: hidden;
           box-shadow: var(--shadow);
@@ -1369,13 +1401,13 @@ export default function HomePage() {
           position: relative;
           border-radius: 22px;
           overflow: hidden;
-          min-height: 260px;
+          min-height: 340px;
           box-shadow: var(--shadow-soft);
           background: #fff;
         }
 
         .galleryCard.large {
-          min-height: 330px;
+          min-height: 420px;
         }
 
         .faqContactWrap {
@@ -1696,7 +1728,7 @@ export default function HomePage() {
           }
 
           .heroImage {
-            min-height: 420px;
+            min-height: 440px;
           }
         }
 
@@ -1772,7 +1804,35 @@ export default function HomePage() {
           }
 
           .heroImage {
-            min-height: 300px;
+            min-height: 380px;
+          }
+
+          .heroImg {
+            object-position: center 72%;
+          }
+
+          .smallImgGreenhouse {
+            object-position: center 68%;
+          }
+
+          .smallImgBudOne {
+            object-position: center 30%;
+          }
+
+          .cultivoImg {
+            object-position: center 26%;
+          }
+
+          .galleryHeroImg {
+            object-position: center 70%;
+          }
+
+          .galleryBudTwo {
+            object-position: center 24%;
+          }
+
+          .galleryBudOne {
+            object-position: center 30%;
           }
 
           .heroMiniCard {
@@ -1787,12 +1847,16 @@ export default function HomePage() {
           }
 
           .smallPhoto {
-            min-height: 160px;
+            min-height: 240px;
+          }
+
+          .cultivoImage {
+            min-height: 440px;
           }
 
           .galleryCard.large,
           .galleryCard {
-            min-height: 240px;
+            min-height: 320px;
           }
 
           .heroBody,
