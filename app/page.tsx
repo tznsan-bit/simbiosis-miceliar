@@ -1,74 +1,139 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 
 export default function HomePage() {
-  const [ageVerified, setAgeVerified] = useState(true);
+  const [ageVerified, setAgeVerified] = useState<boolean | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navItems = useMemo(
+    () => [
+      { href: "#quienes-somos", label: "Quiénes somos" },
+      { href: "#como-trabajamos", label: "Cómo trabajamos" },
+      { href: "#areas", label: "Áreas" },
+      { href: "#reprocann", label: "REPROCANN" },
+      { href: "#faq", label: "Preguntas frecuentes" },
+      { href: "#contacto", label: "Contacto" },
+    ],
+    []
+  );
+
+  const faqs = useMemo(
+    () => [
+      {
+        q: "¿Qué es REPROCANN?",
+        a: "REPROCANN es el registro nacional vinculado al acceso dentro del marco vigente. Muchas personas llegan con dudas sobre cómo iniciar, qué documentación se necesita o cómo seguir. Por eso brindamos orientación y acompañamiento en cada etapa.",
+      },
+      {
+        q: "¿Cómo arranco?",
+        a: "Podés escribirnos por WhatsApp y contarnos tu situación. A partir de ese primer contacto, te orientamos sobre los pasos a seguir según tu caso.",
+      },
+      {
+        q: "¿Tienen vinculación con profesionales médicos?",
+        a: "Sí. Contamos con médicos encargados de la vinculación a REPROCANN, acompañando ese proceso con seriedad, criterio y cercanía.",
+      },
+      {
+        q: "¿Ofrecen acompañamiento durante el proceso?",
+        a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana.",
+      },
+      {
+        q: "¿La consulta es confidencial?",
+        a: "Sí. Priorizamos el respeto, la privacidad y el cuidado de cada proceso personal.",
+      },
+      {
+        q: "¿También trabajan formación y cultivo responsable?",
+        a: "Sí. Promovemos una mirada integral que incluye formación, cultivo responsable, comunidad y construcción de saberes.",
+      },
+    ],
+    []
+  );
+
   useEffect(() => {
-    const saved = sessionStorage.getItem("ageVerified");
-    setAgeVerified(saved === "true");
+    try {
+      const saved = sessionStorage.getItem("ageVerified");
+      setAgeVerified(saved === "true");
+    } catch {
+      setAgeVerified(false);
+    }
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 760) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    const shouldLockScroll = menuOpen || ageVerified === false;
+    const previousOverflow = document.body.style.overflow;
+
+    if (shouldLockScroll) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen, ageVerified]);
+
   const handleAgeYes = () => {
-    sessionStorage.setItem("ageVerified", "true");
+    try {
+      sessionStorage.setItem("ageVerified", "true");
+    } catch {}
     setAgeVerified(true);
   };
 
   const handleAgeNo = () => {
-    window.location.href = "https://www.google.com";
+    window.location.replace("https://www.google.com");
   };
 
   const closeMenu = () => setMenuOpen(false);
 
-  const faqs = [
-    {
-      q: "¿Qué es REPROCANN?",
-      a: "REPROCANN es el registro nacional vinculado al acceso dentro del marco vigente. Muchas personas llegan con dudas sobre cómo iniciar, qué documentación se necesita o cómo seguir. Por eso brindamos orientación y acompañamiento en cada etapa.",
-    },
-    {
-      q: "¿Cómo arranco?",
-      a: "Podés escribirnos por WhatsApp y contarnos tu situación. A partir de ese primer contacto, te orientamos sobre los pasos a seguir según tu caso.",
-    },
-    {
-      q: "¿Tienen vinculación con profesionales médicos?",
-      a: "Sí. Contamos con médicos encargados de la vinculación a REPROCANN, acompañando ese proceso con seriedad, criterio y cercanía.",
-    },
-    {
-      q: "¿Ofrecen acompañamiento durante el proceso?",
-      a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana.",
-    },
-    {
-      q: "¿La consulta es confidencial?",
-      a: "Sí. Priorizamos el respeto, la privacidad y el cuidado de cada proceso personal.",
-    },
-    {
-      q: "¿También trabajan formación y cultivo responsable?",
-      a: 'Sí. Promovemos una mirada integral que incluye formación, cultivo responsable, comunidad y construcción de saberes.',
-    },
-  ];
+  if (ageVerified === null) {
+    return <div className="bootScreen" aria-hidden="true" />;
+  }
 
   return (
     <>
       {!ageVerified && (
-        <div className="ageGate">
+        <div className="ageGate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
           <div className="ageBox">
             <div className="pill">Acceso al sitio</div>
-            <h3>¿Sos mayor de edad?</h3>
+            <h3 id="age-gate-title">¿Sos mayor de edad?</h3>
             <p>Este sitio está dirigido a personas mayores de 18 años.</p>
             <div className="ageActions">
-              <button className="btn btnPrimary" onClick={handleAgeYes}>
+              <button className="btn btnPrimary" onClick={handleAgeYes} type="button">
                 Sí, soy mayor
               </button>
-              <button className="btn btnSecondary" onClick={handleAgeNo}>
+              <button className="btn btnSecondary" onClick={handleAgeNo} type="button">
                 No
               </button>
             </div>
           </div>
         </div>
       )}
+
+      {menuOpen && <button className="menuBackdrop" onClick={closeMenu} aria-label="Cerrar menú" />}
 
       <div className="leaf leaf1">🍃</div>
       <div className="leaf leaf2">🍃</div>
@@ -78,11 +143,16 @@ export default function HomePage() {
       <header className="header">
         <div className="container nav">
           <a href="#inicio" className="brand" onClick={closeMenu}>
-            <img
-              src="/logo.png"
-              alt="Logo de Simbiosis Miceliar"
-              className="brandLogo"
-            />
+            <div className="brandLogoWrap">
+              <Image
+                src="/logo.png"
+                alt="Logo de Simbiosis Miceliar"
+                className="brandLogo"
+                width={52}
+                height={52}
+                priority
+              />
+            </div>
             <div>
               <div className="brandTitle">Simbiosis Miceliar</div>
               <div className="brandSub">Proyecto patagónico</div>
@@ -90,10 +160,11 @@ export default function HomePage() {
           </a>
 
           <button
-            className="menuToggle"
-            aria-label="Abrir menú"
+            className={`menuToggle ${menuOpen ? "active" : ""}`}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
+            aria-controls="main-navigation"
+            onClick={() => setMenuOpen((prev) => !prev)}
             type="button"
           >
             <span />
@@ -101,13 +172,12 @@ export default function HomePage() {
             <span />
           </button>
 
-          <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
-            <a href="#quienes-somos" onClick={closeMenu}>Quiénes somos</a>
-            <a href="#como-trabajamos" onClick={closeMenu}>Cómo trabajamos</a>
-            <a href="#areas" onClick={closeMenu}>Áreas</a>
-            <a href="#reprocann" onClick={closeMenu}>REPROCANN</a>
-            <a href="#faq" onClick={closeMenu}>Preguntas frecuentes</a>
-            <a href="#contacto" onClick={closeMenu}>Contacto</a>
+          <nav id="main-navigation" className={`navLinks ${menuOpen ? "open" : ""}`}>
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} onClick={closeMenu}>
+                {item.label}
+              </a>
+            ))}
           </nav>
         </div>
       </header>
@@ -122,7 +192,8 @@ export default function HomePage() {
                 Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
               </p>
               <p className="heroBody">
-                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para REPROCANN, formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
+                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para REPROCANN,
+                formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
               </p>
 
               <div className="buttons">
@@ -147,7 +218,14 @@ export default function HomePage() {
             </div>
 
             <div className="heroImage">
-              <img src="/IMG_3967.jpeg" alt="Simbiosis Miceliar" />
+              <Image
+                src="/IMG_3967.jpeg"
+                alt="Simbiosis Miceliar"
+                fill
+                priority
+                sizes="(max-width: 1080px) 100vw, 45vw"
+                className="coverImage"
+              />
               <div className="heroOverlay" />
             </div>
           </div>
@@ -179,18 +257,21 @@ export default function HomePage() {
             <div className="pill">Quiénes somos</div>
             <h2>Una comunidad construida desde el territorio</h2>
             <p className="sectionLead">
-              Simbiosis Miceliar es un proyecto patagónico que nace del vínculo cercano con las personas, la comunidad y el cuidado de los procesos.
+              Simbiosis Miceliar es un proyecto patagónico que nace del vínculo cercano con las personas,
+              la comunidad y el cuidado de los procesos.
             </p>
 
             <div className="twoCols">
               <div className="card">
                 <p>
-                  Creemos que el acceso a la información, la orientación responsable y el acompañamiento humano hacen una diferencia real en los recorridos vinculados al cannabis medicinal.
+                  Creemos que el acceso a la información, la orientación responsable y el acompañamiento
+                  humano hacen una diferencia real en los recorridos vinculados al cannabis medicinal.
                 </p>
               </div>
               <div className="card">
                 <p>
-                  Nuestro enfoque combina cercanía, seriedad, identidad territorial y compromiso comunitario. Buscamos que cada persona encuentre un espacio claro, respetuoso y confiable.
+                  Nuestro enfoque combina cercanía, seriedad, identidad territorial y compromiso comunitario.
+                  Buscamos que cada persona encuentre un espacio claro, respetuoso y confiable.
                 </p>
               </div>
             </div>
@@ -221,7 +302,8 @@ export default function HomePage() {
                 <div>
                   <h3>Te orientamos</h3>
                   <p>
-                    Brindamos una primera orientación clara, cercana y responsable para ayudarte a entender el camino posible según tu caso.
+                    Brindamos una primera orientación clara, cercana y responsable para ayudarte a entender
+                    el camino posible según tu caso.
                   </p>
                 </div>
               </div>
@@ -260,9 +342,7 @@ export default function HomePage() {
             <div className="gridCards">
               <div className="card">
                 <h3>Orientación inicial</h3>
-                <p>
-                  Escuchamos cada situación de forma personalizada para orientar con claridad, respeto y criterio.
-                </p>
+                <p>Escuchamos cada situación de forma personalizada para orientar con claridad, respeto y criterio.</p>
               </div>
               <div className="card">
                 <h3>Vinculación médica</h3>
@@ -272,9 +352,7 @@ export default function HomePage() {
               </div>
               <div className="card">
                 <h3>Acompañamiento</h3>
-                <p>
-                  No trabajamos desde una lógica fría o automática. Buscamos presencia real, seguimiento y cercanía.
-                </p>
+                <p>No trabajamos desde una lógica fría o automática. Buscamos presencia real, seguimiento y cercanía.</p>
               </div>
               <div className="card">
                 <h3>Formación</h3>
@@ -307,7 +385,9 @@ export default function HomePage() {
                 Sabemos que muchas personas llegan con dudas, desinformación o incertidumbre sobre REPROCANN.
               </p>
               <p>
-                Por eso ofrecemos un acompañamiento claro y cercano, ayudando a ordenar el proceso y brindando orientación en cada etapa. Contamos con médicos encargados de la vinculación a REPROCANN y acompañamos a las personas para que puedan transitar ese camino con más claridad, resguardo y tranquilidad.
+                Por eso ofrecemos un acompañamiento claro y cercano, ayudando a ordenar el proceso y brindando orientación
+                en cada etapa. Contamos con médicos encargados de la vinculación a REPROCANN y acompañamos a las personas
+                para que puedan transitar ese camino con más claridad, resguardo y tranquilidad.
               </p>
               <p className="strongLine">
                 Acompañamos con cercanía, seriedad y criterio, priorizando siempre el cuidado de cada proceso.
@@ -323,14 +403,21 @@ export default function HomePage() {
 
             <div className="twoCols">
               <div className="card imageCard">
-                <img src="/IMG_3924.jpeg" alt="Cultivo responsable" />
+                <Image
+                  src="/IMG_3924.jpeg"
+                  alt="Cultivo responsable"
+                  fill
+                  sizes="(max-width: 1080px) 100vw, 50vw"
+                  className="coverImage"
+                />
               </div>
               <div className="card textCard">
                 <p>
                   Entendemos el cultivo como parte de una mirada integral, basada en el aprendizaje, la responsabilidad y el vínculo con el territorio.
                 </p>
                 <p>
-                  Promovemos una perspectiva consciente sobre los procesos de cultivo, el cuidado, la formación y la construcción de saberes, desde una lógica seria, comunitaria y respetuosa.
+                  Promovemos una perspectiva consciente sobre los procesos de cultivo, el cuidado, la formación y la construcción de saberes,
+                  desde una lógica seria, comunitaria y respetuosa.
                 </p>
                 <p>
                   Para nosotros, cultivar también es aprender, compartir conocimiento y fortalecer una red construida desde la experiencia y la cercanía.
@@ -346,13 +433,31 @@ export default function HomePage() {
             <h2>Una identidad construida desde el cuidado y la cercanía</h2>
             <div className="galleryGrid">
               <div className="galleryCard large">
-                <img src="/IMG_3819.jpeg" alt="Territorio y comunidad" />
+                <Image
+                  src="/IMG_3819.jpeg"
+                  alt="Territorio y comunidad"
+                  fill
+                  sizes="(max-width: 1080px) 100vw, 40vw"
+                  className="coverImage"
+                />
               </div>
               <div className="galleryCard">
-                <img src="/IMG_3967.jpeg" alt="Simbiosis Miceliar Patagonia" />
+                <Image
+                  src="/IMG_3967.jpeg"
+                  alt="Simbiosis Miceliar Patagonia"
+                  fill
+                  sizes="(max-width: 1080px) 50vw, 20vw"
+                  className="coverImage"
+                />
               </div>
               <div className="galleryCard">
-                <img src="/IMG_3924.jpeg" alt="Cultivo y formación" />
+                <Image
+                  src="/IMG_3924.jpeg"
+                  alt="Cultivo y formación"
+                  fill
+                  sizes="(max-width: 1080px) 50vw, 20vw"
+                  className="coverImage"
+                />
               </div>
             </div>
           </div>
@@ -364,23 +469,37 @@ export default function HomePage() {
             <h2>Dudas comunes, respuestas claras</h2>
 
             <div className="faqList">
-              {faqs.map((item, index) => (
-                <div key={index} className={`faqItem ${openFaq === index ? "active" : ""}`}>
-                  <button
-                    className="faqQuestion"
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    type="button"
-                  >
-                    <span>{item.q}</span>
-                    <span>{openFaq === index ? "−" : "+"}</span>
-                  </button>
-                  {openFaq === index && (
-                    <div className="faqAnswer">
+              {faqs.map((item, index) => {
+                const isOpen = openFaq === index;
+                const answerId = `faq-answer-${index}`;
+                const questionId = `faq-question-${index}`;
+
+                return (
+                  <div key={item.q} className={`faqItem ${isOpen ? "active" : ""}`}>
+                    <button
+                      id={questionId}
+                      className="faqQuestion"
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      type="button"
+                      aria-expanded={isOpen}
+                      aria-controls={answerId}
+                    >
+                      <span>{item.q}</span>
+                      <span>{isOpen ? "−" : "+"}</span>
+                    </button>
+
+                    <div
+                      id={answerId}
+                      className="faqAnswer"
+                      role="region"
+                      aria-labelledby={questionId}
+                      hidden={!isOpen}
+                    >
                       <p>{item.a}</p>
                     </div>
-                  )}
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -457,9 +576,7 @@ export default function HomePage() {
 
               <div className="miniPolicy">
                 <strong>Privacidad</strong>
-                <span>
-                  La información compartida en el primer contacto se trata con cuidado y reserva.
-                </span>
+                <span>La información compartida en el primer contacto se trata con cuidado y reserva.</span>
               </div>
 
               <div className="buttons">
@@ -542,19 +659,30 @@ export default function HomePage() {
           overflow-x: hidden;
         }
 
+        section[id] {
+          scroll-margin-top: 96px;
+        }
+
         a {
           color: inherit;
           text-decoration: none;
         }
 
-        img {
-          display: block;
-          max-width: 100%;
+        .bootScreen {
+          min-height: 100vh;
+          background:
+            radial-gradient(circle at top left, rgba(156, 199, 126, 0.08), transparent 30%),
+            radial-gradient(circle at top right, rgba(216, 185, 106, 0.08), transparent 25%),
+            linear-gradient(180deg, #09100b 0%, #0f1711 100%);
         }
 
         .container {
           width: min(100% - 32px, var(--max));
           margin: 0 auto;
+        }
+
+        .coverImage {
+          object-fit: cover;
         }
 
         .header {
@@ -582,14 +710,21 @@ export default function HomePage() {
           min-width: 0;
         }
 
+        .brandLogoWrap {
+          width: 52px;
+          height: 52px;
+          border-radius: 14px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.06);
+          flex-shrink: 0;
+          position: relative;
+        }
+
         .brandLogo {
           width: 52px;
           height: 52px;
           object-fit: cover;
-          border-radius: 14px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.06);
-          flex-shrink: 0;
         }
 
         .brandTitle {
@@ -614,6 +749,7 @@ export default function HomePage() {
           flex-direction: column;
           gap: 5px;
           cursor: pointer;
+          z-index: 52;
         }
 
         .menuToggle span {
@@ -622,6 +758,23 @@ export default function HomePage() {
           border-radius: 999px;
           background: var(--text);
           display: block;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menuToggle.active span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        .menuToggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .menuToggle.active span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .menuBackdrop {
+          display: none;
         }
 
         .navLinks {
@@ -658,6 +811,7 @@ export default function HomePage() {
           margin: 0 0 18px;
           letter-spacing: -1px;
           max-width: 720px;
+          text-wrap: balance;
         }
 
         .pill {
@@ -761,16 +915,11 @@ export default function HomePage() {
           box-shadow: var(--shadow);
         }
 
-        .heroImage img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
         .heroOverlay {
           position: absolute;
           inset: 0;
           background: linear-gradient(180deg, rgba(6, 10, 7, 0.05), rgba(6, 10, 7, 0.5));
+          pointer-events: none;
         }
 
         .trustStrip {
@@ -802,6 +951,7 @@ export default function HomePage() {
           font-size: clamp(2rem, 4vw, 3.1rem);
           line-height: 1.08;
           margin: 0 0 16px;
+          text-wrap: balance;
         }
 
         h3 {
@@ -874,16 +1024,15 @@ export default function HomePage() {
           color: var(--text) !important;
         }
 
-        .imageCard {
+        .imageCard,
+        .galleryCard {
+          position: relative;
           overflow: hidden;
-          padding: 0;
-          min-height: 380px;
         }
 
-        .imageCard img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .imageCard {
+          padding: 0;
+          min-height: 380px;
         }
 
         .textCard p + p {
@@ -903,7 +1052,6 @@ export default function HomePage() {
 
         .galleryCard {
           border-radius: 24px;
-          overflow: hidden;
           min-height: 280px;
           border: 1px solid var(--line);
           box-shadow: var(--shadow);
@@ -912,12 +1060,6 @@ export default function HomePage() {
 
         .galleryCard.large {
           min-height: 420px;
-        }
-
-        .galleryCard img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
         }
 
         .faqList {
@@ -1132,6 +1274,10 @@ export default function HomePage() {
         }
 
         @media (max-width: 760px) {
+          section[id] {
+            scroll-margin-top: 84px;
+          }
+
           .header {
             position: sticky;
             top: 0;
@@ -1144,6 +1290,15 @@ export default function HomePage() {
 
           .menuToggle {
             display: inline-flex;
+          }
+
+          .menuBackdrop {
+            display: block;
+            position: fixed;
+            inset: 0;
+            z-index: 49;
+            background: rgba(0, 0, 0, 0.24);
+            border: 0;
           }
 
           .navLinks {
@@ -1159,6 +1314,7 @@ export default function HomePage() {
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 20px;
             box-shadow: var(--shadow);
+            z-index: 51;
           }
 
           .navLinks.open {
