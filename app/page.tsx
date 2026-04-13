@@ -13,7 +13,7 @@ export default function HomePage() {
       { href: "#quienes-somos", label: "Quiénes somos" },
       { href: "#como-trabajamos", label: "Cómo trabajamos" },
       { href: "#areas", label: "Áreas" },
-      { href: "#reprocann", label: "REPROCANN" },
+      { href: "#agroecologico", label: "Enfoque agroecológico" },
       { href: "#faq", label: "Preguntas frecuentes" },
       { href: "#contacto", label: "Contacto" },
     ],
@@ -32,19 +32,19 @@ export default function HomePage() {
       },
       {
         q: "¿Tienen vinculación con profesionales médicos?",
-        a: "Sí. Contamos con médicos encargados de la vinculación a REPROCANN, acompañando ese proceso con seriedad, criterio y cercanía.",
+        a: "Sí. Contamos con profesionales médicos para la vinculación a REPROCANN, acompañando ese proceso con seriedad, criterio y cercanía.",
       },
       {
-        q: "¿Ofrecen acompañamiento durante el proceso?",
-        a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana.",
+        q: "¿Qué significa su enfoque agroecológico?",
+        a: "Promovemos una mirada de cuidado integral: respeto por el territorio, buenas prácticas, formación consciente, procesos responsables y una relación atenta con el entorno, el cultivo y la comunidad.",
       },
       {
         q: "¿La consulta es confidencial?",
         a: "Sí. Priorizamos el respeto, la privacidad y el cuidado de cada proceso personal.",
       },
       {
-        q: "¿También trabajan formación y cultivo responsable?",
-        a: "Sí. Promovemos una mirada integral que incluye formación, cultivo responsable, comunidad y construcción de saberes.",
+        q: "¿Ofrecen acompañamiento durante el proceso?",
+        a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana.",
       },
     ],
     []
@@ -201,7 +201,7 @@ export default function HomePage() {
               <div className="pill darkPill">Cannabis medicinal · Comunidad · Patagonia</div>
 
               <h1>
-                Comunidad, orientación y
+                Orientación clara y
                 <span> acompañamiento responsable</span>
               </h1>
 
@@ -211,7 +211,8 @@ export default function HomePage() {
 
               <p className="heroBody">
                 En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para
-                REPROCANN, formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
+                REPROCANN, formación y seguimiento desde una mirada cercana, comunitaria y con enfoque
+                agroecológico.
               </p>
 
               <div className="buttons">
@@ -232,7 +233,7 @@ export default function HomePage() {
               <div className="badges">
                 <span>Proyecto patagónico</span>
                 <span>Vinculación médica para REPROCANN</span>
-                <span>Confidencialidad y cuidado</span>
+                <span>Enfoque agroecológico</span>
               </div>
             </div>
 
@@ -247,8 +248,8 @@ export default function HomePage() {
               />
               <div className="heroOverlay" />
               <div className="heroMiniCard">
-                <strong>Proyecto patagónico</strong>
-                <span>Comunidad, acompañamiento y cultivo responsable.</span>
+                <strong>Cuidado, territorio y comunidad</strong>
+                <span>Una mirada responsable sobre el acompañamiento y el cultivo.</span>
               </div>
             </div>
           </div>
@@ -275,8 +276,8 @@ export default function HomePage() {
             <div className="trustMini">
               <div className="trustIcon">❋</div>
               <div>
-                <strong>Cultivo responsable</strong>
-                <span>Formación, cuidado y construcción de saberes.</span>
+                <strong>Enfoque agroecológico</strong>
+                <span>Buenas prácticas, cuidado del entorno y mirada territorial.</span>
               </div>
             </div>
 
@@ -394,13 +395,13 @@ export default function HomePage() {
                 <div className="areaCard">
                   <div className="areaIcon">✚</div>
                   <h3>Vinculación médica</h3>
-                  <p>Médicos encargados del proceso de REPROCANN.</p>
+                  <p>Profesionales encargados del proceso de REPROCANN.</p>
                 </div>
 
                 <div className="areaCard">
-                  <div className="areaIcon">♡</div>
-                  <h3>Acompañamiento</h3>
-                  <p>Presencia real, seguimiento y cercanía.</p>
+                  <div className="areaIcon">❋</div>
+                  <h3>Cultivo agroecológico</h3>
+                  <p>Mirada responsable, respetuosa del entorno y del territorio.</p>
                 </div>
 
                 <div className="areaCard">
@@ -410,21 +411,21 @@ export default function HomePage() {
                 </div>
 
                 <div className="areaCard">
-                  <div className="areaIcon">❋</div>
-                  <h3>Cultivo responsable</h3>
-                  <p>Cuidado, responsabilidad y vínculo con el territorio.</p>
-                </div>
-
-                <div className="areaCard">
                   <div className="areaIcon">◎</div>
                   <h3>Comunidad</h3>
                   <p>Escucha, confianza y acompañamiento humano.</p>
                 </div>
+
+                <div className="areaCard">
+                  <div className="areaIcon">♡</div>
+                  <h3>Confidencialidad</h3>
+                  <p>Respeto por cada proceso, cada consulta y cada recorrido.</p>
+                </div>
               </div>
             </div>
 
-            <div className="areasRight" id="reprocann">
-              <div className="reprocannCard">
+            <div className="areasRight">
+              <div className="reprocannCard" id="reprocann">
                 <div className="pill darkPill">REPROCANN</div>
                 <h3>Acompañamiento claro para un proceso sensible</h3>
                 <p>
@@ -442,12 +443,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section darkSection" id="cultivo">
+        <section className="section darkSection" id="agroecologico">
           <div className="container cultivoGrid">
             <div className="cultivoImage">
               <Image
                 src="/cultivo-2.jpg"
-                alt="Cultivo responsable"
+                alt="Cultivo responsable y agroecológico"
                 fill
                 sizes="(max-width: 1080px) 100vw, 50vw"
                 className="coverImage"
@@ -455,15 +456,22 @@ export default function HomePage() {
             </div>
 
             <div className="cultivoTextCard">
-              <div className="pill darkPill">Cultivo y formación</div>
-              <h2>Aprendizaje, cuidado y territorio</h2>
+              <div className="pill darkPill">Enfoque agroecológico</div>
+              <h2>Cultivo responsable, cuidado del entorno y formación consciente</h2>
               <p>
                 Entendemos el cultivo como parte de una mirada integral: aprendizaje, responsabilidad
                 y vínculo con la tierra.
               </p>
               <p>
-                Para nosotros, cultivar también es compartir conocimiento y fortalecer comunidad.
+                Promovemos buenas prácticas, respeto por el entorno, procesos cuidados y una relación
+                responsable con el territorio y la comunidad.
               </p>
+              <div className="agroList">
+                <span>Cuidado del entorno</span>
+                <span>Buenas prácticas</span>
+                <span>Mirada territorial</span>
+                <span>Aprendizaje compartido</span>
+              </div>
             </div>
           </div>
         </section>
@@ -613,7 +621,7 @@ export default function HomePage() {
             </div>
 
             <p className="footerStatement">
-              Identidad territorial, acompañamiento humano y compromiso comunitario.
+              Identidad territorial, acompañamiento humano, enfoque agroecológico y compromiso comunitario.
             </p>
           </div>
 
@@ -622,7 +630,7 @@ export default function HomePage() {
             <a href="#inicio">Inicio</a>
             <a href="#quienes-somos">Quiénes somos</a>
             <a href="#areas">Áreas</a>
-            <a href="#faq">Preguntas frecuentes</a>
+            <a href="#agroecologico">Enfoque agroecológico</a>
             <a href="#contacto">Contacto</a>
           </div>
 
@@ -652,26 +660,21 @@ export default function HomePage() {
 
       <style jsx global>{`
         :root {
-          --dark: #07110a;
-          --dark-2: #0d1811;
-          --dark-3: #102117;
-          --green: #6da35a;
-          --green-2: #87bd72;
-          --green-soft: rgba(123, 174, 102, 0.15);
-          --gold: #ccb06d;
-          --light: #f2eee5;
-          --light-2: #f8f5ee;
+          --dark: #0b1711;
+          --dark-2: #13241b;
+          --green: #6f8f5b;
+          --green-2: #89aa75;
+          --light: #f4efe7;
+          --stone: #e8dfd0;
           --white: #ffffff;
-          --text-dark: #182018;
-          --text-light: #f4f2ec;
-          --muted-dark: #596255;
-          --muted-light: #cdd4c9;
+          --text-dark: #1d241e;
+          --text-light: #f4f2eb;
+          --muted-dark: #5c655c;
+          --muted-light: #c7cfc5;
           --line-dark: rgba(255, 255, 255, 0.08);
-          --line-light: rgba(8, 18, 10, 0.09);
+          --line-light: rgba(16, 24, 18, 0.08);
           --shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
           --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
-          --radius: 24px;
-          --radius-lg: 30px;
           --max: 1180px;
         }
 
@@ -716,14 +719,14 @@ export default function HomePage() {
 
         .darkSection {
           background:
-            radial-gradient(circle at top left, rgba(122, 176, 96, 0.12), transparent 28%),
-            radial-gradient(circle at right center, rgba(204, 176, 109, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(111, 143, 91, 0.12), transparent 28%),
+            radial-gradient(circle at right center, rgba(232, 223, 208, 0.06), transparent 24%),
             linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
           color: var(--text-light);
         }
 
         .lightSection {
-          background: linear-gradient(180deg, var(--light-2) 0%, var(--light) 100%);
+          background: linear-gradient(180deg, var(--light) 0%, var(--stone) 100%);
           color: var(--text-dark);
         }
 
@@ -731,7 +734,7 @@ export default function HomePage() {
           position: sticky;
           top: 0;
           z-index: 60;
-          background: rgba(7, 17, 10, 0.88);
+          background: rgba(11, 23, 17, 0.88);
           backdrop-filter: blur(12px);
           border-bottom: 1px solid var(--line-dark);
         }
@@ -841,7 +844,7 @@ export default function HomePage() {
         .desktopWhatsApp {
           padding: 12px 18px;
           border-radius: 999px;
-          background: linear-gradient(135deg, #0f8b4b, #13a357);
+          background: linear-gradient(135deg, #1a7d4c, #22a55c);
           color: white;
           font-weight: 700;
           box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
@@ -966,10 +969,10 @@ export default function HomePage() {
           position: absolute;
           right: 18px;
           bottom: 18px;
-          max-width: 250px;
+          max-width: 260px;
           padding: 14px 16px;
           border-radius: 18px;
-          background: rgba(7, 17, 10, 0.75);
+          background: rgba(11, 23, 17, 0.78);
           border: 1px solid rgba(255, 255, 255, 0.08);
           backdrop-filter: blur(10px);
           box-shadow: var(--shadow-soft);
@@ -999,15 +1002,15 @@ export default function HomePage() {
         }
 
         .darkPill {
-          background: rgba(109, 163, 90, 0.14);
-          color: #9fd086;
-          border: 1px solid rgba(109, 163, 90, 0.2);
+          background: rgba(111, 143, 91, 0.16);
+          color: #a6cf8c;
+          border: 1px solid rgba(111, 143, 91, 0.24);
         }
 
         .lightPill {
-          background: rgba(24, 32, 24, 0.06);
-          color: #5a6a55;
-          border: 1px solid rgba(24, 32, 24, 0.08);
+          background: rgba(29, 36, 30, 0.06);
+          color: #5f6b5f;
+          border: 1px solid rgba(29, 36, 30, 0.08);
         }
 
         .trustBand {
@@ -1038,8 +1041,8 @@ export default function HomePage() {
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: rgba(109, 163, 90, 0.14);
-          color: #4e6f48;
+          background: rgba(111, 143, 91, 0.14);
+          color: #4f6e48;
           display: grid;
           place-items: center;
           font-size: 0.9rem;
@@ -1090,11 +1093,6 @@ export default function HomePage() {
           text-wrap: balance;
         }
 
-        .darkSection .sectionTop h2,
-        .darkSection .contactPromo h2 {
-          color: var(--text-light);
-        }
-
         .sectionLead {
           font-size: clamp(1.04rem, 2vw, 1.16rem);
           line-height: 1.62;
@@ -1120,7 +1118,7 @@ export default function HomePage() {
         }
 
         .smallPhotoCard {
-          background: #fff;
+          background: rgba(255, 255, 255, 0.88);
           border-radius: 18px;
           padding: 12px;
           box-shadow: var(--shadow-soft);
@@ -1213,7 +1211,7 @@ export default function HomePage() {
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          background: rgba(109, 163, 90, 0.14);
+          background: rgba(111, 143, 91, 0.14);
           color: #4d6e47;
           display: grid;
           place-items: center;
@@ -1236,7 +1234,7 @@ export default function HomePage() {
 
         .reprocannCard {
           background:
-            linear-gradient(180deg, rgba(7, 17, 10, 0.82), rgba(7, 17, 10, 0.92)),
+            linear-gradient(180deg, rgba(11, 23, 17, 0.84), rgba(11, 23, 17, 0.94)),
             url("/cultivo-1.jpg");
           background-size: cover;
           background-position: center;
@@ -1320,6 +1318,22 @@ export default function HomePage() {
           margin: 0 0 14px;
         }
 
+        .agroList {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-top: 8px;
+        }
+
+        .agroList span {
+          padding: 9px 13px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #eef1ea;
+          font-size: 0.88rem;
+        }
+
         .galleryGrid {
           display: grid;
           grid-template-columns: 1.2fr 0.8fr 0.8fr;
@@ -1393,7 +1407,7 @@ export default function HomePage() {
 
         .contactPromo {
           background:
-            radial-gradient(circle at top right, rgba(109, 163, 90, 0.15), transparent 25%),
+            radial-gradient(circle at top right, rgba(111, 143, 91, 0.16), transparent 25%),
             linear-gradient(180deg, var(--dark-2) 0%, var(--dark) 100%);
           border-radius: 24px;
           padding: 28px 24px;
@@ -1692,7 +1706,7 @@ export default function HomePage() {
             flex-direction: column;
             gap: 0;
             padding: 10px;
-            background: rgba(7, 17, 10, 0.96);
+            background: rgba(11, 23, 17, 0.96);
             border: 1px solid var(--line-dark);
             border-radius: 20px;
             box-shadow: var(--shadow);
