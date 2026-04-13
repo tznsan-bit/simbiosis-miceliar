@@ -418,9 +418,7 @@ export default function HomePage() {
                   <div className="areaIcon">❋</div>
                   <h3>Cultivo agroecológico</h3>
                   <p>
-                    Cultivo responsable con enfoque agroecológico, priorizando inocuidad, procesos
-                    seguros para el consumidor, el productor y el medio ambiente, y nutrición
-                    orgánica sin aditivos sintéticos.
+                    Inocuidad, proceso seguro y nutrición orgánica con enfoque agroecológico.
                   </p>
                 </div>
 
@@ -428,8 +426,7 @@ export default function HomePage() {
                   <div className="areaIcon">▣</div>
                   <h3>Formación</h3>
                   <p>
-                    Capacitaciones teórico-prácticas a lo largo del ciclo de cultivo, experiencias
-                    con terpenos y formación en preparación de derivados.
+                    Capacitaciones, terpenos y preparación responsable de derivados.
                   </p>
                 </div>
 
@@ -443,8 +440,7 @@ export default function HomePage() {
                   <div className="areaIcon">♡</div>
                   <h3>Confidencialidad</h3>
                   <p>
-                    Cuidamos el uso adecuado de la información personal y sensible, con criterios
-                    de confidencialidad y resguardo acordes a la Ley 25.326.
+                    Resguardo responsable de información personal y sensible según Ley 25.326.
                   </p>
                 </div>
               </div>
@@ -537,8 +533,8 @@ export default function HomePage() {
 
               <div className="galleryCard">
                 <Image
-                  src="/cultivo-1.jpg"
-                  alt="Imagen del proyecto"
+                  src="/hero-invernadero.jpeg"
+                  alt="Territorio y entorno del proyecto"
                   fill
                   sizes="(max-width: 1080px) 50vw, 20vw"
                   className="coverImage galleryThree"
@@ -776,7 +772,7 @@ export default function HomePage() {
         }
 
         .galleryThree {
-          object-position: center 40%;
+          object-position: center 62%;
         }
 
         .darkSection {
@@ -1470,7 +1466,7 @@ export default function HomePage() {
           background: transparent;
           color: var(--text-dark);
           border: 0;
-          padding: 18px 18px;
+          padding: 20px 18px;
           font-size: 1rem;
           font-weight: 700;
           display: flex;
@@ -1481,13 +1477,13 @@ export default function HomePage() {
         }
 
         .faqAnswer {
-          padding: 0 18px 18px;
+          padding: 0 18px 22px;
         }
 
         .faqAnswer p {
           margin: 0;
           color: var(--muted-dark);
-          line-height: 1.65;
+          line-height: 1.72;
         }
 
         .contactPromo {
@@ -1859,10 +1855,11 @@ export default function HomePage() {
           }
 
           .whatsappFloat {
-            width: 58px;
-            height: 58px;
-            right: 14px;
-            bottom: 14px;
+            width: 54px;
+            height: 54px;
+            right: 12px;
+            bottom: 12px;
+            font-size: 24px;
           }
 
           .btn {
@@ -1875,6 +1872,11 @@ export default function HomePage() {
 
           .trustMini {
             padding: 18px 16px;
+          }
+
+          .areaCard {
+            min-height: auto;
+            padding: 24px 20px;
           }
         }
 
