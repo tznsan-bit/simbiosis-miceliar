@@ -291,6 +291,15 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="miniValue lightSection">
+          <div className="container miniValueWrap">
+            <p>
+              Acompañamos con cercanía, criterio y responsabilidad, integrando orientación,
+              vinculación médica, formación y una mirada agroecológica del territorio.
+            </p>
+          </div>
+        </section>
+
         <section className="section lightSection" id="quienes-somos">
           <div className="container splitIntro">
             <div className="introBlock">
@@ -561,7 +570,7 @@ export default function HomePage() {
               <h2>Escribinos y te orientamos de forma cercana y responsable</h2>
               <p>
                 Si querés recibir orientación, conocer cómo trabajamos o iniciar un primer contacto,
-                escribinos y te respondemos de forma clara.
+                escribinos y te respondemos de forma clara, humana y cuidada.
               </p>
 
               <div className="contactButtons">
@@ -664,8 +673,8 @@ export default function HomePage() {
           --dark-2: #13241b;
           --green: #6f8f5b;
           --green-2: #89aa75;
-          --light: #f4efe7;
-          --stone: #e8dfd0;
+          --light: #f3eee5;
+          --stone: #e6ddcf;
           --white: #ffffff;
           --text-dark: #1d241e;
           --text-light: #f4f2eb;
@@ -674,7 +683,7 @@ export default function HomePage() {
           --line-dark: rgba(255, 255, 255, 0.08);
           --line-light: rgba(16, 24, 18, 0.08);
           --shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
-          --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
+          --shadow-soft: 0 10px 22px rgba(0, 0, 0, 0.07);
           --max: 1180px;
         }
 
@@ -720,7 +729,7 @@ export default function HomePage() {
         .darkSection {
           background:
             radial-gradient(circle at top left, rgba(111, 143, 91, 0.12), transparent 28%),
-            radial-gradient(circle at right center, rgba(232, 223, 208, 0.06), transparent 24%),
+            radial-gradient(circle at right center, rgba(230, 221, 207, 0.06), transparent 24%),
             linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
           color: var(--text-light);
         }
@@ -852,7 +861,7 @@ export default function HomePage() {
         }
 
         .hero {
-          padding: 36px 0 30px;
+          padding: 32px 0 26px;
         }
 
         .heroGrid {
@@ -953,7 +962,7 @@ export default function HomePage() {
         .heroImage {
           position: relative;
           min-height: 510px;
-          border-radius: 30px;
+          border-radius: 28px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: var(--shadow);
@@ -1061,8 +1070,24 @@ export default function HomePage() {
           font-size: 0.94rem;
         }
 
+        .miniValue {
+          padding: 24px 0 8px;
+        }
+
+        .miniValueWrap {
+          text-align: center;
+        }
+
+        .miniValueWrap p {
+          max-width: 880px;
+          margin: 0 auto;
+          color: var(--text-dark);
+          font-size: 1.08rem;
+          line-height: 1.7;
+        }
+
         .section {
-          padding: 82px 0;
+          padding: 76px 0;
         }
 
         .sectionTop {
@@ -1291,7 +1316,7 @@ export default function HomePage() {
         .cultivoImage {
           position: relative;
           min-height: 340px;
-          border-radius: 24px;
+          border-radius: 22px;
           overflow: hidden;
           box-shadow: var(--shadow);
         }
@@ -1342,7 +1367,7 @@ export default function HomePage() {
 
         .galleryCard {
           position: relative;
-          border-radius: 20px;
+          border-radius: 22px;
           overflow: hidden;
           min-height: 260px;
           box-shadow: var(--shadow-soft);
@@ -1375,7 +1400,7 @@ export default function HomePage() {
         .faqItem {
           background: rgba(255, 255, 255, 0.85);
           border: 1px solid rgba(0, 0, 0, 0.07);
-          border-radius: 16px;
+          border-radius: 18px;
           overflow: hidden;
           box-shadow: var(--shadow-soft);
         }
@@ -1729,7 +1754,7 @@ export default function HomePage() {
 
         @media (max-width: 760px) {
           .hero {
-            padding: 30px 0 22px;
+            padding: 28px 0 20px;
           }
 
           .heroGrid,
@@ -1758,7 +1783,7 @@ export default function HomePage() {
           }
 
           .section {
-            padding: 64px 0;
+            padding: 58px 0;
           }
 
           .smallPhoto {
@@ -1768,6 +1793,12 @@ export default function HomePage() {
           .galleryCard.large,
           .galleryCard {
             min-height: 240px;
+          }
+
+          .heroBody,
+          .sectionText,
+          .faqAnswer p {
+            font-size: 0.97rem;
           }
 
           .whatsappFloat {
