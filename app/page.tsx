@@ -61,15 +61,13 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 760) {
+      if (window.innerWidth > 860) {
         setMenuOpen(false);
       }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setMenuOpen(false);
-      }
+      if (event.key === "Escape") setMenuOpen(false);
     };
 
     window.addEventListener("resize", handleResize);
@@ -85,11 +83,7 @@ export default function HomePage() {
     const shouldLockScroll = menuOpen || ageVerified === false;
     const previousOverflow = document.body.style.overflow;
 
-    if (shouldLockScroll) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = shouldLockScroll ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -127,10 +121,10 @@ export default function HomePage() {
             <h3 id="age-gate-title">¿Sos mayor de edad?</h3>
             <p>Este sitio está dirigido a personas mayores de 18 años.</p>
             <div className="ageActions">
-              <button className="btn btnPrimary" onClick={handleAgeYes} type="button">
+              <button className="btn btnPrimary" type="button" onClick={handleAgeYes}>
                 Sí, soy mayor
               </button>
-              <button className="btn btnSecondary" onClick={handleAgeNo} type="button">
+              <button className="btn btnSecondary" type="button" onClick={handleAgeNo}>
                 No
               </button>
             </div>
@@ -140,17 +134,16 @@ export default function HomePage() {
 
       {menuOpen && (
         <button
-          className="menuBackdrop"
-          onClick={closeMenu}
-          aria-label="Cerrar menú"
           type="button"
+          className="menuBackdrop"
+          aria-label="Cerrar menú"
+          onClick={closeMenu}
         />
       )}
 
       <div className="leaf leaf1">🍃</div>
       <div className="leaf leaf2">🍃</div>
       <div className="leaf leaf3">🍃</div>
-      <div className="leaf leaf4">🍃</div>
 
       <header className="header">
         <div className="container nav">
@@ -159,25 +152,25 @@ export default function HomePage() {
               <Image
                 src="/logo.png"
                 alt="Logo de Simbiosis Miceliar"
-                className="brandLogo"
                 width={52}
                 height={52}
                 priority
+                className="brandLogo"
               />
             </div>
-            <div>
+            <div className="brandText">
               <div className="brandTitle">Simbiosis Miceliar</div>
               <div className="brandSub">Proyecto patagónico</div>
             </div>
           </a>
 
           <button
+            type="button"
             className={`menuToggle ${menuOpen ? "active" : ""}`}
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
             aria-controls="main-navigation"
             onClick={() => setMenuOpen((prev) => !prev)}
-            type="button"
           >
             <span />
             <span />
@@ -199,15 +192,16 @@ export default function HomePage() {
           <div className="container heroGrid">
             <div className="heroText">
               <div className="pill">Cannabis medicinal · Comunidad · Patagonia</div>
+
               <h1>Comunidad, orientación y acompañamiento responsable</h1>
+
               <p className="heroLead">
-                Proyecto patagónico de acompañamiento, formación y articulación en
-                cannabis medicinal.
+                Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
               </p>
+
               <p className="heroBody">
-                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación
-                médica para REPROCANN, formación y seguimiento, desde una mirada cercana,
-                comunitaria y responsable.
+                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para
+                REPROCANN, formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
               </p>
 
               <div className="buttons">
@@ -237,10 +231,14 @@ export default function HomePage() {
                 alt="Invernadero y dimensión del cultivo"
                 fill
                 priority
-                sizes="(max-width: 1080px) 100vw, 45vw"
+                sizes="(max-width: 1080px) 100vw, 48vw"
                 className="coverImage"
               />
               <div className="heroOverlay" />
+              <div className="heroMiniCard">
+                <strong>Proyecto patagónico</strong>
+                <span>Comunidad, acompañamiento y cultivo responsable.</span>
+              </div>
             </div>
           </div>
         </section>
@@ -268,26 +266,27 @@ export default function HomePage() {
 
         <section className="section" id="quienes-somos">
           <div className="container">
-            <div className="pill">Quiénes somos</div>
-            <h2>Una comunidad construida desde el territorio</h2>
-            <p className="sectionLead">
-              Simbiosis Miceliar es un proyecto patagónico que nace del vínculo cercano
-              con las personas, la comunidad y el cuidado de los procesos.
-            </p>
+            <div className="sectionTop">
+              <div className="pill">Quiénes somos</div>
+              <h2>Una comunidad construida desde el territorio</h2>
+              <p className="sectionLead">
+                Simbiosis Miceliar es un proyecto patagónico que nace del vínculo cercano con
+                las personas, la comunidad y el cuidado de los procesos.
+              </p>
+            </div>
 
             <div className="twoCols">
-              <div className="card">
+              <div className="card softCard">
                 <p>
-                  Creemos que el acceso a la información, la orientación responsable y
-                  el acompañamiento humano hacen una diferencia real en los recorridos
-                  vinculados al cannabis medicinal.
+                  Creemos que el acceso a la información, la orientación responsable y el
+                  acompañamiento humano hacen una diferencia real en los recorridos vinculados
+                  al cannabis medicinal.
                 </p>
               </div>
-              <div className="card">
+              <div className="card softCard">
                 <p>
-                  Nuestro enfoque combina cercanía, seriedad, identidad territorial y
-                  compromiso comunitario. Buscamos que cada persona encuentre un espacio
-                  claro, respetuoso y confiable.
+                  Nuestro enfoque combina cercanía, seriedad, identidad territorial y compromiso
+                  comunitario. Buscamos que cada persona encuentre un espacio claro, respetuoso y confiable.
                 </p>
               </div>
             </div>
@@ -296,54 +295,52 @@ export default function HomePage() {
 
         <section className="section" id="como-trabajamos">
           <div className="container">
-            <div className="pill">Cómo trabajamos</div>
-            <h2>Un recorrido simple, cuidado y ordenado</h2>
-            <p className="sectionLead">
-              Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo
-              empieza el proceso.
-            </p>
+            <div className="sectionTop">
+              <div className="pill">Cómo trabajamos</div>
+              <h2>Un recorrido simple, cuidado y ordenado</h2>
+              <p className="sectionLead">
+                Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo empieza el proceso.
+              </p>
+            </div>
 
             <div className="steps">
-              <div className="step card">
+              <div className="step card softCard">
                 <div className="stepNum">1</div>
                 <div>
                   <h3>Nos escribís</h3>
                   <p>
-                    Recibimos tu consulta por WhatsApp y conocemos tu situación, tus
-                    dudas y lo que necesitás orientar.
+                    Recibimos tu consulta por WhatsApp y conocemos tu situación, tus dudas y lo que necesitás orientar.
                   </p>
                 </div>
               </div>
 
-              <div className="step card">
+              <div className="step card softCard">
                 <div className="stepNum">2</div>
                 <div>
                   <h3>Te orientamos</h3>
                   <p>
-                    Brindamos una primera orientación clara, cercana y responsable para
-                    ayudarte a entender el camino posible según tu caso.
+                    Brindamos una primera orientación clara, cercana y responsable para ayudarte a entender
+                    el camino posible según tu caso.
                   </p>
                 </div>
               </div>
 
-              <div className="step card">
+              <div className="step card softCard">
                 <div className="stepNum">3</div>
                 <div>
                   <h3>Te vinculamos</h3>
                   <p>
-                    Cuando corresponde, articulamos la vinculación con profesionales
-                    médicos para el proceso de REPROCANN.
+                    Cuando corresponde, articulamos la vinculación con profesionales médicos para el proceso de REPROCANN.
                   </p>
                 </div>
               </div>
 
-              <div className="step card">
+              <div className="step card softCard">
                 <div className="stepNum">4</div>
                 <div>
                   <h3>Acompañamos el seguimiento</h3>
                   <p>
-                    Sostenemos una relación cercana, con continuidad y compromiso,
-                    priorizando siempre el cuidado de cada proceso.
+                    Sostenemos una relación cercana, con continuidad y compromiso, priorizando siempre el cuidado de cada proceso.
                   </p>
                 </div>
               </div>
@@ -353,54 +350,45 @@ export default function HomePage() {
 
         <section className="section" id="areas">
           <div className="container">
-            <div className="pill">Áreas de trabajo</div>
-            <h2>Qué hacemos en Simbiosis Miceliar</h2>
-            <p className="sectionLead">
-              Integramos orientación, acompañamiento, formación y comunidad desde una
-              mirada responsable.
-            </p>
+            <div className="sectionTop">
+              <div className="pill">Áreas de trabajo</div>
+              <h2>Qué hacemos en Simbiosis Miceliar</h2>
+              <p className="sectionLead">
+                Integramos orientación, acompañamiento, formación y comunidad desde una mirada responsable.
+              </p>
+            </div>
 
             <div className="gridCards">
-              <div className="card">
+              <div className="card softCard">
                 <h3>Orientación inicial</h3>
-                <p>
-                  Escuchamos cada situación de forma personalizada para orientar con
-                  claridad, respeto y criterio.
-                </p>
+                <p>Escuchamos cada situación de forma personalizada para orientar con claridad, respeto y criterio.</p>
               </div>
-              <div className="card">
+              <div className="card softCard">
                 <h3>Vinculación médica</h3>
                 <p>
-                  Contamos con médicos encargados de la vinculación a REPROCANN,
-                  acompañando el proceso de manera seria y ordenada.
+                  Contamos con médicos encargados de la vinculación a REPROCANN, acompañando el proceso de manera seria y ordenada.
                 </p>
               </div>
-              <div className="card">
+              <div className="card softCard">
                 <h3>Acompañamiento</h3>
-                <p>
-                  No trabajamos desde una lógica fría o automática. Buscamos presencia
-                  real, seguimiento y cercanía.
-                </p>
+                <p>No trabajamos desde una lógica fría o automática. Buscamos presencia real, seguimiento y cercanía.</p>
               </div>
-              <div className="card">
+              <div className="card softCard">
                 <h3>Formación</h3>
                 <p>
-                  Promovemos la circulación de saberes, el aprendizaje y una mirada
-                  consciente sobre los procesos vinculados al cannabis medicinal.
+                  Promovemos la circulación de saberes, el aprendizaje y una mirada consciente sobre los procesos vinculados al cannabis medicinal.
                 </p>
               </div>
-              <div className="card">
+              <div className="card softCard">
                 <h3>Cultivo responsable</h3>
                 <p>
-                  Entendemos el cultivo como parte de una perspectiva integral basada en
-                  el cuidado, la responsabilidad y el territorio.
+                  Entendemos el cultivo como parte de una perspectiva integral basada en el cuidado, la responsabilidad y el territorio.
                 </p>
               </div>
-              <div className="card">
+              <div className="card softCard">
                 <h3>Comunidad</h3>
                 <p>
-                  Sostenemos un vínculo cercano con quienes se acercan a Simbiosis,
-                  priorizando escucha, confianza y acompañamiento humano.
+                  Sostenemos un vínculo cercano con quienes se acercan a Simbiosis, priorizando escucha, confianza y acompañamiento humano.
                 </p>
               </div>
             </div>
@@ -413,19 +401,15 @@ export default function HomePage() {
               <div className="pill">REPROCANN</div>
               <h2>Acompañamiento claro para un proceso sensible</h2>
               <p className="sectionLead">
-                Sabemos que muchas personas llegan con dudas, desinformación o
-                incertidumbre sobre REPROCANN.
+                Sabemos que muchas personas llegan con dudas, desinformación o incertidumbre sobre REPROCANN.
               </p>
               <p>
-                Por eso ofrecemos un acompañamiento claro y cercano, ayudando a ordenar
-                el proceso y brindando orientación en cada etapa. Contamos con médicos
-                encargados de la vinculación a REPROCANN y acompañamos a las personas
-                para que puedan transitar ese camino con más claridad, resguardo y
-                tranquilidad.
+                Por eso ofrecemos un acompañamiento claro y cercano, ayudando a ordenar el proceso y brindando orientación
+                en cada etapa. Contamos con médicos encargados de la vinculación a REPROCANN y acompañamos a las personas
+                para que puedan transitar ese camino con más claridad, resguardo y tranquilidad.
               </p>
               <p className="strongLine">
-                Acompañamos con cercanía, seriedad y criterio, priorizando siempre el
-                cuidado de cada proceso.
+                Acompañamos con cercanía, seriedad y criterio, priorizando siempre el cuidado de cada proceso.
               </p>
             </div>
           </div>
@@ -433,8 +417,10 @@ export default function HomePage() {
 
         <section className="section" id="cultivo">
           <div className="container">
-            <div className="pill">Cultivo responsable y formación</div>
-            <h2>Aprendizaje, cuidado y territorio</h2>
+            <div className="sectionTop">
+              <div className="pill">Cultivo responsable y formación</div>
+              <h2>Aprendizaje, cuidado y territorio</h2>
+            </div>
 
             <div className="twoCols">
               <div className="card imageCard">
@@ -446,19 +432,17 @@ export default function HomePage() {
                   className="coverImage"
                 />
               </div>
-              <div className="card textCard">
+
+              <div className="card textCard softCard">
                 <p>
-                  Entendemos el cultivo como parte de una mirada integral, basada en el
-                  aprendizaje, la responsabilidad y el vínculo con el territorio.
+                  Entendemos el cultivo como parte de una mirada integral, basada en el aprendizaje, la responsabilidad y el vínculo con el territorio.
                 </p>
                 <p>
-                  Promovemos una perspectiva consciente sobre los procesos de cultivo, el
-                  cuidado, la formación y la construcción de saberes, desde una lógica
-                  seria, comunitaria y respetuosa.
+                  Promovemos una perspectiva consciente sobre los procesos de cultivo, el cuidado, la formación y la construcción de saberes,
+                  desde una lógica seria, comunitaria y respetuosa.
                 </p>
                 <p>
-                  Para nosotros, cultivar también es aprender, compartir conocimiento y
-                  fortalecer una red construida desde la experiencia y la cercanía.
+                  Para nosotros, cultivar también es aprender, compartir conocimiento y fortalecer una red construida desde la experiencia y la cercanía.
                 </p>
               </div>
             </div>
@@ -467,8 +451,11 @@ export default function HomePage() {
 
         <section className="section gallerySection">
           <div className="container">
-            <div className="pill">Territorio y comunidad</div>
-            <h2>Una identidad construida desde el cuidado y la cercanía</h2>
+            <div className="sectionTop">
+              <div className="pill">Territorio y comunidad</div>
+              <h2>Una identidad construida desde el cuidado y la cercanía</h2>
+            </div>
+
             <div className="galleryGrid">
               <div className="galleryCard large">
                 <Image
@@ -503,8 +490,10 @@ export default function HomePage() {
 
         <section className="section" id="faq">
           <div className="container">
-            <div className="pill">Preguntas frecuentes</div>
-            <h2>Dudas comunes, respuestas claras</h2>
+            <div className="sectionTop">
+              <div className="pill">Preguntas frecuentes</div>
+              <h2>Dudas comunes, respuestas claras</h2>
+            </div>
 
             <div className="faqList">
               {faqs.map((item, index) => {
@@ -544,14 +533,13 @@ export default function HomePage() {
 
         <section className="section ctaSection">
           <div className="container">
-            <div className="highlight">
+            <div className="highlight ctaBox">
               <div className="pill">Primer contacto</div>
               <h2>Estamos para acompañarte</h2>
               <p className="sectionLead">
-                Si querés recibir orientación, conocer cómo trabajamos o iniciar un
-                primer contacto, escribinos y te respondemos de forma cercana y clara.
+                Si querés recibir orientación, conocer cómo trabajamos o iniciar un primer contacto, escribinos y te respondemos de forma cercana y clara.
               </p>
-              <div className="buttons">
+              <div className="buttons centerButtons">
                 <a
                   className="btn btnPrimary"
                   href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
@@ -568,12 +556,13 @@ export default function HomePage() {
         <section className="section" id="contacto">
           <div className="container contactGrid">
             <div>
-              <div className="pill">Contacto</div>
-              <h2>Comunicate con nosotros</h2>
-              <p className="sectionLead">
-                Podés escribirnos para recibir orientación, realizar consultas o conocer
-                más sobre nuestro trabajo y nuestras formas de acompañamiento.
-              </p>
+              <div className="sectionTop leftTop">
+                <div className="pill">Contacto</div>
+                <h2>Comunicate con nosotros</h2>
+                <p className="sectionLead">
+                  Podés escribirnos para recibir orientación, realizar consultas o conocer más sobre nuestro trabajo y nuestras formas de acompañamiento.
+                </p>
+              </div>
 
               <div className="contactList">
                 <a
@@ -608,18 +597,16 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="card contactSide">
+            <div className="card contactSide softCard">
               <h3>Confidencialidad y cuidado</h3>
               <p>
-                Trabajamos con respeto, escucha y confidencialidad en cada proceso,
-                priorizando la tranquilidad de quienes se acercan a Simbiosis Miceliar.
+                Trabajamos con respeto, escucha y confidencialidad en cada proceso, priorizando la tranquilidad de quienes se acercan a Simbiosis Miceliar.
               </p>
 
               <div className="miniPolicy">
                 <strong>Privacidad</strong>
                 <span>
-                  La información compartida en el primer contacto se trata con cuidado y
-                  reserva.
+                  La información compartida en el primer contacto se trata con cuidado y reserva.
                 </span>
               </div>
 
@@ -640,7 +627,7 @@ export default function HomePage() {
 
       <footer className="footer">
         <div className="container footerWrap">
-          <div>
+          <div className="footerMain">
             <h3>Simbiosis Miceliar</h3>
             <p>
               Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
@@ -672,15 +659,20 @@ export default function HomePage() {
       <style jsx global>{`
         :root {
           --bg: #09100b;
+          --bg-soft: rgba(255, 255, 255, 0.04);
           --card: rgba(255, 255, 255, 0.05);
+          --card-soft: rgba(255, 255, 255, 0.055);
           --line: rgba(255, 255, 255, 0.08);
+          --line-soft: rgba(255, 255, 255, 0.06);
           --text: #f4f2ec;
           --muted: #c6c9c1;
           --green: #9cc77e;
           --green2: #7faa61;
           --gold: #d8b96a;
           --shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+          --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.18);
           --radius: 24px;
+          --radius-sm: 18px;
           --max: 1180px;
         }
 
@@ -733,7 +725,7 @@ export default function HomePage() {
           position: sticky;
           top: 0;
           z-index: 50;
-          background: rgba(8, 13, 10, 0.74);
+          background: rgba(8, 13, 10, 0.72);
           backdrop-filter: blur(12px);
           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -763,12 +755,17 @@ export default function HomePage() {
           background: rgba(255, 255, 255, 0.06);
           flex-shrink: 0;
           position: relative;
+          box-shadow: var(--shadow-soft);
         }
 
         .brandLogo {
           width: 52px;
           height: 52px;
           object-fit: cover;
+        }
+
+        .brandText {
+          min-width: 0;
         }
 
         .brandTitle {
@@ -838,22 +835,22 @@ export default function HomePage() {
         }
 
         .hero {
-          padding: 82px 0 42px;
+          padding: 78px 0 34px;
           position: relative;
         }
 
         .heroGrid {
           display: grid;
-          grid-template-columns: 1.08fr 0.92fr;
-          gap: 40px;
+          grid-template-columns: 1.02fr 0.98fr;
+          gap: 46px;
           align-items: center;
         }
 
         .heroText h1 {
-          font-size: clamp(2.7rem, 6vw, 5.1rem);
-          line-height: 1.02;
+          font-size: clamp(2.7rem, 6vw, 5rem);
+          line-height: 1.01;
           margin: 0 0 18px;
-          letter-spacing: -1px;
+          letter-spacing: -1.2px;
           max-width: 720px;
           text-wrap: balance;
         }
@@ -862,7 +859,7 @@ export default function HomePage() {
           display: inline-block;
           padding: 8px 14px;
           border-radius: 999px;
-          border: 1px solid var(--line);
+          border: 1px solid var(--line-soft);
           background: rgba(255, 255, 255, 0.04);
           color: var(--green);
           font-size: 13px;
@@ -871,9 +868,10 @@ export default function HomePage() {
 
         .heroLead,
         .sectionLead {
-          font-size: clamp(1.05rem, 2vw, 1.22rem);
+          font-size: clamp(1.04rem, 2vw, 1.18rem);
           color: var(--muted);
           max-width: 760px;
+          line-height: 1.65;
         }
 
         .heroBody,
@@ -888,25 +886,10 @@ export default function HomePage() {
         }
 
         .heroBody {
-          max-width: 760px;
-          margin-top: 16px;
+          max-width: 720px;
+          margin-top: 14px;
           font-size: 1rem;
-          line-height: 1.75;
-        }
-
-        .badges {
-          display: flex;
-          gap: 12px;
-          flex-wrap: wrap;
-          margin-top: 24px;
-        }
-
-        .badges span {
-          padding: 10px 14px;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid var(--line);
-          font-size: 0.94rem;
+          line-height: 1.78;
         }
 
         .buttons {
@@ -914,6 +897,26 @@ export default function HomePage() {
           flex-wrap: wrap;
           gap: 14px;
           margin-top: 28px;
+        }
+
+        .centerButtons {
+          justify-content: center;
+        }
+
+        .badges {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 24px;
+        }
+
+        .badges span {
+          padding: 9px 13px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid var(--line-soft);
+          font-size: 0.88rem;
+          color: #eef1ea;
         }
 
         .btn {
@@ -937,6 +940,7 @@ export default function HomePage() {
 
         .btnPrimary:hover {
           transform: translateY(-2px);
+          filter: brightness(1.02);
         }
 
         .btnSecondary {
@@ -951,8 +955,8 @@ export default function HomePage() {
 
         .heroImage {
           position: relative;
-          min-height: 500px;
-          border-radius: 28px;
+          min-height: 520px;
+          border-radius: 30px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
           background: rgba(255, 255, 255, 0.04);
@@ -962,37 +966,78 @@ export default function HomePage() {
         .heroOverlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(6, 10, 7, 0.05), rgba(6, 10, 7, 0.5));
+          background: linear-gradient(180deg, rgba(6, 10, 7, 0.03), rgba(6, 10, 7, 0.46));
           pointer-events: none;
         }
 
-        .trustStrip {
-          padding: 0 0 28px;
-        }
-
-        .trustGrid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 18px;
-        }
-
-        .trustItem {
-          padding: 18px;
-          border-radius: 18px;
-          background: rgba(255, 255, 255, 0.045);
-          border: 1px solid var(--line);
-          box-shadow: var(--shadow);
+        .heroMiniCard {
+          position: absolute;
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          padding: 16px 18px;
+          border-radius: 20px;
+          background: rgba(8, 13, 10, 0.58);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(10px);
+          box-shadow: var(--shadow-soft);
           display: flex;
           flex-direction: column;
           gap: 6px;
         }
 
+        .heroMiniCard strong {
+          font-size: 1rem;
+          color: var(--text);
+        }
+
+        .heroMiniCard span {
+          font-size: 0.94rem;
+          color: var(--muted);
+        }
+
+        .trustStrip {
+          padding: 0 0 24px;
+        }
+
+        .trustGrid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+        }
+
+        .trustItem {
+          padding: 18px;
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid var(--line-soft);
+          box-shadow: var(--shadow-soft);
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .trustItem:hover {
+          transform: translateY(-2px);
+          background: rgba(255, 255, 255, 0.055);
+        }
+
         .section {
-          padding: 84px 0;
+          padding: 82px 0;
+        }
+
+        .sectionTop {
+          max-width: 760px;
+          margin-bottom: 28px;
+        }
+
+        .leftTop {
+          margin-bottom: 0;
         }
 
         h2 {
-          font-size: clamp(2rem, 4vw, 3.1rem);
+          font-size: clamp(2rem, 4vw, 3rem);
           line-height: 1.08;
           margin: 0 0 16px;
           text-wrap: balance;
@@ -1000,35 +1045,37 @@ export default function HomePage() {
 
         h3 {
           margin: 0 0 10px;
-          font-size: 1.18rem;
+          font-size: 1.14rem;
         }
 
         .twoCols {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 24px;
-          margin-top: 30px;
+          align-items: stretch;
         }
 
         .gridCards {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-top: 30px;
+          gap: 22px;
         }
 
         .card {
           background: var(--card);
-          border: 1px solid var(--line);
+          border: 1px solid var(--line-soft);
           border-radius: var(--radius);
           padding: 28px;
-          box-shadow: var(--shadow);
+          box-shadow: var(--shadow-soft);
+        }
+
+        .softCard {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.03));
         }
 
         .steps {
           display: grid;
-          gap: 18px;
-          margin-top: 34px;
+          gap: 16px;
         }
 
         .step {
@@ -1048,6 +1095,7 @@ export default function HomePage() {
           justify-content: center;
           font-weight: 800;
           flex-shrink: 0;
+          box-shadow: var(--shadow-soft);
         }
 
         .highlight {
@@ -1060,6 +1108,10 @@ export default function HomePage() {
           );
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: var(--shadow);
+        }
+
+        .ctaBox {
+          text-align: center;
         }
 
         .strongLine {
@@ -1076,7 +1128,7 @@ export default function HomePage() {
 
         .imageCard {
           padding: 0;
-          min-height: 380px;
+          min-height: 390px;
         }
 
         .textCard p + p {
@@ -1091,32 +1143,36 @@ export default function HomePage() {
           display: grid;
           grid-template-columns: 1.2fr 0.8fr 0.8fr;
           gap: 18px;
-          margin-top: 28px;
         }
 
         .galleryCard {
           border-radius: 24px;
           min-height: 280px;
-          border: 1px solid var(--line);
-          box-shadow: var(--shadow);
-          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--line-soft);
+          box-shadow: var(--shadow-soft);
+          background: rgba(255, 255, 255, 0.04);
+          transition: transform 0.22s ease;
+        }
+
+        .galleryCard:hover {
+          transform: translateY(-2px);
         }
 
         .galleryCard.large {
-          min-height: 420px;
+          min-height: 430px;
         }
 
         .faqList {
           display: grid;
           gap: 14px;
-          margin-top: 26px;
         }
 
         .faqItem {
-          border: 1px solid var(--line);
+          border: 1px solid var(--line-soft);
           border-radius: 18px;
-          background: rgba(255, 255, 255, 0.04);
+          background: rgba(255, 255, 255, 0.035);
           overflow: hidden;
+          box-shadow: var(--shadow-soft);
         }
 
         .faqQuestion {
@@ -1132,6 +1188,11 @@ export default function HomePage() {
           justify-content: space-between;
           cursor: pointer;
           text-align: left;
+          transition: background 0.2s ease;
+        }
+
+        .faqQuestion:hover {
+          background: rgba(255, 255, 255, 0.03);
         }
 
         .faqAnswer {
@@ -1139,12 +1200,12 @@ export default function HomePage() {
         }
 
         .ctaSection {
-          padding-top: 20px;
+          padding-top: 16px;
         }
 
         .contactGrid {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
+          grid-template-columns: 1.05fr 0.95fr;
           gap: 28px;
           align-items: stretch;
         }
@@ -1159,15 +1220,17 @@ export default function HomePage() {
           display: flex;
           flex-direction: column;
           gap: 4px;
-          padding: 16px 18px;
+          padding: 18px 20px;
           border-radius: 18px;
           background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--line);
+          border: 1px solid var(--line-soft);
           transition: 0.2s ease;
+          box-shadow: var(--shadow-soft);
         }
 
         a.contactItem:hover {
-          background: rgba(255, 255, 255, 0.07);
+          background: rgba(255, 255, 255, 0.065);
+          transform: translateY(-1px);
         }
 
         .contactSide {
@@ -1181,7 +1244,7 @@ export default function HomePage() {
           padding: 16px 18px;
           border-radius: 18px;
           background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--line);
+          border: 1px solid var(--line-soft);
           display: flex;
           flex-direction: column;
           gap: 6px;
@@ -1189,7 +1252,7 @@ export default function HomePage() {
 
         .footer {
           border-top: 1px solid rgba(255, 255, 255, 0.08);
-          padding: 30px 0 40px;
+          padding: 28px 0 38px;
           background: rgba(0, 0, 0, 0.12);
         }
 
@@ -1198,6 +1261,15 @@ export default function HomePage() {
           justify-content: space-between;
           gap: 24px;
           flex-wrap: wrap;
+          align-items: flex-start;
+        }
+
+        .footerMain {
+          max-width: 560px;
+        }
+
+        .footerMain h3 {
+          margin-bottom: 10px;
         }
 
         .footerLine {
@@ -1222,6 +1294,11 @@ export default function HomePage() {
           font-size: 28px;
           box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
           z-index: 60;
+          transition: transform 0.2s ease;
+        }
+
+        .whatsappFloat:hover {
+          transform: translateY(-2px);
         }
 
         .ageGate {
@@ -1265,7 +1342,7 @@ export default function HomePage() {
 
         .leaf {
           position: absolute;
-          opacity: 0.06;
+          opacity: 0.05;
           font-size: 54px;
           user-select: none;
           pointer-events: none;
@@ -1278,21 +1355,15 @@ export default function HomePage() {
         }
 
         .leaf2 {
-          top: 780px;
+          top: 980px;
           right: 4%;
           transform: rotate(18deg);
         }
 
         .leaf3 {
-          top: 1480px;
+          top: 2050px;
           left: 4%;
           transform: rotate(10deg);
-        }
-
-        .leaf4 {
-          top: 2300px;
-          right: 6%;
-          transform: rotate(-8deg);
         }
 
         @media (max-width: 1080px) {
@@ -1313,11 +1384,17 @@ export default function HomePage() {
           }
 
           .heroImage {
-            min-height: 400px;
+            min-height: 420px;
+          }
+
+          .heroMiniCard {
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
           }
         }
 
-        @media (max-width: 760px) {
+        @media (max-width: 860px) {
           section[id] {
             scroll-margin-top: 84px;
           }
@@ -1379,7 +1456,7 @@ export default function HomePage() {
           }
 
           .section {
-            padding: 68px 0;
+            padding: 66px 0;
           }
 
           .gridCards,
@@ -1394,7 +1471,7 @@ export default function HomePage() {
           }
 
           .heroImage {
-            min-height: 300px;
+            min-height: 320px;
           }
 
           .card,
@@ -1408,6 +1485,14 @@ export default function HomePage() {
 
           .btn {
             width: 100%;
+          }
+
+          .heroMiniCard {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            bottom: 14px;
+            padding: 14px 16px;
           }
 
           .whatsappFloat {
