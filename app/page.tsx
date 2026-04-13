@@ -61,7 +61,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 900) setMenuOpen(false);
+      if (window.innerWidth > 920) setMenuOpen(false);
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -210,8 +210,8 @@ export default function HomePage() {
               </p>
 
               <p className="heroBody">
-                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para REPROCANN,
-                formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
+                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para
+                REPROCANN, formación y seguimiento, desde una mirada cercana, comunitaria y responsable.
               </p>
 
               <div className="buttons">
@@ -238,7 +238,7 @@ export default function HomePage() {
 
             <div className="heroImage">
               <Image
-                src="/IMG_3967.jpeg"
+                src="/hero-invernadero.jpeg"
                 alt="Invernadero y dimensión del cultivo"
                 fill
                 priority
@@ -309,7 +309,7 @@ export default function HomePage() {
               <div className="smallPhotoCard">
                 <div className="smallPhoto">
                   <Image
-                    src="/IMG_3967.jpeg"
+                    src="/hero-invernadero.jpeg"
                     alt="Territorio patagónico"
                     fill
                     sizes="(max-width: 1080px) 100vw, 22vw"
@@ -323,7 +323,7 @@ export default function HomePage() {
               <div className="smallPhotoCard">
                 <div className="smallPhoto">
                   <Image
-                    src="/IMG_3924.jpeg"
+                    src="/cultivo-1.jpg"
                     alt="Compromiso comunitario"
                     fill
                     sizes="(max-width: 1080px) 100vw, 22vw"
@@ -446,7 +446,7 @@ export default function HomePage() {
           <div className="container cultivoGrid">
             <div className="cultivoImage">
               <Image
-                src="/IMG_3819.jpeg"
+                src="/cultivo-2.jpg"
                 alt="Cultivo responsable"
                 fill
                 sizes="(max-width: 1080px) 100vw, 50vw"
@@ -464,6 +464,45 @@ export default function HomePage() {
               <p>
                 Para nosotros, cultivar también es compartir conocimiento y fortalecer comunidad.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section lightSection">
+          <div className="container">
+            <div className="sectionTop">
+              <div className="pill lightPill">Territorio y comunidad</div>
+              <h2>Una identidad construida desde el cuidado y la cercanía</h2>
+            </div>
+
+            <div className="galleryGrid">
+              <div className="galleryCard large">
+                <Image
+                  src="/hero-invernadero.jpeg"
+                  alt="Territorio y comunidad"
+                  fill
+                  sizes="(max-width: 1080px) 100vw, 40vw"
+                  className="coverImage"
+                />
+              </div>
+              <div className="galleryCard">
+                <Image
+                  src="/cultivo-2.jpg"
+                  alt="Cultivo responsable"
+                  fill
+                  sizes="(max-width: 1080px) 50vw, 20vw"
+                  className="coverImage"
+                />
+              </div>
+              <div className="galleryCard">
+                <Image
+                  src="/cultivo-1.jpg"
+                  alt="Cultivo y comunidad"
+                  fill
+                  sizes="(max-width: 1080px) 50vw, 20vw"
+                  className="coverImage"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -1198,7 +1237,7 @@ export default function HomePage() {
         .reprocannCard {
           background:
             linear-gradient(180deg, rgba(7, 17, 10, 0.82), rgba(7, 17, 10, 0.92)),
-            url("/IMG_3924.jpeg");
+            url("/cultivo-1.jpg");
           background-size: cover;
           background-position: center;
           border-radius: 22px;
@@ -1279,10 +1318,6 @@ export default function HomePage() {
           color: var(--muted-light);
           line-height: 1.72;
           margin: 0 0 14px;
-        }
-
-        .gallerySection .sectionTop {
-          margin-bottom: 18px;
         }
 
         .galleryGrid {
@@ -1438,10 +1473,6 @@ export default function HomePage() {
           content: "•";
           margin-right: 8px;
           color: var(--green-2);
-        }
-
-        .contactMeta span:first-child::before {
-          content: "•";
         }
 
         .footer {
@@ -1630,7 +1661,7 @@ export default function HomePage() {
           }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 920px) {
           section[id] {
             scroll-margin-top: 84px;
           }
