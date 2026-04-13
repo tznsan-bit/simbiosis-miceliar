@@ -8,6 +8,11 @@ export default function HomePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const whatsappHref =
+    "https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n.";
+  const instagramHref = "https://instagram.com/simbiosismiceliar";
+  const currentYear = new Date().getFullYear();
+
   const navItems = useMemo(
     () => [
       { href: "#quienes-somos", label: "Quiénes somos" },
@@ -95,7 +100,7 @@ export default function HomePage() {
   };
 
   const handleAgeNo = () => {
-    window.location.replace("https://www.google.com");
+    window.location.replace("https://www.google.com.ar");
   };
 
   const closeMenu = () => setMenuOpen(false);
@@ -116,7 +121,7 @@ export default function HomePage() {
           <div className="ageBox">
             <div className="pill darkPill">Acceso al sitio</div>
             <h3 id="age-gate-title">¿Sos mayor de edad?</h3>
-            <p>Este sitio está dirigido a personas mayores de 18 años.</p>
+            <p>Este sitio está orientado a personas mayores de 18 años.</p>
             <div className="ageActions">
               <button className="btn btnPrimary" type="button" onClick={handleAgeYes}>
                 Sí, soy mayor
@@ -137,10 +142,6 @@ export default function HomePage() {
           onClick={closeMenu}
         />
       )}
-
-      <div className="leaf leaf1">🍃</div>
-      <div className="leaf leaf2">🍃</div>
-      <div className="leaf leaf3">🍃</div>
 
       <header className="header">
         <div className="container nav">
@@ -185,7 +186,7 @@ export default function HomePage() {
 
           <a
             className="desktopWhatsApp"
-            href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -198,27 +199,28 @@ export default function HomePage() {
         <section className="hero darkSection" id="inicio">
           <div className="container heroGrid">
             <div className="heroText">
-              <div className="pill darkPill">Cannabis medicinal · Comunidad · Patagonia</div>
+              <div className="pill darkPill">Proyecto patagónico · Orientación · REPROCANN</div>
 
               <h1>
-                Orientación clara y
-                <span> acompañamiento responsable</span>
+                Acompañamiento claro,
+                <span> cercano y responsable</span>
               </h1>
 
               <p className="heroLead">
-                Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.
+                Orientación, vinculación médica para REPROCANN, formación y comunidad desde Lago
+                Puelo.
               </p>
 
               <p className="heroBody">
-                En Simbiosis Miceliar acompañamos procesos de orientación, vinculación médica para
-                REPROCANN, formación y seguimiento desde una mirada cercana, comunitaria y con enfoque
+                En Simbiosis Miceliar acompañamos procesos de orientación, articulación,
+                formación y seguimiento desde una mirada humana, comunitaria y con enfoque
                 agroecológico.
               </p>
 
               <div className="buttons">
                 <a
                   className="btn btnPrimary"
-                  href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
+                  href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -240,7 +242,7 @@ export default function HomePage() {
             <div className="heroImage">
               <Image
                 src="/hero-invernadero.jpeg"
-                alt="Invernadero y dimensión del cultivo"
+                alt="Invernadero y entorno del proyecto"
                 fill
                 priority
                 sizes="(max-width: 1080px) 100vw, 48vw"
@@ -248,8 +250,8 @@ export default function HomePage() {
               />
               <div className="heroOverlay" />
               <div className="heroMiniCard">
-                <strong>Cuidado, territorio y comunidad</strong>
-                <span>Una mirada responsable sobre el acompañamiento y el cultivo.</span>
+                <strong>Territorio, cuidado y comunidad</strong>
+                <span>Una mirada cercana y responsable sobre el acompañamiento y el cultivo.</span>
               </div>
             </div>
           </div>
@@ -306,12 +308,12 @@ export default function HomePage() {
               <div className="pill lightPill">Quiénes somos</div>
               <h2>Una comunidad construida desde el territorio</h2>
               <p className="sectionLead darkText">
-                Creemos que el acceso a la información, la orientación responsable y el acompañamiento
-                humano hacen una diferencia real en los recorridos vinculados al cannabis medicinal.
+                Somos un proyecto patagónico que busca aportar claridad, acompañamiento responsable
+                y cercanía en los recorridos vinculados al cannabis medicinal.
               </p>
               <p className="sectionText">
-                Nuestro enfoque combina cercanía, seriedad, identidad territorial y compromiso comunitario.
-                Buscamos que cada persona encuentre un espacio claro, respetuoso y confiable.
+                Nuestro enfoque combina identidad territorial, compromiso comunitario, respeto por
+                cada proceso y una relación cercana entre quienes consultan y quienes acompañan.
               </p>
             </div>
 
@@ -319,29 +321,29 @@ export default function HomePage() {
               <div className="smallPhotoCard">
                 <div className="smallPhoto">
                   <Image
-                    src="/hero-invernadero.jpeg"
-                    alt="Territorio patagónico"
+                    src="/cultivo-3.jpg"
+                    alt="Cultivo y trabajo cuidado"
                     fill
                     sizes="(max-width: 1080px) 100vw, 22vw"
-                    className="coverImage smallImgGreenhouse"
+                    className="coverImage photoOne"
                   />
                 </div>
-                <strong>Territorio patagónico</strong>
-                <span>Lago Puelo · Chubut</span>
+                <strong>Trabajo cuidado</strong>
+                <span>Procesos responsables y cercanos</span>
               </div>
 
               <div className="smallPhotoCard">
                 <div className="smallPhoto">
                   <Image
-                    src="/cultivo-1.jpg"
-                    alt="Compromiso comunitario"
+                    src="/cultivo-4.jpg"
+                    alt="Detalle del cultivo"
                     fill
                     sizes="(max-width: 1080px) 100vw, 22vw"
-                    className="coverImage smallImgBudOne"
+                    className="coverImage photoTwo"
                   />
                 </div>
-                <strong>Compromiso comunitario</strong>
-                <span>Identidad, respeto y cuidado</span>
+                <strong>Identidad territorial</strong>
+                <span>Lago Puelo · Chubut · Patagonia</span>
               </div>
             </div>
           </div>
@@ -353,7 +355,8 @@ export default function HomePage() {
               <div className="pill darkPill">Cómo trabajamos</div>
               <h2>Un recorrido simple, cuidado y ordenado</h2>
               <p className="sectionLead">
-                Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo empieza el proceso.
+                Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo comienza el
+                proceso.
               </p>
             </div>
 
@@ -379,7 +382,7 @@ export default function HomePage() {
               <div className="stepCard">
                 <div className="stepCircle">4</div>
                 <h3>Acompañamos</h3>
-                <p>Sostenemos una relación cercana, con seguimiento y continuidad durante cada proceso.</p>
+                <p>Sostenemos una relación cercana, ordenada y humana durante cada proceso.</p>
               </div>
             </div>
           </div>
@@ -398,7 +401,7 @@ export default function HomePage() {
                 <div className="areaCard">
                   <div className="areaIcon">◌</div>
                   <h3>Orientación inicial</h3>
-                  <p>Escuchamos cada situación de forma personalizada.</p>
+                  <p>Escuchamos cada situación de forma personalizada y clara.</p>
                 </div>
 
                 <div className="areaCard">
@@ -439,7 +442,7 @@ export default function HomePage() {
                 <h3>Acompañamiento claro para un proceso sensible</h3>
                 <p>
                   Sabemos que muchas personas llegan con dudas o desinformación. Por eso ofrecemos
-                  un acompañamiento claro y cercano en cada etapa.
+                  un acompañamiento claro, cercano y ordenado en cada etapa.
                 </p>
                 <ul>
                   <li>Información clara</li>
@@ -469,11 +472,11 @@ export default function HomePage() {
               <h2>Cultivo responsable, cuidado del entorno y formación consciente</h2>
               <p>
                 Entendemos el cultivo como parte de una mirada integral: aprendizaje, responsabilidad
-                y vínculo con la tierra.
+                y vínculo con el territorio.
               </p>
               <p>
                 Promovemos buenas prácticas, respeto por el entorno, procesos cuidados y una relación
-                responsable con el territorio y la comunidad.
+                responsable con la comunidad.
               </p>
               <div className="agroList">
                 <span>Cuidado del entorno</span>
@@ -495,29 +498,31 @@ export default function HomePage() {
             <div className="galleryGrid">
               <div className="galleryCard large">
                 <Image
-                  src="/hero-invernadero.jpeg"
-                  alt="Territorio y comunidad"
+                  src="/cultivo-5.jpg"
+                  alt="Trabajo de cultivo"
                   fill
                   sizes="(max-width: 1080px) 100vw, 40vw"
-                  className="coverImage galleryHeroImg"
+                  className="coverImage galleryLarge"
                 />
               </div>
+
               <div className="galleryCard">
                 <Image
-                  src="/cultivo-2.jpg"
-                  alt="Cultivo responsable"
+                  src="/cultivo-6.jpg"
+                  alt="Detalle del cultivo"
                   fill
                   sizes="(max-width: 1080px) 50vw, 20vw"
-                  className="coverImage galleryBudTwo"
+                  className="coverImage galleryTwo"
                 />
               </div>
+
               <div className="galleryCard">
                 <Image
                   src="/cultivo-1.jpg"
-                  alt="Cultivo y comunidad"
+                  alt="Imagen del proyecto"
                   fill
                   sizes="(max-width: 1080px) 50vw, 20vw"
-                  className="coverImage galleryBudOne"
+                  className="coverImage galleryThree"
                 />
               </div>
             </div>
@@ -576,7 +581,7 @@ export default function HomePage() {
               <div className="contactButtons">
                 <a
                   className="contactPromoBtn whatsappBtn"
-                  href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
+                  href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -586,7 +591,7 @@ export default function HomePage() {
 
                 <a
                   className="contactPromoBtn instagramBtn"
-                  href="https://instagram.com/simbiosismiceliar"
+                  href={instagramHref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -625,7 +630,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3>Simbiosis Miceliar</h3>
-                <p>Proyecto patagónico de cannabis medicinal</p>
+                <p>Proyecto patagónico de orientación y acompañamiento</p>
               </div>
             </div>
 
@@ -653,13 +658,13 @@ export default function HomePage() {
         </div>
 
         <div className="container footerBottom">
-          <p>© 2024 Simbiosis Miceliar. Lago Puelo, Chubut. Todos los derechos reservados.</p>
+          <p>© {currentYear} Simbiosis Miceliar. Lago Puelo, Chubut. Todos los derechos reservados.</p>
         </div>
       </footer>
 
       <a
         className="whatsappFloat"
-        href="https://wa.me/5492944138880?text=Hola%2C%20quiero%20recibir%20orientaci%C3%B3n."
+        href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"
@@ -669,17 +674,17 @@ export default function HomePage() {
 
       <style jsx global>{`
         :root {
-          --dark: #0b1711;
-          --dark-2: #13241b;
-          --green: #6f8f5b;
-          --green-2: #89aa75;
-          --light: #f3eee5;
-          --stone: #e6ddcf;
+          --dark: #0d1712;
+          --dark-2: #16231b;
+          --green: #6e8e5c;
+          --green-2: #96b481;
+          --light: #eee5d8;
+          --stone: #e2d3bd;
           --white: #ffffff;
           --text-dark: #1d241e;
-          --text-light: #f4f2eb;
-          --muted-dark: #5c655c;
-          --muted-light: #c7cfc5;
+          --text-light: #f5f1e8;
+          --muted-dark: #5f685f;
+          --muted-light: #c9d0c5;
           --line-dark: rgba(255, 255, 255, 0.08);
           --line-light: rgba(16, 24, 18, 0.08);
           --shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
@@ -718,46 +723,47 @@ export default function HomePage() {
         }
 
         .container {
-          width: min(100% - 32px, var(--max));
+          width: min(100% - 30px, var(--max));
           margin: 0 auto;
         }
 
         .coverImage {
           object-fit: cover;
+          object-position: center center;
         }
 
         .heroImg {
-          object-position: center 68%;
-        }
-
-        .smallImgGreenhouse {
           object-position: center 62%;
         }
 
-        .smallImgBudOne {
-          object-position: center 36%;
+        .photoOne {
+          object-position: center 44%;
+        }
+
+        .photoTwo {
+          object-position: center 50%;
         }
 
         .cultivoImg {
-          object-position: center 32%;
+          object-position: center 40%;
         }
 
-        .galleryHeroImg {
-          object-position: center 64%;
+        .galleryLarge {
+          object-position: center 42%;
         }
 
-        .galleryBudTwo {
-          object-position: center 30%;
+        .galleryTwo {
+          object-position: center 44%;
         }
 
-        .galleryBudOne {
-          object-position: center 36%;
+        .galleryThree {
+          object-position: center 40%;
         }
 
         .darkSection {
           background:
-            radial-gradient(circle at top left, rgba(111, 143, 91, 0.12), transparent 28%),
-            radial-gradient(circle at right center, rgba(230, 221, 207, 0.06), transparent 24%),
+            radial-gradient(circle at top left, rgba(110, 142, 92, 0.12), transparent 28%),
+            radial-gradient(circle at right center, rgba(238, 229, 216, 0.06), transparent 24%),
             linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
           color: var(--text-light);
         }
@@ -771,7 +777,7 @@ export default function HomePage() {
           position: sticky;
           top: 0;
           z-index: 60;
-          background: rgba(11, 23, 17, 0.88);
+          background: rgba(13, 23, 18, 0.82);
           backdrop-filter: blur(12px);
           border-bottom: 1px solid var(--line-dark);
         }
@@ -813,10 +819,15 @@ export default function HomePage() {
           object-fit: cover;
         }
 
+        .brandText {
+          min-width: 0;
+        }
+
         .brandTitle {
           font-weight: 800;
           font-size: 1rem;
           color: var(--text-light);
+          line-height: 1.1;
         }
 
         .brandSub {
@@ -867,7 +878,7 @@ export default function HomePage() {
         .navLinks {
           display: flex;
           align-items: center;
-          gap: 26px;
+          gap: 24px;
           flex-wrap: wrap;
         }
 
@@ -885,7 +896,7 @@ export default function HomePage() {
         .desktopWhatsApp {
           padding: 12px 18px;
           border-radius: 999px;
-          background: linear-gradient(135deg, #1a7d4c, #22a55c);
+          background: linear-gradient(135deg, #177f48, #22a55c);
           color: white;
           font-weight: 700;
           box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
@@ -893,7 +904,7 @@ export default function HomePage() {
         }
 
         .hero {
-          padding: 32px 0 26px;
+          padding: 30px 0 28px;
         }
 
         .heroGrid {
@@ -905,9 +916,9 @@ export default function HomePage() {
 
         .heroText h1 {
           margin: 0 0 16px;
-          font-size: clamp(2.7rem, 5.8vw, 5rem);
+          font-size: clamp(2.45rem, 5.5vw, 4.9rem);
           line-height: 0.98;
-          letter-spacing: -1.4px;
+          letter-spacing: -1.3px;
           max-width: 720px;
           text-wrap: balance;
         }
@@ -985,15 +996,15 @@ export default function HomePage() {
         .badges span {
           padding: 9px 13px;
           border-radius: 999px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.09);
           font-size: 0.88rem;
           color: #eef1ea;
         }
 
         .heroImage {
           position: relative;
-          min-height: 540px;
+          min-height: 560px;
           border-radius: 28px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1003,14 +1014,14 @@ export default function HomePage() {
         .heroOverlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(4, 10, 6, 0.04), rgba(4, 10, 6, 0.34));
+          background: linear-gradient(180deg, rgba(4, 10, 6, 0.08), rgba(4, 10, 6, 0.34));
         }
 
         .heroMiniCard {
           position: absolute;
           right: 18px;
           bottom: 18px;
-          max-width: 260px;
+          max-width: 270px;
           padding: 14px 16px;
           border-radius: 18px;
           background: rgba(11, 23, 17, 0.78);
@@ -1043,9 +1054,9 @@ export default function HomePage() {
         }
 
         .darkPill {
-          background: rgba(111, 143, 91, 0.16);
-          color: #a6cf8c;
-          border: 1px solid rgba(111, 143, 91, 0.24);
+          background: rgba(110, 142, 92, 0.16);
+          color: #afd08f;
+          border: 1px solid rgba(110, 142, 92, 0.24);
         }
 
         .lightPill {
@@ -1055,7 +1066,7 @@ export default function HomePage() {
         }
 
         .trustBand {
-          padding: 26px 0;
+          padding: 24px 0;
         }
 
         .trustGrid {
@@ -1070,7 +1081,7 @@ export default function HomePage() {
           display: flex;
           align-items: flex-start;
           gap: 14px;
-          padding: 26px 18px;
+          padding: 24px 18px;
           border-right: 1px solid var(--line-light);
         }
 
@@ -1082,7 +1093,7 @@ export default function HomePage() {
           width: 34px;
           height: 34px;
           border-radius: 50%;
-          background: rgba(111, 143, 91, 0.14);
+          background: rgba(110, 142, 92, 0.14);
           color: #4f6e48;
           display: grid;
           place-items: center;
@@ -1103,7 +1114,7 @@ export default function HomePage() {
         }
 
         .miniValue {
-          padding: 24px 0 8px;
+          padding: 22px 0 6px;
         }
 
         .miniValueWrap {
@@ -1119,7 +1130,7 @@ export default function HomePage() {
         }
 
         .section {
-          padding: 76px 0;
+          padding: 72px 0;
         }
 
         .sectionTop {
@@ -1185,7 +1196,7 @@ export default function HomePage() {
         .smallPhoto {
           position: relative;
           width: 100%;
-          min-height: 210px;
+          min-height: 220px;
           border-radius: 14px;
           overflow: hidden;
           margin-bottom: 12px;
@@ -1268,7 +1279,7 @@ export default function HomePage() {
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          background: rgba(111, 143, 91, 0.14);
+          background: rgba(110, 142, 92, 0.14);
           color: #4d6e47;
           display: grid;
           place-items: center;
@@ -1291,10 +1302,8 @@ export default function HomePage() {
 
         .reprocannCard {
           background:
-            linear-gradient(180deg, rgba(11, 23, 17, 0.84), rgba(11, 23, 17, 0.94)),
-            url("/cultivo-1.jpg");
-          background-size: cover;
-          background-position: center;
+            radial-gradient(circle at top right, rgba(110, 142, 92, 0.16), transparent 28%),
+            linear-gradient(180deg, rgba(13, 23, 18, 0.92), rgba(13, 23, 18, 0.98));
           border-radius: 22px;
           padding: 28px 24px;
           color: var(--text-light);
@@ -1304,7 +1313,7 @@ export default function HomePage() {
         }
 
         .reprocannCard h3 {
-          font-size: 2rem;
+          font-size: 1.95rem;
           line-height: 1.1;
           margin: 0 0 14px;
         }
@@ -1347,7 +1356,7 @@ export default function HomePage() {
 
         .cultivoImage {
           position: relative;
-          min-height: 420px;
+          min-height: 430px;
           border-radius: 22px;
           overflow: hidden;
           box-shadow: var(--shadow);
@@ -1401,7 +1410,7 @@ export default function HomePage() {
           position: relative;
           border-radius: 22px;
           overflow: hidden;
-          min-height: 340px;
+          min-height: 330px;
           box-shadow: var(--shadow-soft);
           background: #fff;
         }
@@ -1464,7 +1473,7 @@ export default function HomePage() {
 
         .contactPromo {
           background:
-            radial-gradient(circle at top right, rgba(111, 143, 91, 0.16), transparent 25%),
+            radial-gradient(circle at top right, rgba(110, 142, 92, 0.16), transparent 25%),
             linear-gradient(180deg, var(--dark-2) 0%, var(--dark) 100%);
           border-radius: 24px;
           padding: 28px 24px;
@@ -1671,32 +1680,6 @@ export default function HomePage() {
           flex-wrap: wrap;
         }
 
-        .leaf {
-          position: absolute;
-          opacity: 0.06;
-          font-size: 54px;
-          user-select: none;
-          pointer-events: none;
-        }
-
-        .leaf1 {
-          top: 140px;
-          left: 2%;
-          transform: rotate(-14deg);
-        }
-
-        .leaf2 {
-          top: 1650px;
-          right: 4%;
-          transform: rotate(18deg);
-        }
-
-        .leaf3 {
-          top: 2680px;
-          left: 3%;
-          transform: rotate(10deg);
-        }
-
         @media (max-width: 1180px) {
           .heroGrid,
           .splitIntro,
@@ -1728,7 +1711,7 @@ export default function HomePage() {
           }
 
           .heroImage {
-            min-height: 440px;
+            min-height: 460px;
           }
         }
 
@@ -1763,7 +1746,7 @@ export default function HomePage() {
             flex-direction: column;
             gap: 0;
             padding: 10px;
-            background: rgba(11, 23, 17, 0.96);
+            background: rgba(13, 23, 18, 0.96);
             border: 1px solid var(--line-dark);
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -1786,7 +1769,7 @@ export default function HomePage() {
 
         @media (max-width: 760px) {
           .hero {
-            padding: 28px 0 20px;
+            padding: 24px 0 18px;
           }
 
           .heroGrid,
@@ -1803,36 +1786,27 @@ export default function HomePage() {
             grid-column: auto;
           }
 
+          .heroText h1 {
+            font-size: clamp(2.15rem, 9vw, 3rem);
+            line-height: 1;
+            letter-spacing: -0.9px;
+          }
+
           .heroImage {
-            min-height: 380px;
+            min-height: 360px;
           }
 
           .heroImg {
-            object-position: center 72%;
+            object-position: center 64%;
           }
 
-          .smallImgGreenhouse {
-            object-position: center 68%;
-          }
-
-          .smallImgBudOne {
-            object-position: center 30%;
-          }
-
-          .cultivoImg {
-            object-position: center 26%;
-          }
-
-          .galleryHeroImg {
-            object-position: center 70%;
-          }
-
-          .galleryBudTwo {
-            object-position: center 24%;
-          }
-
-          .galleryBudOne {
-            object-position: center 30%;
+          .photoOne,
+          .photoTwo,
+          .cultivoImg,
+          .galleryLarge,
+          .galleryTwo,
+          .galleryThree {
+            object-position: center center;
           }
 
           .heroMiniCard {
@@ -1843,20 +1817,20 @@ export default function HomePage() {
           }
 
           .section {
-            padding: 58px 0;
+            padding: 54px 0;
           }
 
           .smallPhoto {
-            min-height: 240px;
+            min-height: 250px;
           }
 
           .cultivoImage {
-            min-height: 440px;
+            min-height: 360px;
           }
 
           .galleryCard.large,
           .galleryCard {
-            min-height: 320px;
+            min-height: 280px;
           }
 
           .heroBody,
@@ -1882,6 +1856,53 @@ export default function HomePage() {
 
           .trustMini {
             padding: 18px 16px;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .container {
+            width: min(100% - 24px, var(--max));
+          }
+
+          .nav {
+            min-height: 72px;
+            gap: 14px;
+          }
+
+          .brandLogoWrap {
+            width: 46px;
+            height: 46px;
+          }
+
+          .brandTitle {
+            font-size: 0.94rem;
+          }
+
+          .brandSub {
+            font-size: 0.79rem;
+          }
+
+          .heroMiniCard {
+            display: none;
+          }
+
+          .heroImage {
+            min-height: 330px;
+            border-radius: 22px;
+          }
+
+          .areaCard,
+          .stepCard,
+          .contactPromo,
+          .reprocannCard,
+          .smallPhotoCard,
+          .faqItem {
+            border-radius: 18px;
+          }
+
+          .ageBox {
+            padding: 28px 22px;
+            border-radius: 22px;
           }
         }
       `}</style>
