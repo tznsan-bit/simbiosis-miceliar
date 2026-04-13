@@ -197,6 +197,7 @@ export default function HomePage() {
 
       <main>
         <section className="hero darkSection" id="inicio">
+          <div className="heroBackdropTexture" />
           <div className="container heroGrid">
             <div className="heroText">
               <div className="pill darkPill">Proyecto patagónico · Orientación · REPROCANN</div>
@@ -417,17 +418,13 @@ export default function HomePage() {
                 <div className="areaCard">
                   <div className="areaIcon">❋</div>
                   <h3>Cultivo agroecológico</h3>
-                  <p>
-                    Inocuidad, proceso seguro y nutrición orgánica con enfoque agroecológico.
-                  </p>
+                  <p>Inocuidad, proceso seguro y nutrición orgánica con enfoque agroecológico.</p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">▣</div>
                   <h3>Formación</h3>
-                  <p>
-                    Capacitaciones, terpenos y preparación responsable de derivados.
-                  </p>
+                  <p>Capacitaciones, terpenos y preparación responsable de derivados.</p>
                 </div>
 
                 <div className="areaCard">
@@ -439,9 +436,7 @@ export default function HomePage() {
                 <div className="areaCard">
                   <div className="areaIcon">♡</div>
                   <h3>Confidencialidad</h3>
-                  <p>
-                    Resguardo responsable de información personal y sensible según Ley 25.326.
-                  </p>
+                  <p>Resguardo responsable de información personal y sensible según Ley 25.326.</p>
                 </div>
               </div>
             </div>
@@ -567,7 +562,7 @@ export default function HomePage() {
                         aria-controls={answerId}
                       >
                         <span>{item.q}</span>
-                        <span>{isOpen ? "−" : "+"}</span>
+                        <span className="faqSymbol">{isOpen ? "−" : "+"}</span>
                       </button>
 
                       <div
@@ -693,17 +688,19 @@ export default function HomePage() {
           --dark-2: #16231b;
           --green: #6e8e5c;
           --green-2: #96b481;
-          --light: #eee5d8;
-          --stone: #e2d3bd;
+          --light: #efe6d9;
+          --stone: #e3d5c0;
+          --paper: #f8f4ec;
           --white: #ffffff;
-          --text-dark: #1d241e;
-          --text-light: #f5f1e8;
-          --muted-dark: #5f685f;
+          --text-dark: #1c241e;
+          --text-light: #f6f1e7;
+          --muted-dark: #5e675e;
           --muted-light: #c9d0c5;
           --line-dark: rgba(255, 255, 255, 0.08);
           --line-light: rgba(16, 24, 18, 0.08);
-          --shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
-          --shadow-soft: 0 10px 22px rgba(0, 0, 0, 0.07);
+          --shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+          --shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.08);
+          --shadow-soft-2: 0 10px 26px rgba(0, 0, 0, 0.06);
           --max: 1180px;
         }
 
@@ -721,6 +718,8 @@ export default function HomePage() {
           background: var(--dark);
           color: var(--text-light);
           overflow-x: hidden;
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
         }
 
         a {
@@ -729,7 +728,7 @@ export default function HomePage() {
         }
 
         section[id] {
-          scroll-margin-top: 92px;
+          scroll-margin-top: 96px;
         }
 
         .bootScreen {
@@ -745,6 +744,7 @@ export default function HomePage() {
         .coverImage {
           object-fit: cover;
           object-position: center center;
+          transform: scale(1.01);
         }
 
         .heroImg {
@@ -777,14 +777,16 @@ export default function HomePage() {
 
         .darkSection {
           background:
-            radial-gradient(circle at top left, rgba(110, 142, 92, 0.12), transparent 28%),
-            radial-gradient(circle at right center, rgba(238, 229, 216, 0.06), transparent 24%),
+            radial-gradient(circle at top left, rgba(110, 142, 92, 0.12), transparent 30%),
+            radial-gradient(circle at right center, rgba(238, 229, 216, 0.05), transparent 24%),
             linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
           color: var(--text-light);
         }
 
         .lightSection {
-          background: linear-gradient(180deg, var(--light) 0%, var(--stone) 100%);
+          background:
+            linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.02) 100%),
+            linear-gradient(180deg, var(--light) 0%, var(--stone) 100%);
           color: var(--text-dark);
         }
 
@@ -792,13 +794,13 @@ export default function HomePage() {
           position: sticky;
           top: 0;
           z-index: 60;
-          background: rgba(13, 23, 18, 0.82);
-          backdrop-filter: blur(12px);
+          background: rgba(13, 23, 18, 0.76);
+          backdrop-filter: blur(14px);
           border-bottom: 1px solid var(--line-dark);
         }
 
         .nav {
-          min-height: 78px;
+          min-height: 80px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -817,12 +819,13 @@ export default function HomePage() {
         .footerLogoWrap {
           width: 52px;
           height: 52px;
-          border-radius: 14px;
+          border-radius: 16px;
           overflow: hidden;
           flex-shrink: 0;
           position: relative;
           background: rgba(255, 255, 255, 0.04);
           border: 1px solid var(--line-dark);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
         }
 
         .footerLogoWrap {
@@ -842,12 +845,13 @@ export default function HomePage() {
           font-weight: 800;
           font-size: 1rem;
           color: var(--text-light);
-          line-height: 1.1;
+          line-height: 1.08;
+          letter-spacing: -0.02em;
         }
 
         .brandSub {
           color: var(--muted-light);
-          font-size: 0.84rem;
+          font-size: 0.83rem;
         }
 
         .menuToggle {
@@ -901,11 +905,12 @@ export default function HomePage() {
           color: var(--text-light);
           font-size: 0.95rem;
           opacity: 0.9;
-          transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .navLinks a:hover {
           opacity: 1;
+          transform: translateY(-1px);
         }
 
         .desktopWhatsApp {
@@ -914,15 +919,33 @@ export default function HomePage() {
           background: linear-gradient(135deg, #177f48, #22a55c);
           color: white;
           font-weight: 700;
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
           white-space: nowrap;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .desktopWhatsApp:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
         }
 
         .hero {
-          padding: 30px 0 28px;
+          position: relative;
+          padding: 34px 0 32px;
+          overflow: hidden;
+        }
+
+        .heroBackdropTexture {
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(circle at 10% 12%, rgba(255,255,255,0.05), transparent 18%),
+            radial-gradient(circle at 82% 18%, rgba(255,255,255,0.035), transparent 20%);
+          pointer-events: none;
         }
 
         .heroGrid {
+          position: relative;
           display: grid;
           grid-template-columns: 1.02fr 0.98fr;
           gap: 34px;
@@ -931,10 +954,10 @@ export default function HomePage() {
 
         .heroText h1 {
           margin: 0 0 16px;
-          font-size: clamp(2.45rem, 5.5vw, 4.9rem);
-          line-height: 0.98;
-          letter-spacing: -1.3px;
-          max-width: 720px;
+          font-size: clamp(2.5rem, 5.7vw, 5.1rem);
+          line-height: 0.96;
+          letter-spacing: -1.6px;
+          max-width: 760px;
           text-wrap: balance;
         }
 
@@ -946,14 +969,14 @@ export default function HomePage() {
           font-size: clamp(1.04rem, 2vw, 1.18rem);
           line-height: 1.6;
           color: var(--text-light);
-          opacity: 0.96;
+          opacity: 0.97;
           max-width: 720px;
           margin: 0 0 10px;
         }
 
         .heroBody {
           font-size: 1rem;
-          line-height: 1.72;
+          line-height: 1.75;
           color: var(--muted-light);
           max-width: 700px;
           margin: 0;
@@ -963,7 +986,7 @@ export default function HomePage() {
           display: flex;
           flex-wrap: wrap;
           gap: 14px;
-          margin-top: 28px;
+          margin-top: 30px;
         }
 
         .btn {
@@ -977,12 +1000,13 @@ export default function HomePage() {
           cursor: pointer;
           transition: 0.25s ease;
           border: 1px solid transparent;
+          font-size: 0.98rem;
         }
 
         .btnPrimary {
           background: linear-gradient(135deg, #177f48, #22a55c);
           color: white;
-          box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
         }
 
         .btnPrimary:hover {
@@ -1005,7 +1029,7 @@ export default function HomePage() {
           display: flex;
           gap: 10px;
           flex-wrap: wrap;
-          margin-top: 22px;
+          margin-top: 24px;
         }
 
         .badges span {
@@ -1019,29 +1043,32 @@ export default function HomePage() {
 
         .heroImage {
           position: relative;
-          min-height: 560px;
-          border-radius: 28px;
+          min-height: 590px;
+          border-radius: 32px;
           overflow: hidden;
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: var(--shadow);
+          background: #0d1712;
         }
 
         .heroOverlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(4, 10, 6, 0.08), rgba(4, 10, 6, 0.34));
+          background:
+            linear-gradient(180deg, rgba(4, 10, 6, 0.06), rgba(4, 10, 6, 0.34)),
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06), transparent 22%);
         }
 
         .heroMiniCard {
           position: absolute;
           right: 18px;
           bottom: 18px;
-          max-width: 270px;
-          padding: 14px 16px;
+          max-width: 280px;
+          padding: 15px 16px;
           border-radius: 18px;
           background: rgba(11, 23, 17, 0.78);
           border: 1px solid rgba(255, 255, 255, 0.08);
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(12px);
           box-shadow: var(--shadow-soft);
           display: flex;
           flex-direction: column;
@@ -1055,7 +1082,7 @@ export default function HomePage() {
         .heroMiniCard span {
           font-size: 0.9rem;
           color: var(--muted-light);
-          line-height: 1.4;
+          line-height: 1.45;
         }
 
         .pill {
@@ -1081,7 +1108,7 @@ export default function HomePage() {
         }
 
         .trustBand {
-          padding: 24px 0;
+          padding: 26px 0;
         }
 
         .trustGrid {
@@ -1105,8 +1132,8 @@ export default function HomePage() {
         }
 
         .trustIcon {
-          width: 34px;
-          height: 34px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           background: rgba(110, 142, 92, 0.14);
           color: #4f6e48;
@@ -1129,7 +1156,7 @@ export default function HomePage() {
         }
 
         .miniValue {
-          padding: 22px 0 6px;
+          padding: 24px 0 8px;
         }
 
         .miniValueWrap {
@@ -1137,25 +1164,26 @@ export default function HomePage() {
         }
 
         .miniValueWrap p {
-          max-width: 880px;
+          max-width: 900px;
           margin: 0 auto;
           color: var(--text-dark);
           font-size: 1.08rem;
-          line-height: 1.7;
+          line-height: 1.75;
         }
 
         .section {
-          padding: 72px 0;
+          padding: 78px 0;
+          position: relative;
         }
 
         .sectionTop {
-          margin-bottom: 28px;
+          margin-bottom: 30px;
         }
 
         .centerTop {
           text-align: center;
           max-width: 760px;
-          margin: 0 auto 28px;
+          margin: 0 auto 30px;
         }
 
         .splitIntro {
@@ -1171,14 +1199,15 @@ export default function HomePage() {
         .contactPromo h2 {
           margin: 0 0 16px;
           font-size: clamp(2rem, 4vw, 3rem);
-          line-height: 1.05;
+          line-height: 1.03;
           color: var(--text-dark);
           text-wrap: balance;
+          letter-spacing: -0.03em;
         }
 
         .sectionLead {
           font-size: clamp(1.04rem, 2vw, 1.16rem);
-          line-height: 1.62;
+          line-height: 1.64;
           max-width: 760px;
           margin: 0;
         }
@@ -1189,7 +1218,7 @@ export default function HomePage() {
 
         .sectionText {
           color: var(--muted-dark);
-          line-height: 1.7;
+          line-height: 1.74;
           margin-top: 14px;
           max-width: 700px;
         }
@@ -1197,22 +1226,22 @@ export default function HomePage() {
         .introCards {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 16px;
+          gap: 18px;
         }
 
         .smallPhotoCard {
-          background: rgba(255, 255, 255, 0.88);
-          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.82);
+          border-radius: 22px;
           padding: 12px;
-          box-shadow: var(--shadow-soft);
-          border: 1px solid rgba(0, 0, 0, 0.06);
+          box-shadow: var(--shadow-soft-2);
+          border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .smallPhoto {
           position: relative;
           width: 100%;
-          min-height: 220px;
-          border-radius: 14px;
+          min-height: 230px;
+          border-radius: 16px;
           overflow: hidden;
           margin-bottom: 12px;
         }
@@ -1235,16 +1264,22 @@ export default function HomePage() {
         }
 
         .stepCard {
-          padding: 26px 20px;
-          border-radius: 20px;
+          padding: 28px 20px;
+          border-radius: 22px;
           background: rgba(255, 255, 255, 0.035);
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+          transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .stepCard:hover {
+          transform: translateY(-3px);
+          border-color: rgba(255,255,255,0.12);
         }
 
         .stepCircle {
-          width: 38px;
-          height: 38px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           background: linear-gradient(135deg, var(--green), var(--green-2));
           color: white;
@@ -1263,7 +1298,7 @@ export default function HomePage() {
         .stepCard p {
           margin: 0;
           color: var(--muted-light);
-          line-height: 1.6;
+          line-height: 1.62;
           font-size: 0.96rem;
         }
 
@@ -1282,12 +1317,18 @@ export default function HomePage() {
         }
 
         .areaCard {
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.88);
           border: 1px solid rgba(0, 0, 0, 0.05);
-          border-radius: 18px;
+          border-radius: 22px;
           padding: 22px 18px;
+          box-shadow: var(--shadow-soft-2);
+          min-height: 176px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .areaCard:hover {
+          transform: translateY(-3px);
           box-shadow: var(--shadow-soft);
-          min-height: 170px;
         }
 
         .areaIcon {
@@ -1311,7 +1352,7 @@ export default function HomePage() {
         .areaCard p {
           margin: 0;
           color: var(--muted-dark);
-          line-height: 1.55;
+          line-height: 1.58;
           font-size: 0.94rem;
         }
 
@@ -1319,8 +1360,8 @@ export default function HomePage() {
           background:
             radial-gradient(circle at top right, rgba(110, 142, 92, 0.16), transparent 28%),
             linear-gradient(180deg, rgba(13, 23, 18, 0.92), rgba(13, 23, 18, 0.98));
-          border-radius: 22px;
-          padding: 28px 24px;
+          border-radius: 26px;
+          padding: 30px 24px;
           color: var(--text-light);
           min-height: 100%;
           box-shadow: var(--shadow);
@@ -1329,13 +1370,14 @@ export default function HomePage() {
 
         .reprocannCard h3 {
           font-size: 1.95rem;
-          line-height: 1.1;
+          line-height: 1.08;
           margin: 0 0 14px;
+          letter-spacing: -0.03em;
         }
 
         .reprocannCard p {
           color: var(--muted-light);
-          line-height: 1.7;
+          line-height: 1.74;
           margin: 0 0 18px;
         }
 
@@ -1371,31 +1413,33 @@ export default function HomePage() {
 
         .cultivoImage {
           position: relative;
-          min-height: 430px;
-          border-radius: 22px;
+          min-height: 450px;
+          border-radius: 26px;
           overflow: hidden;
           box-shadow: var(--shadow);
         }
 
         .cultivoTextCard {
-          border-radius: 24px;
-          padding: 34px 30px;
+          border-radius: 26px;
+          padding: 36px 30px;
           background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.03));
           border: 1px solid rgba(255, 255, 255, 0.08);
           display: flex;
           flex-direction: column;
           justify-content: center;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
         }
 
         .cultivoTextCard h2 {
           margin: 0 0 16px;
           font-size: clamp(2rem, 4vw, 2.7rem);
-          line-height: 1.1;
+          line-height: 1.07;
+          letter-spacing: -0.03em;
         }
 
         .cultivoTextCard p {
           color: var(--muted-light);
-          line-height: 1.72;
+          line-height: 1.74;
           margin: 0 0 14px;
         }
 
@@ -1403,7 +1447,7 @@ export default function HomePage() {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
-          margin-top: 8px;
+          margin-top: 10px;
         }
 
         .agroList span {
@@ -1423,15 +1467,15 @@ export default function HomePage() {
 
         .galleryCard {
           position: relative;
-          border-radius: 22px;
+          border-radius: 24px;
           overflow: hidden;
-          min-height: 330px;
+          min-height: 340px;
           box-shadow: var(--shadow-soft);
           background: #fff;
         }
 
         .galleryCard.large {
-          min-height: 420px;
+          min-height: 440px;
         }
 
         .faqContactWrap {
@@ -1444,8 +1488,9 @@ export default function HomePage() {
         .faqBlock h2 {
           margin: 0 0 16px;
           font-size: clamp(2rem, 4vw, 2.8rem);
-          line-height: 1.08;
+          line-height: 1.06;
           color: var(--text-dark);
+          letter-spacing: -0.03em;
         }
 
         .faqList {
@@ -1454,11 +1499,11 @@ export default function HomePage() {
         }
 
         .faqItem {
-          background: rgba(255, 255, 255, 0.85);
+          background: rgba(255, 255, 255, 0.84);
           border: 1px solid rgba(0, 0, 0, 0.07);
-          border-radius: 18px;
+          border-radius: 20px;
           overflow: hidden;
-          box-shadow: var(--shadow-soft);
+          box-shadow: var(--shadow-soft-2);
         }
 
         .faqQuestion {
@@ -1474,6 +1519,13 @@ export default function HomePage() {
           justify-content: space-between;
           cursor: pointer;
           text-align: left;
+          gap: 16px;
+        }
+
+        .faqSymbol {
+          font-size: 1.3rem;
+          line-height: 1;
+          flex-shrink: 0;
         }
 
         .faqAnswer {
@@ -1483,15 +1535,15 @@ export default function HomePage() {
         .faqAnswer p {
           margin: 0;
           color: var(--muted-dark);
-          line-height: 1.72;
+          line-height: 1.74;
         }
 
         .contactPromo {
           background:
             radial-gradient(circle at top right, rgba(110, 142, 92, 0.16), transparent 25%),
             linear-gradient(180deg, var(--dark-2) 0%, var(--dark) 100%);
-          border-radius: 24px;
-          padding: 28px 24px;
+          border-radius: 28px;
+          padding: 30px 24px;
           color: var(--text-light);
           box-shadow: var(--shadow);
           border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1499,16 +1551,17 @@ export default function HomePage() {
 
         .contactPromo h2 {
           color: var(--text-light);
-          font-size: clamp(1.9rem, 4vw, 2.6rem);
-          line-height: 1.08;
+          font-size: clamp(1.95rem, 4vw, 2.6rem);
+          line-height: 1.06;
           margin: 0 0 14px;
           text-wrap: balance;
+          letter-spacing: -0.03em;
         }
 
         .contactPromo p {
           margin: 0 0 18px;
           color: var(--muted-light);
-          line-height: 1.72;
+          line-height: 1.74;
         }
 
         .contactButtons {
@@ -1523,15 +1576,20 @@ export default function HomePage() {
         }
 
         .contactPromoBtn {
-          border-radius: 16px;
+          border-radius: 18px;
           padding: 16px 16px;
           display: flex;
           flex-direction: column;
           gap: 4px;
-          min-height: 78px;
+          min-height: 80px;
           justify-content: center;
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: var(--shadow-soft);
+          transition: transform 0.2s ease;
+        }
+
+        .contactPromoBtn:hover {
+          transform: translateY(-2px);
         }
 
         .contactPromoBtn strong {
@@ -1571,7 +1629,7 @@ export default function HomePage() {
         }
 
         .footer {
-          padding: 28px 0 18px;
+          padding: 32px 0 18px;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -1592,6 +1650,7 @@ export default function HomePage() {
         .footerLogoRow h3 {
           margin: 0 0 4px;
           color: var(--text-light);
+          letter-spacing: -0.02em;
         }
 
         .footerLogoRow p,
@@ -1602,7 +1661,7 @@ export default function HomePage() {
 
         .footerStatement {
           max-width: 420px;
-          line-height: 1.65;
+          line-height: 1.68;
         }
 
         .footerLinks,
@@ -1649,11 +1708,12 @@ export default function HomePage() {
           font-size: 28px;
           box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
           z-index: 60;
-          transition: transform 0.2s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .whatsappFloat:hover {
           transform: translateY(-2px);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
         }
 
         .ageGate {
@@ -1721,12 +1781,12 @@ export default function HomePage() {
 
           .trustMini {
             border: 1px solid var(--line-light);
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.45);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.42);
           }
 
           .heroImage {
-            min-height: 460px;
+            min-height: 480px;
           }
         }
 
@@ -1802,13 +1862,14 @@ export default function HomePage() {
           }
 
           .heroText h1 {
-            font-size: clamp(2.15rem, 9vw, 3rem);
-            line-height: 1;
-            letter-spacing: -0.9px;
+            font-size: clamp(2.2rem, 9vw, 3.1rem);
+            line-height: 0.98;
+            letter-spacing: -1px;
           }
 
           .heroImage {
-            min-height: 360px;
+            min-height: 370px;
+            border-radius: 24px;
           }
 
           .heroImg {
@@ -1832,7 +1893,7 @@ export default function HomePage() {
           }
 
           .section {
-            padding: 54px 0;
+            padding: 56px 0;
           }
 
           .smallPhoto {
@@ -1845,7 +1906,7 @@ export default function HomePage() {
 
           .galleryCard.large,
           .galleryCard {
-            min-height: 280px;
+            min-height: 290px;
           }
 
           .heroBody,
