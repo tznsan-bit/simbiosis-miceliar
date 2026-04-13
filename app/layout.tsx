@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Simbiosis Miceliar | Proyecto patagónico de cannabis medicinal",
   description:
     "Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal. Orientación, vinculación médica para REPROCANN y seguimiento cercano.",
+  applicationName: "Simbiosis Miceliar",
+  keywords: [
+    "cannabis medicinal",
+    "REPROCANN",
+    "Patagonia",
+    "Lago Puelo",
+    "acompañamiento",
+    "cultivo responsable",
+    "Simbiosis Miceliar",
+  ],
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -21,10 +31,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
+        url: "/og-image.png",
         width: 1200,
-        height: 1200,
-        alt: "Logo de Simbiosis Miceliar",
+        height: 630,
+        alt: "Simbiosis Miceliar · Proyecto patagónico de cannabis medicinal",
       },
     ],
   },
@@ -33,7 +43,7 @@ export const metadata: Metadata = {
     title: "Simbiosis Miceliar",
     description:
       "Proyecto patagónico de acompañamiento, formación y articulación en cannabis medicinal.",
-    images: ["/logo.png"],
+    images: ["/og-image.png"],
   },
 };
 
