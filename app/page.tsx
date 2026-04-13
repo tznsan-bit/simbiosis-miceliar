@@ -41,15 +41,15 @@ export default function HomePage() {
       },
       {
         q: "¿Qué significa su enfoque agroecológico?",
-        a: "Promovemos una mirada de cuidado integral: respeto por el territorio, buenas prácticas, formación consciente, procesos responsables y una relación atenta con el entorno, el cultivo y la comunidad.",
+        a: "Promovemos una mirada de cuidado integral: inocuidad, buenas prácticas, nutrición orgánica sin aditivos sintéticos, respeto por el territorio y procesos responsables para el consumidor, el productor y el medio ambiente.",
       },
       {
         q: "¿La consulta es confidencial?",
-        a: "Sí. Priorizamos el respeto, la privacidad y el cuidado de cada proceso personal.",
+        a: "Sí. Priorizamos el respeto, la privacidad y el cuidado de cada proceso personal. Promovemos un uso adecuado de la información personal y sensible, con criterios de confidencialidad acordes a la Ley 25.326 de Protección de los Datos Personales.",
       },
       {
         q: "¿Ofrecen acompañamiento durante el proceso?",
-        a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana.",
+        a: "Sí. Nuestro enfoque no termina en una respuesta aislada. Buscamos acompañar de manera cercana, ordenada y humana, incluyendo formación, capacitaciones teórico-prácticas y seguimiento durante cada proceso.",
       },
     ],
     []
@@ -315,6 +315,10 @@ export default function HomePage() {
                 Nuestro enfoque combina identidad territorial, compromiso comunitario, respeto por
                 cada proceso y una relación cercana entre quienes consultan y quienes acompañan.
               </p>
+              <p className="sectionText">
+                También impulsamos capacitaciones teórico-prácticas a lo largo del ciclo de cultivo,
+                experiencias con terpenos y formación en preparación responsable de derivados.
+              </p>
             </div>
 
             <div className="introCards">
@@ -413,13 +417,20 @@ export default function HomePage() {
                 <div className="areaCard">
                   <div className="areaIcon">❋</div>
                   <h3>Cultivo agroecológico</h3>
-                  <p>Mirada responsable, respetuosa del entorno y del territorio.</p>
+                  <p>
+                    Cultivo responsable con enfoque agroecológico, priorizando inocuidad, procesos
+                    seguros para el consumidor, el productor y el medio ambiente, y nutrición
+                    orgánica sin aditivos sintéticos.
+                  </p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">▣</div>
                   <h3>Formación</h3>
-                  <p>Circulación de saberes y aprendizaje consciente.</p>
+                  <p>
+                    Capacitaciones teórico-prácticas a lo largo del ciclo de cultivo, experiencias
+                    con terpenos y formación en preparación de derivados.
+                  </p>
                 </div>
 
                 <div className="areaCard">
@@ -431,7 +442,10 @@ export default function HomePage() {
                 <div className="areaCard">
                   <div className="areaIcon">♡</div>
                   <h3>Confidencialidad</h3>
-                  <p>Respeto por cada proceso, cada consulta y cada recorrido.</p>
+                  <p>
+                    Cuidamos el uso adecuado de la información personal y sensible, con criterios
+                    de confidencialidad y resguardo acordes a la Ley 25.326.
+                  </p>
                 </div>
               </div>
             </div>
@@ -442,7 +456,9 @@ export default function HomePage() {
                 <h3>Acompañamiento claro para un proceso sensible</h3>
                 <p>
                   Sabemos que muchas personas llegan con dudas o desinformación. Por eso ofrecemos
-                  un acompañamiento claro, cercano y ordenado en cada etapa.
+                  un acompañamiento claro, cercano y ordenado en cada etapa, incluyendo orientación
+                  general, articulación con profesionales y selección responsable de genéticas
+                  acordes a cada proceso y necesidad.
                 </p>
                 <ul>
                   <li>Información clara</li>
@@ -471,18 +487,21 @@ export default function HomePage() {
               <div className="pill darkPill">Enfoque agroecológico</div>
               <h2>Cultivo responsable, cuidado del entorno y formación consciente</h2>
               <p>
-                Entendemos el cultivo como parte de una mirada integral: aprendizaje, responsabilidad
-                y vínculo con el territorio.
+                Entendemos el cultivo como parte de una mirada integral: aprendizaje, responsabilidad,
+                inocuidad y vínculo con el territorio.
               </p>
               <p>
-                Promovemos buenas prácticas, respeto por el entorno, procesos cuidados y una relación
-                responsable con la comunidad.
+                Priorizamos procesos seguros para el consumidor, el productor y el medio ambiente,
+                promoviendo buenas prácticas, nutrición orgánica sin aditivos sintéticos y una
+                relación responsable con la comunidad.
               </p>
               <div className="agroList">
+                <span>Inocuidad</span>
+                <span>Proceso seguro</span>
+                <span>Nutrición orgánica</span>
                 <span>Cuidado del entorno</span>
                 <span>Buenas prácticas</span>
                 <span>Mirada territorial</span>
-                <span>Aprendizaje compartido</span>
               </div>
             </div>
           </div>
