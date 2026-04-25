@@ -2311,6 +2311,97 @@ export default function HomePage() {
             border-radius: 22px;
           }
         }
+
+        /* AJUSTES FINALES MOBILE / CONTRASTE */
+        .darkSection .sectionTop h2,
+        .darkSection .centerTop h2 {
+          color: var(--text-light);
+        }
+
+        .darkSection .sectionLead {
+          color: var(--muted-light);
+        }
+
+        @media (max-width: 760px) {
+          .pathWrap {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+
+          .pathIntro,
+          .pathDetail {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 24px 18px !important;
+            border-radius: 22px !important;
+          }
+
+          .pathIntro h2,
+          .pathDetail h3 {
+            font-size: clamp(2.05rem, 10vw, 2.8rem) !important;
+            line-height: 1.04 !important;
+            letter-spacing: -0.04em !important;
+          }
+
+          .pathIntro p,
+          .pathDetail p {
+            font-size: 1rem !important;
+            line-height: 1.65 !important;
+          }
+
+          .pathButtons {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 10px !important;
+          }
+
+          .pathButton {
+            width: 100% !important;
+            padding: 15px 16px !important;
+            border-radius: 16px !important;
+            font-size: 1rem !important;
+          }
+
+          .pathPoints {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 9px !important;
+          }
+
+          .pathPoints span {
+            width: 100% !important;
+          }
+
+          .pathCta {
+            width: 100% !important;
+          }
+
+          .sectionTop h2,
+          .introBlock h2,
+          .areasLeft h2,
+          .faqBlock h2,
+          .contactPromo h2 {
+            font-size: clamp(2rem, 9.5vw, 2.8rem) !important;
+            line-height: 1.06 !important;
+          }
+
+          .footerBottom {
+            padding-bottom: 56px;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .pathIntro,
+          .pathDetail {
+            border-radius: 20px !important;
+          }
+
+          .pathIntro h2,
+          .pathDetail h3 {
+            font-size: clamp(2rem, 10vw, 2.55rem) !important;
+          }
+        }
+
       `}</style>
     </>
   );
