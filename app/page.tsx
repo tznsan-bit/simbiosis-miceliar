@@ -19,6 +19,7 @@ export default function HomePage() {
       { href: "#quienes-somos", label: "Quiénes somos" },
       { href: "#como-trabajamos", label: "Cómo trabajamos" },
       { href: "#areas", label: "Áreas" },
+      { href: "#lineas", label: "Líneas de trabajo" },
       { href: "#agroecologico", label: "Enfoque agroecológico" },
       { href: "#faq", label: "Preguntas frecuentes" },
       { href: "#contacto", label: "Contacto" },
@@ -544,6 +545,71 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="section lightSection" id="lineas">
+          <div className="container linesWrap">
+            <div className="linesIntro">
+              <div className="pill lightPill">Elaboraciones, cáñamo y líneas de trabajo</div>
+              <h2>No pensamos en “productos” aislados, sino en procesos completos</h2>
+              <p>
+                En Simbiosis Miceliar trabajamos distintas líneas vinculadas al cannabis medicinal,
+                el cáñamo, la formación y el cultivo agroecológico. La idea no es mostrar un catálogo,
+                sino contar qué áreas venimos desarrollando y hacia dónde queremos crecer.
+              </p>
+            </div>
+
+            <div className="linesGrid">
+              <article className="lineCard featuredLine">
+                <div className="lineTop">
+                  <span>01</span>
+                  <strong>Medicinal</strong>
+                </div>
+                <h3>Preparados y derivados</h3>
+                <p>
+                  Formación, acompañamiento e información sobre derivados de uso medicinal dentro
+                  del marco vigente, priorizando criterios de cuidado, trazabilidad y orientación
+                  adecuada.
+                </p>
+              </article>
+
+              <article className="lineCard">
+                <div className="lineTop">
+                  <span>02</span>
+                  <strong>Agroecología</strong>
+                </div>
+                <h3>Cultivo con suelo vivo</h3>
+                <p>
+                  Trabajamos el cultivo desde la base: suelo, agua, nutrición orgánica, preparados
+                  biológicos, prevención y observación diaria de las plantas.
+                </p>
+              </article>
+
+              <article className="lineCard">
+                <div className="lineTop">
+                  <span>03</span>
+                  <strong>Cáñamo</strong>
+                </div>
+                <h3>Desarrollo industrial y ambiental</h3>
+                <p>
+                  El cáñamo abre posibilidades productivas, educativas y ambientales. Queremos
+                  impulsarlo desde Patagonia con proyectos serios, articulados y sostenibles.
+                </p>
+              </article>
+
+              <article className="lineCard esperanzaLine">
+                <div className="lineTop">
+                  <span>04</span>
+                  <strong>Proyecto</strong>
+                </div>
+                <h3>Sembrando Esperanza</h3>
+                <p>
+                  Una línea de trabajo para articular cannabis medicinal, cáñamo, formación y comunidad.
+                  Un espacio para sembrar proyectos concretos, con sentido local y mirada a futuro.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="section darkSection" id="agroecologico">
           <div className="container cultivoGrid">
             <div className="cultivoImage">
@@ -732,6 +798,7 @@ export default function HomePage() {
             <a href="#inicio">Inicio</a>
             <a href="#quienes-somos">Quiénes somos</a>
             <a href="#areas">Áreas</a>
+            <a href="#lineas">Líneas de trabajo</a>
             <a href="#agroecologico">Enfoque agroecológico</a>
             <a href="#contacto">Contacto</a>
           </div>
@@ -1596,6 +1663,137 @@ export default function HomePage() {
           font-weight: 700;
         }
 
+        .linesWrap {
+          display: grid;
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 28px;
+          align-items: start;
+        }
+
+        .linesIntro {
+          position: sticky;
+          top: 110px;
+          background: rgba(255, 255, 255, 0.62);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          border-radius: 28px;
+          padding: 30px 24px;
+          box-shadow: var(--shadow-soft-2);
+        }
+
+        .linesIntro h2 {
+          margin: 0 0 14px;
+          color: var(--text-dark);
+          font-size: clamp(2rem, 4vw, 3rem);
+          line-height: 1.04;
+          letter-spacing: -0.03em;
+          text-wrap: balance;
+        }
+
+        .linesIntro p {
+          margin: 0;
+          color: var(--muted-dark);
+          line-height: 1.74;
+          font-size: 1rem;
+        }
+
+        .linesGrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        .lineCard {
+          min-height: 250px;
+          border-radius: 24px;
+          padding: 22px 20px;
+          background: rgba(255, 255, 255, 0.86);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          box-shadow: var(--shadow-soft-2);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .lineCard:hover {
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-soft);
+        }
+
+        .featuredLine,
+        .esperanzaLine {
+          background:
+            radial-gradient(circle at top right, rgba(110, 142, 92, 0.16), transparent 30%),
+            linear-gradient(180deg, #17241c 0%, #0d1712 100%);
+          color: var(--text-light);
+          border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .lineTop {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-bottom: 26px;
+        }
+
+        .lineTop span {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: rgba(110, 142, 92, 0.16);
+          color: #4f6e48;
+          display: grid;
+          place-items: center;
+          font-size: 0.86rem;
+          font-weight: 800;
+        }
+
+        .featuredLine .lineTop span,
+        .esperanzaLine .lineTop span {
+          background: rgba(255, 255, 255, 0.08);
+          color: var(--green-2);
+        }
+
+        .lineTop strong {
+          padding: 8px 12px;
+          border-radius: 999px;
+          background: rgba(13, 23, 18, 0.06);
+          color: var(--muted-dark);
+          font-size: 0.82rem;
+        }
+
+        .featuredLine .lineTop strong,
+        .esperanzaLine .lineTop strong {
+          background: rgba(255, 255, 255, 0.07);
+          color: var(--muted-light);
+        }
+
+        .lineCard h3 {
+          margin: 0 0 12px;
+          color: var(--text-dark);
+          font-size: 1.45rem;
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+        }
+
+        .featuredLine h3,
+        .esperanzaLine h3 {
+          color: var(--text-light);
+        }
+
+        .lineCard p {
+          margin: 0;
+          color: var(--muted-dark);
+          line-height: 1.68;
+          font-size: 0.96rem;
+        }
+
+        .featuredLine p,
+        .esperanzaLine p {
+          color: var(--muted-light);
+        }
+
         .cultivoGrid {
           display: grid;
           grid-template-columns: 1.08fr 0.92fr;
@@ -2384,6 +2582,33 @@ export default function HomePage() {
           .pathIntro h2,
           .pathDetail h3 {
             font-size: clamp(2rem, 10vw, 2.55rem) !important;
+          }
+        }
+
+
+        @media (max-width: 1180px) {
+          .linesWrap {
+            grid-template-columns: 1fr !important;
+          }
+
+          .linesIntro {
+            position: relative !important;
+            top: auto !important;
+          }
+        }
+
+        @media (max-width: 760px) {
+          .linesGrid {
+            grid-template-columns: 1fr !important;
+          }
+
+          .linesIntro,
+          .lineCard {
+            border-radius: 18px !important;
+          }
+
+          .lineCard {
+            min-height: auto !important;
           }
         }
 
