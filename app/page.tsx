@@ -32,23 +32,23 @@ export default function HomePage() {
         id: "paciente",
         label: "Soy paciente",
         eyebrow: "Orientación inicial",
-        title: "Te ayudamos a entender el camino posible",
-        text: "Recibimos tu consulta, escuchamos tu situación y te orientamos de forma clara sobre los primeros pasos, la vinculación médica y el proceso relacionado a REPROCANN.",
+        title: "Te ayudamos a ordenar los primeros pasos",
+        text: "Nos contás tu situación y vemos qué necesitás: orientación general, vinculación médica, información sobre REPROCANN o acompañamiento para avanzar con más claridad.",
         points: [
-          "Primera orientación cercana",
-          "Proceso explicado de forma simple",
-          "Confidencialidad y respeto",
+          "Primera orientación",
+          "Pasos claros",
+          "Reserva y cuidado de datos",
         ],
       },
       {
         id: "cultivador",
         label: "Soy cultivador/a",
         eyebrow: "Buenas prácticas",
-        title: "Construimos una red responsable y agroecológica",
-        text: "Promovemos prácticas de cultivo cuidadas, con mirada territorial, respeto por el ambiente, nutrición orgánica y procesos seguros para quienes producen y para quienes reciben acompañamiento.",
+        title: "Cultivar mejor también es cuidar mejor",
+        text: "Nos interesa el cultivo desde la base: suelo vivo, nutrición orgánica, observación, buenas prácticas y plantas sanas. No pensamos el cannabis separado del ambiente donde crece.",
         points: [
-          "Criterios de cultivo responsable",
-          "Mirada agroecológica",
+          "Buenas prácticas de cultivo",
+          "Suelo vivo y nutrición orgánica",
           "Formación y seguimiento",
         ],
       },
@@ -56,12 +56,12 @@ export default function HomePage() {
         id: "institucion",
         label: "Soy institución",
         eyebrow: "Articulación territorial",
-        title: "Impulsamos vínculos serios y proyectos con impacto",
-        text: "Trabajamos para articular con espacios profesionales, educativos, comunitarios e institucionales que compartan una mirada responsable sobre cannabis medicinal, cáñamo y desarrollo territorial.",
+        title: "Articulamos proyectos que tengan sentido real",
+        text: "Buscamos vincularnos con instituciones, profesionales, productores y espacios educativos para desarrollar proyectos concretos alrededor del cannabis medicinal, el cáñamo y la agroecología.",
         points: [
-          "Articulación con equipos técnicos",
+          "Equipos técnicos y profesionales",
           "Proyectos comunitarios",
-          "Desarrollo medicinal e industrial",
+          "Cáñamo medicinal e industrial",
         ],
       },
     ],
@@ -246,22 +246,20 @@ export default function HomePage() {
           <div className="heroBackdropTexture" />
           <div className="container heroGrid">
             <div className="heroText">
-              <div className="pill darkPill">Proyecto patagónico · Orientación · REPROCANN</div>
+              <div className="pill darkPill">Cannabis medicinal · Patagonia · Agroecología</div>
 
               <h1>
-                Acompañamiento claro,
-                <span> cercano y responsable</span>
+                Cannabis medicinal
+                <span> desde la Patagonia</span>
               </h1>
 
               <p className="heroLead">
-                Orientación, vinculación médica para REPROCANN, formación y comunidad desde Lago
+                Orientación para REPROCANN, cultivo agroecológico, formación y comunidad desde Lago
                 Puelo.
               </p>
 
               <p className="heroBody">
-                En Simbiosis Miceliar acompañamos procesos de orientación, articulación,
-                formación y seguimiento desde una mirada humana, comunitaria y con enfoque
-                agroecológico.
+                Trabajamos con personas que buscan ordenar su acceso al cannabis medicinal, aprender a cultivar mejor y ser parte de una red seria, cercana y con identidad patagónica.
               </p>
 
               <div className="buttons">
@@ -280,9 +278,9 @@ export default function HomePage() {
               </div>
 
               <div className="badges">
-                <span>Proyecto patagónico</span>
-                <span>Vinculación médica para REPROCANN</span>
-                <span>Enfoque agroecológico</span>
+                <span>Patagonia</span>
+                <span>REPROCANN y orientación médica</span>
+                <span>Cultivo agroecológico</span>
               </div>
             </div>
 
@@ -297,8 +295,8 @@ export default function HomePage() {
               />
               <div className="heroOverlay" />
               <div className="heroMiniCard">
-                <strong>Territorio, cuidado y comunidad</strong>
-                <span>Una mirada cercana y responsable sobre el acompañamiento y el cultivo.</span>
+                <strong>Patagonia, suelo vivo y comunidad</strong>
+                <span>Un proyecto que crece desde Lago Puelo, con cultivo cuidado y procesos claros.</span>
               </div>
             </div>
           </div>
@@ -310,7 +308,7 @@ export default function HomePage() {
               <div className="trustIcon">◎</div>
               <div>
                 <strong>Orientación personalizada</strong>
-                <span>Escucha, claridad y acompañamiento según cada caso.</span>
+                <span>Te ayudamos a ordenar dudas y primeros pasos.</span>
               </div>
             </div>
 
@@ -318,7 +316,7 @@ export default function HomePage() {
               <div className="trustIcon">✚</div>
               <div>
                 <strong>REPROCANN</strong>
-                <span>Vinculación médica y proceso acompañado.</span>
+                <span>Orientación y vinculación con profesionales.</span>
               </div>
             </div>
 
@@ -326,7 +324,7 @@ export default function HomePage() {
               <div className="trustIcon">❋</div>
               <div>
                 <strong>Enfoque agroecológico</strong>
-                <span>Buenas prácticas, cuidado del entorno y mirada territorial.</span>
+                <span>Suelo vivo, nutrición orgánica y buenas prácticas.</span>
               </div>
             </div>
 
@@ -334,7 +332,7 @@ export default function HomePage() {
               <div className="trustIcon">◉</div>
               <div>
                 <strong>Comunidad real</strong>
-                <span>Un espacio cercano, serio y humano.</span>
+                <span>Una red real, con trabajo sostenido y presencia local.</span>
               </div>
             </div>
           </div>
@@ -343,8 +341,7 @@ export default function HomePage() {
         <section className="miniValue lightSection">
           <div className="container miniValueWrap">
             <p>
-              Acompañamos con cercanía, criterio y responsabilidad, integrando orientación,
-              vinculación médica, formación y una mirada agroecológica del territorio.
+              Desde Lago Puelo impulsamos una forma de trabajar el cannabis medicinal que combina orientación, formación, cultivo agroecológico y vínculos reales con la comunidad.
             </p>
           </div>
         </section>
@@ -353,10 +350,9 @@ export default function HomePage() {
           <div className="container pathWrap">
             <div className="pathIntro">
               <div className="pill lightPill">Acceso rápido</div>
-              <h2>Elegí tu punto de partida</h2>
+              <h2>Encontrá por dónde empezar</h2>
               <p>
-                Cada persona llega con una necesidad distinta. Este espacio te ayuda a encontrar
-                una orientación más rápida y concreta.
+                No todos llegan con la misma duda. Por eso ordenamos la información según lo que estés buscando.
               </p>
 
               <div className="pathButtons">
@@ -400,18 +396,15 @@ export default function HomePage() {
           <div className="container splitIntro">
             <div className="introBlock">
               <div className="pill lightPill">Quiénes somos</div>
-              <h2>Una comunidad construida desde el territorio</h2>
+              <h2>Un proyecto nacido en la Patagonia</h2>
               <p className="sectionLead darkText">
-                Somos un proyecto patagónico que busca aportar claridad, acompañamiento responsable
-                y cercanía en los recorridos vinculados al cannabis medicinal.
+                Simbiosis Miceliar nace en Lago Puelo, en una zona donde la naturaleza, el cultivo y la comunidad tienen un peso real. Desde ahí trabajamos para acercar información clara sobre cannabis medicinal.
               </p>
               <p className="sectionText">
-                Nuestro enfoque combina identidad territorial, compromiso comunitario, respeto por
-                cada proceso y una relación cercana entre quienes consultan y quienes acompañan.
+                No queremos una página que prometa de más ni hable difícil. Queremos que quien llegue entienda qué hacemos, cómo trabajamos y con quién puede hablar.
               </p>
               <p className="sectionText">
-                También impulsamos capacitaciones teórico-prácticas a lo largo del ciclo de cultivo,
-                experiencias con terpenos y formación en preparación responsable de derivados.
+                También impulsamos formación práctica: cultivo, suelo, nutrición orgánica, terpenos, buenas prácticas y preparación responsable de derivados.
               </p>
             </div>
 
@@ -427,7 +420,7 @@ export default function HomePage() {
                   />
                 </div>
                 <strong>Trabajo cuidado</strong>
-                <span>Procesos responsables y cercanos</span>
+                <span>Cultivo, seguimiento y trabajo constante</span>
               </div>
 
               <div className="smallPhotoCard">
@@ -451,10 +444,9 @@ export default function HomePage() {
           <div className="container">
             <div className="sectionTop centerTop">
               <div className="pill darkPill">Cómo trabajamos</div>
-              <h2>Un recorrido simple, cuidado y ordenado</h2>
+              <h2>Un recorrido simple y sin vueltas</h2>
               <p className="sectionLead">
-                Queremos que quien llega a Simbiosis entienda rápido qué hacemos y cómo comienza el
-                proceso.
+                La idea es que no tengas que adivinar por dónde empezar. Primero ordenamos la consulta y después vemos el camino posible.
               </p>
             </div>
 
@@ -462,25 +454,25 @@ export default function HomePage() {
               <div className="stepCard">
                 <div className="stepCircle">1</div>
                 <h3>Nos escribís</h3>
-                <p>Recibimos tu consulta y conocemos tu situación, tus dudas y lo que necesitás orientar.</p>
+                <p>Nos contás qué necesitás y cuál es tu situación.</p>
               </div>
 
               <div className="stepCard">
                 <div className="stepCircle">2</div>
                 <h3>Te orientamos</h3>
-                <p>Brindamos una primera orientación clara y responsable para ayudarte a entender el camino posible.</p>
+                <p>Te explicamos las opciones de forma simple, sin vueltas raras.</p>
               </div>
 
               <div className="stepCard">
                 <div className="stepCircle">3</div>
                 <h3>Te vinculamos</h3>
-                <p>Cuando corresponde, articulamos la vinculación con profesionales médicos para REPROCANN.</p>
+                <p>Si corresponde, te orientamos para la vinculación médica vinculada a REPROCANN.</p>
               </div>
 
               <div className="stepCard">
                 <div className="stepCircle">4</div>
                 <h3>Acompañamos</h3>
-                <p>Sostenemos una relación cercana, ordenada y humana durante cada proceso.</p>
+                <p>Después seguimos disponibles para acompañar dudas, formación y próximos pasos.</p>
               </div>
             </div>
           </div>
@@ -492,44 +484,44 @@ export default function HomePage() {
               <div className="pill lightPill">Áreas de trabajo</div>
               <h2>Qué hacemos en Simbiosis Miceliar</h2>
               <p className="sectionLead darkText">
-                Integramos orientación, acompañamiento, formación y comunidad desde una mirada responsable.
+                Trabajamos en distintas áreas, pero con una misma idea: cannabis medicinal bien explicado, cultivo cuidado y procesos claros.
               </p>
 
               <div className="areasGrid">
                 <div className="areaCard">
                   <div className="areaIcon">◌</div>
                   <h3>Orientación inicial</h3>
-                  <p>Escuchamos cada situación de forma personalizada y clara.</p>
+                  <p>Ordenamos dudas y primeros pasos según cada caso.</p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">✚</div>
                   <h3>Vinculación médica</h3>
-                  <p>Profesionales encargados del proceso de REPROCANN.</p>
+                  <p>Vinculación médica para procesos relacionados a REPROCANN.</p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">❋</div>
                   <h3>Cultivo agroecológico</h3>
-                  <p>Inocuidad, proceso seguro y nutrición orgánica con enfoque agroecológico.</p>
+                  <p>Suelo vivo, nutrición orgánica, observación y buenas prácticas.</p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">▣</div>
                   <h3>Formación</h3>
-                  <p>Capacitaciones, terpenos y preparación responsable de derivados.</p>
+                  <p>Capacitaciones sobre cultivo, terpenos y derivados.</p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">◎</div>
                   <h3>Comunidad</h3>
-                  <p>Escucha, confianza y acompañamiento humano.</p>
+                  <p>Una red cercana, con trabajo real y continuidad.</p>
                 </div>
 
                 <div className="areaCard">
                   <div className="areaIcon">♡</div>
                   <h3>Confidencialidad</h3>
-                  <p>Resguardo responsable de información personal y sensible según Ley 25.326.</p>
+                  <p>Cuidado de la información personal y sensible.</p>
                 </div>
               </div>
             </div>
@@ -537,18 +529,15 @@ export default function HomePage() {
             <div className="areasRight">
               <div className="reprocannCard" id="reprocann">
                 <div className="pill darkPill">REPROCANN</div>
-                <h3>Acompañamiento claro para un proceso sensible</h3>
+                <h3>REPROCANN explicado de forma clara</h3>
                 <p>
-                  Sabemos que muchas personas llegan con dudas o desinformación. Por eso ofrecemos
-                  un acompañamiento claro, cercano y ordenado en cada etapa, incluyendo orientación
-                  general, articulación con profesionales y selección responsable de genéticas
-                  acordes a cada proceso y necesidad.
+                  Muchas personas escuchan hablar de REPROCANN, pero no saben por dónde empezar, qué documentación necesitan o cómo seguir. En Simbiosis buscamos ordenar ese camino, orientar la consulta y vincular con profesionales cuando corresponde.
                 </p>
                 <ul>
-                  <li>Información clara</li>
-                  <li>Vinculación con profesionales</li>
-                  <li>Proceso acompañado con criterio</li>
-                  <li>Confidencialidad y respeto</li>
+                  <li>Información simple</li>
+                  <li>Vinculación médica</li>
+                  <li>Acompañamiento durante el proceso</li>
+                  <li>Reserva y cuidado de datos</li>
                 </ul>
               </div>
             </div>
@@ -569,23 +558,20 @@ export default function HomePage() {
 
             <div className="cultivoTextCard">
               <div className="pill darkPill">Enfoque agroecológico</div>
-              <h2>Cultivo responsable, cuidado del entorno y formación consciente</h2>
+              <h2>Cultivo agroecológico: desde el suelo hasta la planta</h2>
               <p>
-                Entendemos el cultivo como parte de una mirada integral: aprendizaje, responsabilidad,
-                inocuidad y vínculo con el territorio.
+                Para nosotros el cultivo empieza antes de la planta. Empieza en el suelo, en el agua, en la nutrición, en la observación diaria y en la decisión de no apurar procesos.
               </p>
               <p>
-                Priorizamos procesos seguros para el consumidor, el productor y el medio ambiente,
-                promoviendo buenas prácticas, nutrición orgánica sin aditivos sintéticos y una
-                relación responsable con la comunidad.
+                Trabajamos con una mirada agroecológica: suelo vivo, materia orgánica, preparados biológicos, prevención, manejo limpio y respeto por el entorno patagónico. La calidad final depende de todo ese camino.
               </p>
               <div className="agroList">
                 <span>Inocuidad</span>
-                <span>Proceso seguro</span>
+                <span>Procesos limpios</span>
                 <span>Nutrición orgánica</span>
-                <span>Cuidado del entorno</span>
+                <span>Cuidado del ambiente</span>
                 <span>Buenas prácticas</span>
-                <span>Mirada territorial</span>
+                <span>Patagonia</span>
               </div>
             </div>
           </div>
@@ -595,7 +581,7 @@ export default function HomePage() {
           <div className="container">
             <div className="sectionTop">
               <div className="pill lightPill">Territorio y comunidad</div>
-              <h2>Una identidad construida desde el cuidado y la cercanía</h2>
+              <h2>Una identidad que nace del cultivo y la Patagonia</h2>
             </div>
 
             <div className="galleryGrid">
@@ -636,7 +622,7 @@ export default function HomePage() {
           <div className="container faqContactWrap">
             <div className="faqBlock">
               <div className="pill lightPill">Preguntas frecuentes</div>
-              <h2>Dudas comunes, respuestas claras</h2>
+              <h2>Preguntas frecuentes</h2>
 
               <div className="faqList">
                 {faqs.map((item, index) => {
@@ -675,10 +661,9 @@ export default function HomePage() {
 
             <div className="contactPromo" id="contacto">
               <div className="pill darkPill">Primer contacto</div>
-              <h2>Escribinos y te orientamos de forma cercana y responsable</h2>
+              <h2>Escribinos y vemos cómo orientarte</h2>
               <p>
-                Si querés recibir orientación, conocer cómo trabajamos o iniciar un primer contacto,
-                escribinos y te respondemos de forma clara, humana y cuidada.
+                Si querés consultar por REPROCANN, formación, cultivo agroecológico o articulaciones, escribinos. Primero escuchamos la situación y después vemos cómo seguir.
               </p>
 
               <div className="contactButtons">
@@ -733,12 +718,12 @@ export default function HomePage() {
               </div>
               <div>
                 <h3>Simbiosis Miceliar</h3>
-                <p>Proyecto patagónico de orientación y acompañamiento</p>
+                <p>Cannabis medicinal y agroecología desde Patagonia</p>
               </div>
             </div>
 
             <p className="footerStatement">
-              Identidad territorial, acompañamiento humano, enfoque agroecológico y compromiso comunitario.
+              Cannabis medicinal, agroecología, formación y comunidad desde Lago Puelo.
             </p>
           </div>
 
