@@ -16,12 +16,12 @@ export default function HomePage() {
 
   const navItems = useMemo(
     () => [
-      { href: "#club", label: "El club" },
       { href: "#quienes-somos", label: "Quiénes somos" },
       { href: "#como-trabajamos", label: "Cómo trabajamos" },
       { href: "#areas", label: "Áreas" },
       { href: "#lineas", label: "Líneas de trabajo" },
-      { href: "#agroecologico", label: "Agroecología" },
+      { href: "#agroecologico", label: "Enfoque agroecológico" },
+      { href: "#faq", label: "Preguntas frecuentes" },
       { href: "#contacto", label: "Contacto" },
     ],
     [],
@@ -214,7 +214,7 @@ export default function HomePage() {
 
             <div className="brandText">
               <div className="brandTitle">Simbiosis Miceliar</div>
-              <div className="brandSub">Club cannábico patagónico</div>
+              <div className="brandSub">Proyecto patagónico</div>
             </div>
           </a>
 
@@ -259,25 +259,23 @@ export default function HomePage() {
           <div className="container heroGrid">
             <div className="heroText">
               <div className="pill darkPill">
-                Club cannábico · Acceso seguro · Agroecología
+                Cannabis medicinal · Patagonia · Agroecología
               </div>
 
               <h1>
-                Club cannábico
-                <span> con raíz patagónica</span>
+                Cannabis medicinal
+                <span> desde la Patagonia</span>
               </h1>
 
               <p className="heroLead">
-                Un espacio comunitario de cannabis medicinal, formación, cultivo
-                responsable y acompañamiento desde Lago Puelo para la Comarca
-                Andina.
+                Orientación para REPROCANN, cultivo agroecológico, formación y
+                comunidad desde Lago Puelo.
               </p>
 
               <p className="heroBody">
-                Simbiosis Miceliar mantiene su identidad de club: cercanía,
-                confianza, socios, territorio y trabajo real. Sumamos una
-                estética más actual para contar mejor lo que ya somos: una red
-                viva de salud, cultivo y agroecología.
+                Trabajamos con personas que buscan ordenar su acceso al cannabis
+                medicinal, aprender a cultivar mejor y ser parte de una red
+                seria, cercana y con identidad patagónica.
               </p>
 
               <div className="buttons">
@@ -287,18 +285,18 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Quiero consultar / asociarme
+                  Hablar por WhatsApp
                 </a>
 
-                <a className="btn btnGhost" href="#club">
-                  Conocer el club
+                <a className="btn btnGhost" href="#como-trabajamos">
+                  Ver cómo trabajamos
                 </a>
               </div>
 
               <div className="badges">
-                <span>Club comunitario</span>
+                <span>Patagonia</span>
                 <span>REPROCANN y orientación médica</span>
-                <span>Suelo vivo y bioinsumos</span>
+                <span>Cultivo agroecológico</span>
               </div>
             </div>
 
@@ -312,11 +310,15 @@ export default function HomePage() {
                 className="coverImage heroImg"
               />
               <div className="heroOverlay" />
+              <div className="heroGlow heroGlowOne" aria-hidden="true" />
+              <div className="heroGlow heroGlowTwo" aria-hidden="true" />
+              <div className="floatingTag floatingTagOne">Lago Puelo</div>
+              <div className="floatingTag floatingTagTwo">Suelo vivo</div>
               <div className="heroMiniCard">
-                <strong>Club, salud y territorio</strong>
+                <strong>Patagonia, suelo vivo y comunidad</strong>
                 <span>
-                  Una comunidad cannábica con procesos claros, cultivo cuidado e
-                  identidad patagónica.
+                  Un proyecto que crece desde Lago Puelo, con cultivo cuidado y
+                  procesos claros.
                 </span>
               </div>
             </div>
@@ -324,22 +326,22 @@ export default function HomePage() {
         </section>
 
         <section
-          className="signalStrip darkSection"
+          className="motionStrip"
           aria-label="Ejes de Simbiosis Miceliar"
         >
-          <div className="signalTrack">
+          <div className="motionTrack">
             <span>ACCESO SEGURO</span>
             <span>CULTIVO RESPONSABLE</span>
-            <span>CLUB CANNÁBICO</span>
-            <span>AGROECOLOGÍA</span>
             <span>REPROCANN</span>
+            <span>SUELO VIVO</span>
             <span>COMUNIDAD</span>
+            <span>PATAGONIA</span>
             <span>ACCESO SEGURO</span>
             <span>CULTIVO RESPONSABLE</span>
-            <span>CLUB CANNÁBICO</span>
-            <span>AGROECOLOGÍA</span>
             <span>REPROCANN</span>
+            <span>SUELO VIVO</span>
             <span>COMUNIDAD</span>
+            <span>PATAGONIA</span>
           </div>
         </section>
 
@@ -348,8 +350,8 @@ export default function HomePage() {
             <div className="trustMini">
               <div className="trustIcon">◎</div>
               <div>
-                <strong>Club cercano</strong>
-                <span>Un primer contacto simple, cuidado y sin vueltas.</span>
+                <strong>Orientación personalizada</strong>
+                <span>Te ayudamos a ordenar dudas y primeros pasos.</span>
               </div>
             </div>
 
@@ -372,9 +374,9 @@ export default function HomePage() {
             <div className="trustMini">
               <div className="trustIcon">◉</div>
               <div>
-                <strong>Identidad propia</strong>
+                <strong>Comunidad real</strong>
                 <span>
-                  Club, territorio, salud y cultura cannábica responsable.
+                  Una red real, con trabajo sostenido y presencia local.
                 </span>
               </div>
             </div>
@@ -384,48 +386,24 @@ export default function HomePage() {
         <section className="miniValue lightSection">
           <div className="container miniValueWrap">
             <p>
-              Desde Lago Puelo impulsamos un club cannábico con identidad
-              propia: acompañamiento serio, cultivo responsable, formación
-              práctica y una mirada agroecológica que nace del territorio.
+              Desde Lago Puelo impulsamos una forma de trabajar el cannabis
+              medicinal que combina orientación, formación, cultivo
+              agroecológico y vínculos reales con la comunidad.
             </p>
           </div>
         </section>
 
-        <section className="clubIdentity lightSection" id="club">
-          <div className="container clubGrid">
-            <div className="clubStatement">
-              <div className="pill lightPill">El club</div>
-              <h2>Una comunidad cannábica, no una página fría</h2>
-              <p>
-                Simbiosis Miceliar es un club con presencia territorial:
-                personas, cultivo, acompañamiento, saberes compartidos y una
-                forma de trabajar el cannabis medicinal con responsabilidad.
-              </p>
-              <p>
-                La estética puede ser moderna, pero la esencia sigue siendo
-                comunitaria: socios, pacientes, cultivadores, profesionales y
-                productores vinculados por una misma búsqueda de acceso seguro y
-                salud.
-              </p>
-            </div>
-
-            <div className="impactGrid">
-              <div className="impactCard">
-                <strong>Club</strong>
-                <span>acompañamiento y comunidad</span>
-              </div>
-              <div className="impactCard">
-                <strong>REPROCANN</strong>
-                <span>orientación dentro del marco vigente</span>
-              </div>
-              <div className="impactCard">
-                <strong>Patagonia</strong>
-                <span>Lago Puelo y Comarca Andina</span>
-              </div>
-              <div className="impactCard">
-                <strong>Agroecología</strong>
-                <span>suelo vivo, bioinsumos y buenas prácticas</span>
-              </div>
+        <section
+          className="identityFlash lightSection"
+          aria-label="Identidad visual de Simbiosis Miceliar"
+        >
+          <div className="container identityFlashWrap">
+            <div className="identityWord">SIMBIOSIS</div>
+            <div className="identityChips">
+              <span>Club</span>
+              <span>Territorio</span>
+              <span>Agroecología</span>
+              <span>Acceso seguro</span>
             </div>
           </div>
         </section>
@@ -434,11 +412,10 @@ export default function HomePage() {
           <div className="container pathWrap">
             <div className="pathIntro">
               <div className="pill lightPill">Acceso rápido</div>
-              <h2>Entrá al club desde tu necesidad</h2>
+              <h2>Encontrá por dónde empezar</h2>
               <p>
-                No todos llegan por lo mismo. Algunos buscan orientación médica,
-                otros cultivo, formación o articulación. Ordenamos el primer
-                paso para que el contacto sea claro.
+                No todos llegan con la misma duda. Por eso ordenamos la
+                información según lo que estés buscando.
               </p>
 
               <div className="pathButtons">
@@ -482,22 +459,22 @@ export default function HomePage() {
           <div className="container splitIntro">
             <div className="introBlock">
               <div className="pill lightPill">Quiénes somos</div>
-              <h2>Un club nacido en la Patagonia</h2>
+              <h2>Un proyecto nacido en la Patagonia</h2>
               <p className="sectionLead darkText">
                 Simbiosis Miceliar nace en Lago Puelo, en una zona donde la
                 naturaleza, el cultivo y la comunidad tienen un peso real. Desde
-                ahí construimos un club cannábico con mirada sanitaria,
-                agroecológica y territorial.
+                ahí trabajamos para acercar información clara sobre cannabis
+                medicinal.
               </p>
               <p className="sectionText">
-                Nuestra identidad no se cambia: se ordena y se muestra mejor.
-                Queremos que quien llegue entienda qué hacemos, cómo trabajamos,
-                por qué cuidamos los procesos y de qué manera puede sumarse.
+                No queremos una página que prometa de más ni hable difícil.
+                Queremos que quien llegue entienda qué hacemos, cómo trabajamos
+                y con quién puede hablar.
               </p>
               <p className="sectionText">
-                Impulsamos formación práctica en cultivo, suelo, nutrición
-                orgánica, terpenos, buenas prácticas, bioinsumos y preparación
-                responsable de derivados dentro del marco vigente.
+                También impulsamos formación práctica: cultivo, suelo, nutrición
+                orgánica, terpenos, buenas prácticas y preparación responsable
+                de derivados.
               </p>
             </div>
 
@@ -537,11 +514,10 @@ export default function HomePage() {
           <div className="container">
             <div className="sectionTop centerTop">
               <div className="pill darkPill">Cómo trabajamos</div>
-              <h2>Un recorrido simple, cuidado y de club</h2>
+              <h2>Un recorrido simple y sin vueltas</h2>
               <p className="sectionLead">
-                La idea es que nadie tenga que adivinar por dónde empezar.
-                Primero escuchamos, después ordenamos la consulta y recién ahí
-                vemos el camino posible.
+                La idea es que no tengas que adivinar por dónde empezar. Primero
+                ordenamos la consulta y después vemos el camino posible.
               </p>
             </div>
 
@@ -585,11 +561,10 @@ export default function HomePage() {
           <div className="container areasGridWrap">
             <div className="areasLeft">
               <div className="pill lightPill">Áreas de trabajo</div>
-              <h2>Qué hacemos como club</h2>
+              <h2>Qué hacemos en Simbiosis Miceliar</h2>
               <p className="sectionLead darkText">
                 Trabajamos en distintas áreas, pero con una misma idea: cannabis
-                medicinal bien explicado, cultivo cuidado, socios acompañados y
-                procesos claros.
+                medicinal bien explicado, cultivo cuidado y procesos claros.
               </p>
 
               <div className="areasGrid">
@@ -624,10 +599,8 @@ export default function HomePage() {
 
                 <div className="areaCard">
                   <div className="areaIcon">◎</div>
-                  <h3>Vida de club</h3>
-                  <p>
-                    Una red cercana, con socios, trabajo real y continuidad.
-                  </p>
+                  <h3>Comunidad</h3>
+                  <p>Una red cercana, con trabajo real y continuidad.</p>
                 </div>
 
                 <div className="areaCard">
@@ -641,12 +614,12 @@ export default function HomePage() {
             <div className="areasRight">
               <div className="reprocannCard" id="reprocann">
                 <div className="pill darkPill">REPROCANN</div>
-                <h3>Información legal, clara y sin prometer de más</h3>
+                <h3>REPROCANN explicado de forma clara</h3>
                 <p>
                   Muchas personas escuchan hablar de REPROCANN, pero no saben
                   por dónde empezar, qué documentación necesitan o cómo seguir.
-                  En Simbiosis ordenamos ese camino, orientamos la consulta y
-                  vinculamos con profesionales cuando corresponde.
+                  En Simbiosis buscamos ordenar ese camino, orientar la consulta
+                  y vincular con profesionales cuando corresponde.
                 </p>
                 <ul>
                   <li>Información simple</li>
@@ -662,7 +635,9 @@ export default function HomePage() {
         <section className="section lightSection" id="lineas">
           <div className="container linesWrap">
             <div className="linesIntro">
-              <div className="pill lightPill">Líneas del club</div>
+              <div className="pill lightPill">
+                Elaboraciones, cáñamo y líneas de trabajo
+              </div>
               <h2>
                 No pensamos en “productos” aislados, sino en procesos completos
               </h2>
@@ -710,8 +685,7 @@ export default function HomePage() {
                 <p>
                   El cáñamo abre posibilidades productivas, educativas y
                   ambientales. Queremos impulsarlo desde Patagonia con proyectos
-                  serios, articulados y sostenibles, sin perder la identidad de
-                  club.
+                  serios, articulados y sostenibles.
                 </p>
               </article>
 
@@ -753,15 +727,14 @@ export default function HomePage() {
               </p>
               <p>
                 Trabajamos con una mirada agroecológica: suelo vivo, materia
-                orgánica, preparados biológicos, bioinsumos, prevención, manejo
-                limpio y respeto por el entorno patagónico. La calidad final
-                depende de todo ese camino.
+                orgánica, preparados biológicos, prevención, manejo limpio y
+                respeto por el entorno patagónico. La calidad final depende de
+                todo ese camino.
               </p>
               <div className="agroList">
                 <span>Inocuidad</span>
                 <span>Procesos limpios</span>
                 <span>Nutrición orgánica</span>
-                <span>Bioinsumos</span>
                 <span>Cuidado del ambiente</span>
                 <span>Buenas prácticas</span>
                 <span>Patagonia</span>
@@ -774,9 +747,7 @@ export default function HomePage() {
           <div className="container">
             <div className="sectionTop">
               <div className="pill lightPill">Territorio y comunidad</div>
-              <h2>
-                Una identidad que nace del cultivo, el club y la Patagonia
-              </h2>
+              <h2>Una identidad que nace del cultivo y la Patagonia</h2>
             </div>
 
             <div className="galleryGrid">
@@ -859,11 +830,11 @@ export default function HomePage() {
 
             <div className="contactPromo" id="contacto">
               <div className="pill darkPill">Primer contacto</div>
-              <h2>Escribinos y vemos cómo sumarte u orientarte</h2>
+              <h2>Escribinos y vemos cómo orientarte</h2>
               <p>
-                Si querés consultar por REPROCANN, asociarte, formarte, mejorar
-                tu cultivo o articular con el club, escribinos. Primero
-                escuchamos la situación y después vemos cómo seguir.
+                Si querés consultar por REPROCANN, formación, cultivo
+                agroecológico o articulaciones, escribinos. Primero escuchamos
+                la situación y después vemos cómo seguir.
               </p>
 
               <div className="contactButtons">
@@ -918,13 +889,13 @@ export default function HomePage() {
               </div>
               <div>
                 <h3>Simbiosis Miceliar</h3>
-                <p>Club cannábico y agroecología desde Patagonia</p>
+                <p>Cannabis medicinal y agroecología desde Patagonia</p>
               </div>
             </div>
 
             <p className="footerStatement">
-              Club cannábico, cannabis medicinal, agroecología, formación y
-              comunidad desde Lago Puelo.
+              Cannabis medicinal, agroecología, formación y comunidad desde Lago
+              Puelo.
             </p>
           </div>
 
@@ -1083,121 +1054,6 @@ export default function HomePage() {
             ),
             linear-gradient(180deg, var(--light) 0%, var(--stone) 100%);
           color: var(--text-dark);
-        }
-
-        .signalStrip {
-          padding: 14px 0;
-          overflow: hidden;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .signalTrack {
-          width: max-content;
-          display: flex;
-          gap: 18px;
-          align-items: center;
-          padding-left: 18px;
-          animation: signalMove 24s linear infinite;
-        }
-
-        .signalTrack span {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          color: rgba(246, 241, 231, 0.82);
-          font-weight: 900;
-          letter-spacing: 0.14em;
-          font-size: clamp(0.82rem, 2vw, 1rem);
-          white-space: nowrap;
-        }
-
-        .signalTrack span::after {
-          content: "•";
-          color: var(--green-2);
-          letter-spacing: 0;
-        }
-
-        @keyframes signalMove {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        .clubIdentity {
-          padding: 34px 0 12px;
-        }
-
-        .clubGrid {
-          display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 22px;
-          align-items: stretch;
-        }
-
-        .clubStatement {
-          border-radius: 30px;
-          padding: 32px 26px;
-          background: rgba(255, 255, 255, 0.72);
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          box-shadow: var(--shadow-soft-2);
-        }
-
-        .clubStatement h2 {
-          margin: 0 0 14px;
-          color: var(--text-dark);
-          font-size: clamp(2rem, 4vw, 3.15rem);
-          line-height: 1.03;
-          letter-spacing: -0.04em;
-          text-wrap: balance;
-        }
-
-        .clubStatement p {
-          margin: 0 0 14px;
-          color: var(--muted-dark);
-          line-height: 1.78;
-          font-size: 1rem;
-        }
-
-        .clubStatement p:last-child {
-          margin-bottom: 0;
-        }
-
-        .impactGrid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 14px;
-        }
-
-        .impactCard {
-          border-radius: 24px;
-          padding: 22px 18px;
-          min-height: 150px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          background: linear-gradient(
-            180deg,
-            rgba(22, 35, 27, 0.98),
-            rgba(13, 23, 18, 0.98)
-          );
-          color: var(--text-light);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: var(--shadow-soft);
-        }
-
-        .impactCard strong {
-          font-size: clamp(1.3rem, 3vw, 2rem);
-          letter-spacing: -0.04em;
-        }
-
-        .impactCard span {
-          color: var(--muted-light);
-          line-height: 1.45;
-          font-size: 0.94rem;
         }
 
         .header {
@@ -2467,6 +2323,272 @@ export default function HomePage() {
           flex-wrap: wrap;
         }
 
+        @keyframes floatSoft {
+          0%,
+          100% {
+            transform: translate3d(0, 0, 0) scale(1);
+          }
+          50% {
+            transform: translate3d(10px, -14px, 0) scale(1.04);
+          }
+        }
+
+        @keyframes marqueeMove {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes softPulse {
+          0%,
+          100% {
+            opacity: 0.42;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.72;
+            transform: scale(1.08);
+          }
+        }
+
+        .heroGlow {
+          position: absolute;
+          width: 170px;
+          height: 170px;
+          border-radius: 999px;
+          background: radial-gradient(
+            circle,
+            rgba(150, 180, 129, 0.28),
+            transparent 68%
+          );
+          filter: blur(1px);
+          pointer-events: none;
+          animation: softPulse 5.4s ease-in-out infinite;
+        }
+
+        .heroGlowOne {
+          left: 10%;
+          top: 12%;
+        }
+
+        .heroGlowTwo {
+          right: 4%;
+          bottom: 24%;
+          width: 120px;
+          height: 120px;
+          animation-delay: 1.4s;
+        }
+
+        .floatingTag {
+          position: absolute;
+          z-index: 2;
+          padding: 10px 14px;
+          border-radius: 999px;
+          background: rgba(13, 23, 18, 0.68);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: #eef1ea;
+          backdrop-filter: blur(12px);
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+          font-size: 0.88rem;
+          font-weight: 800;
+          animation: floatSoft 6s ease-in-out infinite;
+        }
+
+        .floatingTagOne {
+          top: 22px;
+          left: 22px;
+        }
+
+        .floatingTagTwo {
+          right: 22px;
+          top: 112px;
+          animation-delay: 1.2s;
+        }
+
+        .motionStrip {
+          overflow: hidden;
+          background: #111d16;
+          color: var(--text-light);
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .motionTrack {
+          width: max-content;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+          padding: 14px 0;
+          animation: marqueeMove 28s linear infinite;
+          will-change: transform;
+        }
+
+        .motionTrack span {
+          display: inline-flex;
+          align-items: center;
+          gap: 16px;
+          white-space: nowrap;
+          font-size: clamp(0.9rem, 2vw, 1.08rem);
+          font-weight: 900;
+          letter-spacing: 0.08em;
+          color: rgba(246, 241, 231, 0.92);
+        }
+
+        .motionTrack span::after {
+          content: "•";
+          color: var(--green-2);
+          font-size: 1.2rem;
+        }
+
+        .identityFlash {
+          padding: 28px 0 18px;
+        }
+
+        .identityFlashWrap {
+          position: relative;
+          overflow: hidden;
+          border-radius: 30px;
+          min-height: 210px;
+          padding: 26px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 22px;
+          background:
+            linear-gradient(
+              135deg,
+              rgba(13, 23, 18, 0.92),
+              rgba(22, 35, 27, 0.78)
+            ),
+            radial-gradient(
+              circle at 20% 20%,
+              rgba(150, 180, 129, 0.22),
+              transparent 32%
+            );
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: var(--shadow-soft);
+        }
+
+        .identityFlashWrap::before {
+          content: "";
+          position: absolute;
+          inset: -40%;
+          background: linear-gradient(
+            90deg,
+            transparent 0 44%,
+            rgba(255, 255, 255, 0.08) 50%,
+            transparent 56%
+          );
+          transform: rotate(12deg);
+          animation: marqueeMove 16s linear infinite;
+          pointer-events: none;
+        }
+
+        .identityWord {
+          position: relative;
+          z-index: 1;
+          font-size: clamp(3.2rem, 10vw, 8.5rem);
+          line-height: 0.78;
+          font-weight: 950;
+          letter-spacing: -0.08em;
+          color: rgba(246, 241, 231, 0.94);
+          text-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+        }
+
+        .identityChips {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 10px;
+          max-width: 420px;
+        }
+
+        .identityChips span {
+          padding: 10px 14px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: var(--text-light);
+          font-weight: 800;
+          font-size: 0.9rem;
+          backdrop-filter: blur(10px);
+        }
+
+        .areaCard,
+        .lineCard,
+        .stepCard,
+        .smallPhotoCard,
+        .faqItem,
+        .contactPromo,
+        .pathIntro,
+        .pathDetail,
+        .reprocannCard,
+        .cultivoImage,
+        .galleryCard {
+          animation: revealSoft 0.7s ease both;
+          animation-timeline: view();
+          animation-range: entry 0% cover 26%;
+        }
+
+        @keyframes revealSoft {
+          from {
+            opacity: 0.1;
+            transform: translateY(18px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .heroImage,
+        .smallPhoto,
+        .cultivoImage,
+        .galleryCard {
+          isolation: isolate;
+        }
+
+        .heroImage::after,
+        .smallPhoto::after,
+        .cultivoImage::after,
+        .galleryCard::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            120deg,
+            transparent 0 42%,
+            rgba(255, 255, 255, 0.12) 50%,
+            transparent 58%
+          );
+          transform: translateX(-130%);
+          transition: transform 0.7s ease;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .heroImage:hover::after,
+        .smallPhoto:hover::after,
+        .cultivoImage:hover::after,
+        .galleryCard:hover::after {
+          transform: translateX(130%);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            scroll-behavior: auto !important;
+          }
+        }
+
         @media (max-width: 1180px) {
           .heroGrid,
           .splitIntro,
@@ -2553,6 +2675,21 @@ export default function HomePage() {
           .navLinks a:hover {
             background: rgba(255, 255, 255, 0.05);
           }
+        }
+
+        .identityFlashWrap {
+          min-height: 180px;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-end;
+        }
+
+        .identityChips {
+          justify-content: flex-start;
+        }
+
+        .floatingTagTwo {
+          top: 78px;
         }
 
         @media (max-width: 760px) {
@@ -2941,36 +3078,6 @@ export default function HomePage() {
 
           .lineCard {
             min-height: auto !important;
-          }
-        }
-
-        @media (max-width: 1180px) {
-          .clubGrid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        @media (max-width: 760px) {
-          .clubIdentity {
-            padding: 28px 0 4px;
-          }
-
-          .clubStatement {
-            padding: 24px 18px;
-            border-radius: 22px;
-          }
-
-          .impactGrid {
-            grid-template-columns: 1fr;
-          }
-
-          .impactCard {
-            min-height: 126px;
-            border-radius: 18px;
-          }
-
-          .signalTrack {
-            animation-duration: 18s;
           }
         }
       `}</style>
